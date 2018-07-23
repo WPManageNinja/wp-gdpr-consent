@@ -42,6 +42,7 @@ class NINJAWPGDPR
 	{
 	
 		add_action('admin_menu', array('WP_GDPR\Classes\Menu','addAdminMenuPages'));
+		
 	}
 
 
