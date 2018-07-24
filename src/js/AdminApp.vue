@@ -15,7 +15,15 @@
 		</el-row>
 
 
-		<app-all-config />
+		<app-all-config :styleObj="styleObj" :styleMsg="styleMsg" 
+                        :stylePolicy="stylePolicy" 
+                        :styleDismissBtn="styleDismissBtn" 
+                        :message="message"
+                        :policyLinkText="policyLinkText" 
+                        :dismissBtnText="dismissBtnText"
+                        @showMsg="show_msg($event)"
+                        @postPolicy="post_policy($event)"
+                        @postDismissBtn="postDismissBtn($event)" />
 	</div>
 </template>
 
@@ -26,9 +34,77 @@
 		components: {
 			'app-all-config': AllConfig
         },
+        data() {
+            return {
+                styleObj: {
+                    bottom: '0px',
+                    background: '#A3549E',
+                    color: 'white',
+                    position: 'relative',
+                    width: '100%',
+                    top: '403px',
+                    margin: '0',
+                    padding: '0px',
+                    left: '0px',
+                    right: '0px',
+                    borderRadius: '0px',
+                    maxWidth: '',
+                    marginTop: '0px',
+                    marginLeft: '0px',
+                    float: ''
+                },
+                styleMsg: {
+                    padding: '15px',
+                    margin: '0',
+                    display: 'inline-block',
+                    color: '#fff',
+                    fontSize: ''
+                },
+                stylePolicy: {
+                    color: 'wheat'
+                },
+                styleDismissBtn: {
+                    float: 'right',
+                    marginTop: '9px',
+                    marginRight: '8px',
+                    background: '#152CB5',
+                    borderColor: '#152CB5'
+                },
+                message: 'This website uses cookies to ensure you get the best experience on our website.',
+				policyLinkText: 'Learn More',
+				dismissBtnText: 'Got it!'
+            }
+        },
         methods: {
             updateGDPR() {
-                
+                let allGdprObj = {
+                    styleObj: this.styleObj,
+                    styleMsg: this.styleMsg,
+                    styleDismissBtn: this.styleDismissBtn,
+                    message: this.message,
+                    policyLinkText: this.policyLinkText,
+                    dismissBtnText: this.dismissBtnText
+                }
+
+                jQuery.post(ajaxurl, {
+                    action:'ninja_gdpr_ajax_actions',
+                    route: 'update_gdpr_config',
+                    gdprConfig: allGdprObj
+                }).then(
+                    response => {
+                        console.log(response)
+                    }
+                );
+            },
+            show_msg(val) {
+                this.message = val;
+            },
+            post_policy(val) {
+                this.policyLinkText = val;
+            },
+
+            postDismissBtn(val) {
+                this.dismissBtnText = val;
             }
         }
 	}

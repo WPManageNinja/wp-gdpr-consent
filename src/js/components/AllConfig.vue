@@ -67,17 +67,17 @@
                             <el-row :gutter="12" class="cstm_msg">
                                 <el-col :span="24">
                                     <label>Message</label>
-                                    <el-input type="textarea" v-model="message" :rows="3" placeholder="This website uses cookies to ensure you get the best experience on our website."></el-input>
+                                    <el-input type="textarea" v-model="show_message" :rows="3" placeholder="This website uses cookies to ensure you get the best experience on our website."></el-input>
                                 </el-col>
                             </el-row>
                             <el-row :gutter="12">
                                 <el-col :span="12">
                                     <label>Dismiss button text</label>
-                                    <el-input v-model="dismissBtnText" placeholder="Got it!"></el-input>
+                                    <el-input v-model="getDismissBtn" placeholder="Got it!"></el-input>
                                 </el-col>
                                 <el-col :span="12">
                                     <label>Policy link text</label>
-                                    <el-input v-model="policyLinkText" placeholder="Learn More"></el-input>
+                                    <el-input v-model="getPolicy" placeholder="Learn More"></el-input>
                                 </el-col>
                             </el-row>
                         </div>
@@ -98,46 +98,18 @@
 
 <script>
 	export default {
+        props: [
+            'styleObj',
+            'styleMsg',
+            'stylePolicy',
+            'styleDismissBtn',
+            'message',
+            'policyLinkText',
+            'dismissBtnText'
+        ],
 		data() {
 			return {
-                styleObj: {
-                    bottom: '0px',
-                    background: '#A3549E',
-                    color: 'white',
-                    position: 'relative',
-                    width: '100%',
-                    top: '403px',
-                    margin: '0',
-                    padding: '0px',
-                    left: '0px',
-                    right: '0px',
-                    borderRadius: '0px',
-                    maxWidth: '',
-                    marginTop: '0px',
-                    marginLeft: '0px',
-                    float: ''
-                },
-                styleMsg: {
-                    padding: '15px',
-                    margin: '0',
-                    display: 'inline-block',
-                    color: '#fff',
-                    fontSize: ''
-                },
-                stylePolicy: {
-                    color: 'wheat'
-                },
-                styleDismissBtn: {
-                    float: 'right',
-                    marginTop: '9px',
-                    marginRight: '8px',
-                    background: '#152CB5',
-                    borderColor: '#152CB5'
-                },
 				activeName: '',
-				message: 'This website uses cookies to ensure you get the best experience on our website.',
-				policyLinkText: 'Learn More',
-				dismissBtnText: 'Got it!',
 				bottom: true,
 				top: false,
 				left: false,
@@ -151,6 +123,9 @@
 				bgPurpleColor: false,
 				btn_bg: '#152CB5',
                 fnt_size: '',
+                show_message: '',
+                getPolicy: '',
+                getDismissBtn: '',
                 options: [
                     { value: '10px', label: '10px' },
                     { value: '15px', label: '15px' },
@@ -158,7 +133,14 @@
                     { value: '25px', label: '25px' }
                 ]
 			}
-		},
+        },
+
+        created() {
+            this.show_message = this.message;
+            this.getPolicy = this.policyLinkText;
+            this.getDismissBtn = this.dismissBtnText;
+        },
+
 		watch: {
 			theme() {
 				if( this.theme == 'banner_bottom' ) {
@@ -220,8 +202,17 @@
             },
             fnt_size() {
                 this.styleMsg.fontSize = this.fnt_size;
+            },
+            show_message() {
+                this.$emit('showMsg', this.show_message)
+            },
+            getPolicy() {
+                this.$emit('postPolicy', this.getPolicy);
+            },
+            getDismissBtn() {
+                this.$emit('postDismissBtn', this.getDismissBtn);
             }
-		}
+        }
 	}
 </script>
 
