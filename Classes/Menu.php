@@ -31,8 +31,7 @@ class Menu
 	{
 		wp_enqueue_script('ninja_wp_gdpr_js', WP_GDPR_PLUGIN_DIR_URL.'public/js/ninja_wp_gdpr.js', array('jquery'), WP_GDPR_PLUGIN_DIR_VERSION, true );
 		include	WP_GDPR_PLUGIN_DIR_PATH.'views/admin_view.php';
-
-		// self::update_option();
+		self::update_option();
 	}
 
 
@@ -40,27 +39,30 @@ class Menu
 
 	public static function handleAjaxCalls()
 	{
-		// $route = sanitize_text_field( $_REQUEST['route'] );
+		$route = sanitize_text_field( $_REQUEST['route'] );
 
-		// if($route == 'add_gdpr'){
-		// 	$gdpr_Con = wp_unslash($_REQUEST['gdpr_Config']); 
-		// 	$gdprConfig = json_decode(trim(stripslashes($gdpr_Con)), true);
-		// 	static::add_gdpr($gdprConfig);
-		// }
-
-		
-
+		if($route == 'add_gdpr'){
+			$gdpr_Con = wp_unslash($_REQUEST['gdprConfig']); 
+			$gdprConfig = json_decode(trim(stripslashes($gdpr_Con)), true);
+			static::add_gdpr($gdprConfig);
+		}
 	}
 
 
 
-
-
-
-	public static function add_gdpr($value='')
-	{
+	// public static function add_gdpr($value='')
+	// {
 		
-	}
+	// 	$data_r = self::getGDPRConfig();
+	// 	$RuhelKye = add_option('lahinKey', $data_r);
+
+
+	// 	wp_send_json_success(array(
+            
+ //            'addData' => $RuhelKye,
+ //        ));
+
+	// }
 
 
 
@@ -72,30 +74,30 @@ class Menu
 
 	public static function update_option()
 	{
-		// $gdpr_consentKey = self::getGDPRConfig();
-		// $consentKey = update_option('consentKey', $gdpr_consentKey, '', 'yes');
+		$gdpr_consentKey = static::getGDPRConfig();
+		$consentKey = update_option('lahinKey', $gdpr_consentKey, '', 'yes');
 		
 
 
-		// wp_send_json_success(array(
+		wp_send_json_success(array(
             
-  //           'updatedData' => $consentKey,
-  //       ));
+            'updatedData' => $consentKey,
+        ));
 	}
 
 
 
 	public static function getGDPRConfig()
 	{
-		// return array(
+		return array(
 			
-		// 	'backgroundColor' => array(
-  //               'bgColor' 	  => 'red',
-  //               'text' 	  	  => 'hiasdfsdfs',
-  //               'theme' 	  => 'border bottommmm',
-  //           ),
-		// 	'settings' 		  => false
-		// );
+	 	'backgroundColor' => array(
+                 'bgColor' 	  => 'red',
+                'text' 	  	  => 'hiasdfsdfs',
+                'theme' 	  => 'border bottommmm',
+             ),
+		 	'settings' 		  => false
+		);
 	}
 
 
