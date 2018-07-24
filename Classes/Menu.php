@@ -31,7 +31,7 @@ class Menu
 	{
 		wp_enqueue_script('ninja_wp_gdpr_js', WP_GDPR_PLUGIN_DIR_URL.'public/js/ninja_wp_gdpr.js', array('jquery'), WP_GDPR_PLUGIN_DIR_VERSION, true );
 		include	WP_GDPR_PLUGIN_DIR_PATH.'views/admin_view.php';
-		self::update_option();
+		
 	}
 
 
@@ -41,47 +41,41 @@ class Menu
 	{
 		$route = sanitize_text_field( $_REQUEST['route'] );
 
-		if($route == 'add_gdpr'){
+		if($route == 'update_config'){
 			$gdpr_Con = wp_unslash($_REQUEST['gdprConfig']); 
 			$gdprConfig = json_decode(trim(stripslashes($gdpr_Con)), true);
-			static::add_gdpr($gdprConfig);
+			static::updateGdprOption($gdprConfig);
 		}
-	}
 
 
-
-	// public static function add_gdpr($value='')
-	// {
-		
-	// 	$data_r = self::getGDPRConfig();
-	// 	$RuhelKye = add_option('lahinKey', $data_r);
-
-
-	// 	wp_send_json_success(array(
-            
- //            'addData' => $RuhelKye,
- //        ));
-
-	// }
-
-
-
-	public static function get_gdpr($value='')
-	{
-		# code...
-	}
-
-
-	public static function update_option()
-	{
-		$gdpr_consentKey = static::getGDPRConfig();
-		$consentKey = update_option('lahinKey', $gdpr_consentKey, '', 'yes');
-		
 
 
 		wp_send_json_success(array(
             
-            'updatedData' => $consentKey,
+            'updatedData' => $gdprConfig,
+        ));
+
+
+
+	}
+
+
+
+	public static function updateGdprOption($gdprConfig)
+	{
+		$consentKey = static::getGDPRConfig();
+
+		if(!get_option('sssdsasadfsdsss', false) ){
+			$consentKey = add_option('sssdsasadfsdsss', $consentKey);
+		}
+		else{
+			$consentKey = update_option('sssdsasadfsdsss', $gdprConfig);
+		}
+
+
+		wp_send_json_success(array(
+            
+            'updatedData' => $gdprConfig,
         ));
 	}
 
@@ -93,12 +87,27 @@ class Menu
 			
 	 	'backgroundColor' => array(
                  'bgColor' 	  => 'red',
-                'text' 	  	  => 'hiasdfsdfs',
-                'theme' 	  => 'border bottommmm',
+                'text' 	  	  => 'hi',
+                'theme' 	  => 'border bottom',
              ),
 		 	'settings' 		  => false
 		);
 	}
+
+
+
+
+
+
+		public static function get_gdpr($value='')
+	{
+		# code...
+	}
+
+
+
+
+
 
 
 

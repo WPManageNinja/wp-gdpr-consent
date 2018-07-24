@@ -59949,12 +59949,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 message: this.message,
                 policyLinkText: this.policyLinkText,
                 dismissBtnText: this.dismissBtnText
-            };
-
-            jQuery.post(ajaxurl, {
+                // console.log(allGdprObj);
+            };jQuery.post(ajaxurl, {
                 action: 'ninja_gdpr_ajax_actions',
-                route: 'update_gdpr_config',
-                gdprConfig: allGdprObj
+                route: 'update_config',
+                gdprConfig: JSON.stringify(allGdprObj)
             }).then(function (response) {
                 console.log(response);
             });
