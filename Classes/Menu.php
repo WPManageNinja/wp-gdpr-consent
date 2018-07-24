@@ -13,7 +13,7 @@ class Menu
             __( 'WP GDRP Consent', 'wp_gdpr' ),
             static::managePermission(),
             'ninja-wp-gdpr.php',
-            array( static::class, 'renderMortgage'),
+            array( static::class, 'renderGDPR'),
             '',
             6
         );
@@ -27,12 +27,79 @@ class Menu
 	}
 
 
-	public static function renderMortgage()
+	public static function renderGDPR()
 	{
 		wp_enqueue_script('ninja_wp_gdpr_js', WP_GDPR_PLUGIN_DIR_URL.'public/js/ninja_wp_gdpr.js', array('jquery'), WP_GDPR_PLUGIN_DIR_VERSION, true );
-
 		include	WP_GDPR_PLUGIN_DIR_PATH.'views/admin_view.php';
+
+		// self::update_option();
 	}
+
+
+
+
+	public static function handleAjaxCalls()
+	{
+		// $route = sanitize_text_field( $_REQUEST['route'] );
+
+		// if($route == 'add_gdpr'){
+		// 	$gdpr_Con = wp_unslash($_REQUEST['gdpr_Config']); 
+		// 	$gdprConfig = json_decode(trim(stripslashes($gdpr_Con)), true);
+		// 	static::add_gdpr($gdprConfig);
+		// }
+
+		
+
+	}
+
+
+
+
+
+
+	public static function add_gdpr($value='')
+	{
+		
+	}
+
+
+
+	public static function get_gdpr($value='')
+	{
+		# code...
+	}
+
+
+	public static function update_option()
+	{
+		// $gdpr_consentKey = self::getGDPRConfig();
+		// $consentKey = update_option('consentKey', $gdpr_consentKey, '', 'yes');
+		
+
+
+		// wp_send_json_success(array(
+            
+  //           'updatedData' => $consentKey,
+  //       ));
+	}
+
+
+
+	public static function getGDPRConfig()
+	{
+		// return array(
+			
+		// 	'backgroundColor' => array(
+  //               'bgColor' 	  => 'red',
+  //               'text' 	  	  => 'hiasdfsdfs',
+  //               'theme' 	  => 'border bottommmm',
+  //           ),
+		// 	'settings' 		  => false
+		// );
+	}
+
+
+
 
 
 }
