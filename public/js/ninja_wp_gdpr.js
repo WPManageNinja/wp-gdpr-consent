@@ -59883,6 +59883,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -59890,8 +59898,69 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     components: {
         'app-all-config': __WEBPACK_IMPORTED_MODULE_0__components_AllConfig_vue___default.a
     },
+    data: function data() {
+        return {
+            styleObj: {
+                bottom: '0px',
+                background: '#A3549E',
+                color: 'white',
+                position: 'relative',
+                width: '100%',
+                top: '403px',
+                margin: '0',
+                padding: '0px',
+                left: '0px',
+                right: '0px',
+                borderRadius: '0px',
+                maxWidth: '',
+                marginTop: '0px',
+                marginLeft: '0px',
+                float: ''
+            },
+            styleMsg: {
+                padding: '15px',
+                margin: '0',
+                display: 'inline-block',
+                color: '#fff',
+                fontSize: ''
+            },
+            stylePolicy: {
+                color: 'wheat'
+            },
+            styleDismissBtn: {
+                float: 'right',
+                marginTop: '9px',
+                marginRight: '8px',
+                background: '#152CB5',
+                borderColor: '#152CB5'
+            },
+            message: 'This website uses cookies to ensure you get the best experience on our website.',
+            policyLinkText: 'Learn More',
+            dismissBtnText: 'Got it!'
+        };
+    },
+
     methods: {
-        updateGDPR: function updateGDPR() {}
+        updateGDPR: function updateGDPR() {
+            var allGdprObj = {
+                styleObj: this.styleObj,
+                styleMsg: this.styleMsg,
+                styleDismissBtn: this.styleDismissBtn,
+                message: this.message,
+                policyLinkText: this.policyLinkText,
+                dismissBtnText: this.dismissBtnText
+            };
+            console.log(allGdprObj);
+        },
+        show_msg: function show_msg(val) {
+            this.message = val;
+        },
+        post_policy: function post_policy(val) {
+            this.policyLinkText = val;
+        },
+        postDismissBtn: function postDismissBtn(val) {
+            this.dismissBtnText = val;
+        }
     }
 });
 
@@ -60092,46 +60161,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['styleObj', 'styleMsg', 'stylePolicy', 'styleDismissBtn', 'message', 'policyLinkText', 'dismissBtnText'],
     data: function data() {
         return {
-            styleObj: {
-                bottom: '0px',
-                background: '#A3549E',
-                color: 'white',
-                position: 'relative',
-                width: '100%',
-                top: '403px',
-                margin: '0',
-                padding: '0px',
-                left: '0px',
-                right: '0px',
-                borderRadius: '0px',
-                maxWidth: '',
-                marginTop: '0px',
-                marginLeft: '0px',
-                float: ''
-            },
-            styleMsg: {
-                padding: '15px',
-                margin: '0',
-                display: 'inline-block',
-                color: '#fff',
-                fontSize: ''
-            },
-            stylePolicy: {
-                color: 'wheat'
-            },
-            styleDismissBtn: {
-                float: 'right',
-                marginTop: '9px',
-                marginRight: '8px',
-                background: '#152CB5',
-                borderColor: '#152CB5'
-            },
             activeName: '',
-            message: 'This website uses cookies to ensure you get the best experience on our website.',
-            policyLinkText: 'Learn More',
-            dismissBtnText: 'Got it!',
             bottom: true,
             top: false,
             left: false,
@@ -60145,9 +60178,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             bgPurpleColor: false,
             btn_bg: '#152CB5',
             fnt_size: '',
+            show_message: '',
+            getPolicy: '',
+            getDismissBtn: '',
             options: [{ value: '10px', label: '10px' }, { value: '15px', label: '15px' }, { value: '20px', label: '20px' }, { value: '25px', label: '25px' }]
         };
     },
+    created: function created() {
+        this.show_message = this.message;
+        this.getPolicy = this.policyLinkText;
+        this.getDismissBtn = this.dismissBtnText;
+    },
+
 
     watch: {
         theme: function theme() {
@@ -60208,6 +60250,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         fnt_size: function fnt_size() {
             this.styleMsg.fontSize = this.fnt_size;
+        },
+        show_message: function show_message() {
+            this.$emit('showMsg', this.show_message);
+        },
+        getPolicy: function getPolicy() {
+            this.$emit('postPolicy', this.getPolicy);
+        },
+        getDismissBtn: function getDismissBtn() {
+            this.$emit('postDismissBtn', this.getDismissBtn);
         }
     }
 });
@@ -60537,11 +60588,11 @@ var render = function() {
                                     "This website uses cookies to ensure you get the best experience on our website."
                                 },
                                 model: {
-                                  value: _vm.message,
+                                  value: _vm.show_message,
                                   callback: function($$v) {
-                                    _vm.message = $$v
+                                    _vm.show_message = $$v
                                   },
-                                  expression: "message"
+                                  expression: "show_message"
                                 }
                               })
                             ],
@@ -60564,11 +60615,11 @@ var render = function() {
                               _c("el-input", {
                                 attrs: { placeholder: "Got it!" },
                                 model: {
-                                  value: _vm.dismissBtnText,
+                                  value: _vm.getDismissBtn,
                                   callback: function($$v) {
-                                    _vm.dismissBtnText = $$v
+                                    _vm.getDismissBtn = $$v
                                   },
-                                  expression: "dismissBtnText"
+                                  expression: "getDismissBtn"
                                 }
                               })
                             ],
@@ -60584,11 +60635,11 @@ var render = function() {
                               _c("el-input", {
                                 attrs: { placeholder: "Learn More" },
                                 model: {
-                                  value: _vm.policyLinkText,
+                                  value: _vm.getPolicy,
                                   callback: function($$v) {
-                                    _vm.policyLinkText = $$v
+                                    _vm.getPolicy = $$v
                                   },
-                                  expression: "policyLinkText"
+                                  expression: "getPolicy"
                                 }
                               })
                             ],
@@ -60698,7 +60749,28 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("app-all-config")
+      _c("app-all-config", {
+        attrs: {
+          styleObj: _vm.styleObj,
+          styleMsg: _vm.styleMsg,
+          stylePolicy: _vm.stylePolicy,
+          styleDismissBtn: _vm.styleDismissBtn,
+          message: _vm.message,
+          policyLinkText: _vm.policyLinkText,
+          dismissBtnText: _vm.dismissBtnText
+        },
+        on: {
+          showMsg: function($event) {
+            _vm.show_msg($event)
+          },
+          postPolicy: function($event) {
+            _vm.post_policy($event)
+          },
+          postDismissBtn: function($event) {
+            _vm.postDismissBtn($event)
+          }
+        }
+      })
     ],
     1
   )
