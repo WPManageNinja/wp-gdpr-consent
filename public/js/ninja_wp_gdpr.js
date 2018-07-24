@@ -59950,7 +59950,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 policyLinkText: this.policyLinkText,
                 dismissBtnText: this.dismissBtnText
             };
-            console.log(allGdprObj);
+
+            jQuery.post(ajaxurl, {
+                action: 'ninja_gdpr_ajax_actions',
+                route: 'update_gdpr_config',
+                gdprConfig: allGdprObj
+            }).then(function (response) {
+                console.log(response);
+            });
         },
         show_msg: function show_msg(val) {
             this.message = val;
