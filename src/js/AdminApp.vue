@@ -6,7 +6,7 @@
 					<h1>WP GDPR CONSENT</h1>
 				</el-col>
 				<el-col :span="4">
-					<el-button class="common_btn" type="success">Update</el-button>
+					<el-button class="common_btn" type="success" @click="updateGDPR">Update</el-button>
 					<a style="color: #fff; text-decoration: none;">
 						<el-button class="common_btn" type="primary">Preview</el-button>
 					</a>
@@ -25,7 +25,12 @@
 		name: 'App',
 		components: {
 			'app-all-config': AllConfig
-		}
+        },
+        methods: {
+            updateGDPR() {
+                
+            }
+        }
 	}
 </script>
 

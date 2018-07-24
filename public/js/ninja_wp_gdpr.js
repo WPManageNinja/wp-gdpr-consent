@@ -59886,10 +59886,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	name: 'App',
-	components: {
-		'app-all-config': __WEBPACK_IMPORTED_MODULE_0__components_AllConfig_vue___default.a
-	}
+    name: 'App',
+    components: {
+        'app-all-config': __WEBPACK_IMPORTED_MODULE_0__components_AllConfig_vue___default.a
+    },
+    methods: {
+        updateGDPR: function updateGDPR() {}
+    }
 });
 
 /***/ }),
@@ -59978,7 +59981,7 @@ exports = module.exports = __webpack_require__(45)(false);
 
 
 // module
-exports.push([module.i, "\n.wp_gdpr_all_config .preview {\n  width: 70%;\n  margin-top: 10px;\n  min-height: 450px;\n  float: left;\n  background: #fff;\n}\n.wp_gdpr_all_config .options {\n  width: 29%;\n  margin-top: 10px;\n  float: right;\n}\n.wp_gdpr_all_config .options ul li {\n    padding: 0 0px 0px 13px;\n}\n.wp_gdpr_all_config .color-customization .el-collapse-item__content p {\n  margin-left: 13px;\n}\n.wp_gdpr_all_config .el-collapse-item__header {\n  background: #83C6CF;\n  color: #fff;\n}\n.wp_gdpr_all_config .el-collapse-item__header {\n  padding-left: 10px;\n  padding-right: 10px;\n  font-size: 16px;\n}\n.wp_gdpr_all_config .is-active {\n  background: #078BA2;\n}\n.wp_gdpr_all_config .bannerBottom {\n  bottom: 0px;\n  background: black;\n  color: white;\n  position: relative;\n  width: 100%;\n  top: 403px;\n  margin: 0;\n  padding: 0px;\n}\n.wp_gdpr_all_config .bannerBottom p {\n    margin: 0;\n    display: inline-block;\n    padding: 14px;\n}\n.wp_gdpr_all_config .bannerBottom .gotItBtn {\n    float: right;\n    margin-top: 9px;\n    margin-right: 8px;\n}\n.wp_gdpr_all_config .bannerBottom a {\n    color: wheat;\n}\n.wp_gdpr_all_config .bannerTop {\n  background: black;\n  color: white;\n  width: 100%;\n  margin: 0;\n  padding: 0;\n}\n.wp_gdpr_all_config .bannerTop p {\n    padding: 15px;\n    margin: 0;\n    display: inline-block;\n}\n.wp_gdpr_all_config .bannerTop a {\n    color: wheat;\n}\n.wp_gdpr_all_config .bannerTop .gotItBtn {\n    float: right;\n    margin-top: 10px;\n    margin-right: 8px;\n}\n.wp_gdpr_all_config .bannerLeft {\n  background: black;\n  color: white;\n  max-width: 24em;\n  padding: 3em;\n  margin-top: 291px;\n  margin-left: 15px;\n  border-radius: 10px;\n}\n.wp_gdpr_all_config .bannerLeft p {\n    padding: 0;\n    margin: 0;\n    font-size: 16px;\n}\n.wp_gdpr_all_config .bannerLeft a {\n    color: wheat;\n}\n.wp_gdpr_all_config .bannerLeft .gotItBtn {\n    float: right;\n    margin-top: 6px;\n}\n.wp_gdpr_all_config .bannerRight {\n  background: black;\n  color: white;\n  max-width: 24em;\n  padding: 3em;\n  margin-top: 276px;\n  float: right;\n  margin-right: 15px;\n  border-radius: 10px;\n}\n.wp_gdpr_all_config .bannerRight p {\n    padding: 0;\n    margin: 0;\n    font-size: 16px;\n}\n.wp_gdpr_all_config .bannerRight a {\n    color: wheat;\n}\n.wp_gdpr_all_config .bannerRight .gotItBtn {\n    float: right;\n    margin-top: 6px;\n}\n.wp_gdpr_all_config .bgColorList {\n  width: 50%;\n  float: left;\n}\n.wp_gdpr_all_config .textColorList {\n  width: 50%;\n  float: right;\n}\n.wp_gdpr_all_config .btnColorList {\n  width: 50%;\n  float: left;\n}\n.wp_gdpr_all_config .fntSize {\n  width: 50%;\n  float: right;\n}\n.wp_gdpr_all_config .cstm_text {\n  padding: 20px;\n}\n.wp_gdpr_all_config .cstm_text .cstm_msg {\n    padding-bottom: 10px;\n}\n.wp_gdpr_all_config .blackBgColor {\n  background: black;\n}\n.wp_gdpr_all_config .blueBgColor {\n  background: blue;\n}\n.wp_gdpr_all_config .redBgColor {\n  background: red;\n}\n.wp_gdpr_all_config .purpleBgColor {\n  background: purple;\n}\n", ""]);
+exports.push([module.i, "\n.wp_gdpr_all_config .preview {\n  width: 70%;\n  margin-top: 10px;\n  min-height: 450px;\n  float: left;\n  background: #fff;\n}\n.wp_gdpr_all_config .options {\n  width: 29%;\n  margin-top: 10px;\n  float: right;\n}\n.wp_gdpr_all_config .options ul li {\n    padding: 0 0px 0px 13px;\n}\n.wp_gdpr_all_config .color-customization .el-collapse-item__content p {\n  margin-left: 13px;\n}\n.wp_gdpr_all_config .el-collapse-item__header {\n  background: #83C6CF;\n  color: #fff;\n}\n.wp_gdpr_all_config .el-collapse-item__header {\n  padding-left: 10px;\n  padding-right: 10px;\n  font-size: 16px;\n}\n.wp_gdpr_all_config .is-active {\n  background: #078BA2;\n}\n.wp_gdpr_all_config .bgColorList {\n  width: 48%;\n  float: left;\n}\n.wp_gdpr_all_config .bgColorList .gdpr_bg_color_picker {\n    position: relative;\n    top: -34px;\n    left: 200px;\n    display: block;\n}\n.wp_gdpr_all_config .textColorList {\n  width: 48%;\n  float: right;\n}\n.wp_gdpr_all_config .textColorList .gdpr_text_color-picker {\n    position: relative;\n    top: -34px;\n    left: 200px;\n    display: block;\n}\n.wp_gdpr_all_config .btnColorList {\n  width: 48%;\n  float: left;\n  margin-top: -6px;\n}\n.wp_gdpr_all_config .btnColorList .gdpr_btn_bg_color {\n    position: relative;\n    top: -34px;\n    left: 200px;\n    display: block;\n}\n.wp_gdpr_all_config .fntSize {\n  width: 48%;\n  float: right;\n}\n.wp_gdpr_all_config .fntSize .el-select {\n    margin-top: -6px;\n    width: 100%;\n}\n.wp_gdpr_all_config .cstm_text {\n  padding: 20px;\n}\n.wp_gdpr_all_config .cstm_text .cstm_msg {\n    padding-bottom: 10px;\n}\n.wp_gdpr_all_config .blackBgColor {\n  background: black;\n}\n.wp_gdpr_all_config .blueBgColor {\n  background: blue;\n}\n.wp_gdpr_all_config .redBgColor {\n  background: red;\n}\n.wp_gdpr_all_config .purpleBgColor {\n  background: purple;\n}\n", ""]);
 
 // exports
 
@@ -60087,122 +60090,126 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	data: function data() {
-		return {
-			activeName: '',
-			message: 'This website uses cookies to ensure you get the best experience on our website.',
-			policyLinkText: 'Learn More',
-			dismissBtnText: 'Got it!',
-			bottom: true,
-			top: false,
-			left: false,
-			right: false,
-			theme: 'banner_bottom',
-			bg_color: 'black',
-			text_color: 'black',
-			bgBlackColor: false,
-			bgBlueColor: false,
-			bgRedColor: false,
-			bgPurpleColor: false,
-			btn_bg: 'black',
-			fnt_size: '5px'
-		};
-	},
+    data: function data() {
+        return {
+            styleObj: {
+                bottom: '0px',
+                background: '#A3549E',
+                color: 'white',
+                position: 'relative',
+                width: '100%',
+                top: '403px',
+                margin: '0',
+                padding: '0px',
+                left: '0px',
+                right: '0px',
+                borderRadius: '0px',
+                maxWidth: '',
+                marginTop: '0px',
+                marginLeft: '0px',
+                float: ''
+            },
+            styleMsg: {
+                padding: '15px',
+                margin: '0',
+                display: 'inline-block',
+                color: '#fff',
+                fontSize: ''
+            },
+            stylePolicy: {
+                color: 'wheat'
+            },
+            styleDismissBtn: {
+                float: 'right',
+                marginTop: '9px',
+                marginRight: '8px',
+                background: '#152CB5',
+                borderColor: '#152CB5'
+            },
+            activeName: '',
+            message: 'This website uses cookies to ensure you get the best experience on our website.',
+            policyLinkText: 'Learn More',
+            dismissBtnText: 'Got it!',
+            bottom: true,
+            top: false,
+            left: false,
+            right: false,
+            theme: 'banner_bottom',
+            bg_color: '#A3549E',
+            text_color: '#fff',
+            bgBlackColor: false,
+            bgBlueColor: false,
+            bgRedColor: false,
+            bgPurpleColor: false,
+            btn_bg: '#152CB5',
+            fnt_size: '',
+            options: [{ value: '10px', label: '10px' }, { value: '15px', label: '15px' }, { value: '20px', label: '20px' }, { value: '25px', label: '25px' }]
+        };
+    },
 
-	watch: {
-		theme: function theme() {
-			console.log(this.theme);
-			if (this.theme == 'banner_bottom') {
-				this.bottom = true;
-				this.top = false;
-				this.left = false;
-				this.right = false;
-			} else if (this.theme == 'banner_top') {
-				this.top = true;
-				this.bottom = false;
-				this.left = false;
-				this.right = false;
-			} else if (this.theme == 'banner_left') {
-				this.left = true;
-				this.right = false;
-				this.top = false;
-				this.bottom = false;
-			} else if (this.theme == 'banner_right') {
-				this.right = true;
-				this.top = false;
-				this.bottom = false;
-				this.left = false;
-			}
-		},
-		bg_color: function bg_color() {
-			if (this.bg_color == 'black') {
-				this.bgBlackColor = true;
-				this.bgBlueColor = false;
-				this.bgRedColor = false;
-				this.bgPurpleColor = false;
-			} else if (this.bg_color == 'blue') {
-				this.bgBlueColor = true;
-				this.bgBlackColor = false;
-				this.bgRedColor = false;
-				this.bgPurpleColor = false;
-			} else if (this.bg_color == 'red') {
-				this.bgRedColor = true;
-				this.bgBlackColor = false;
-				this.bgBlueColor = false;
-				this.bgPurpleColor = false;
-			} else if (this.bg_color == 'purple') {
-				this.bgPurpleColor = true;
-				this.bgRedColor = false;
-				this.bgBlackColor = false;
-				this.bgBlueColor = false;
-			}
-		}
-	}
+    watch: {
+        theme: function theme() {
+            if (this.theme == 'banner_bottom') {
+                this.styleObj.color = 'white';
+                this.styleObj.width = '100%';
+                this.styleObj.margin = 0;
+                this.styleObj.padding = 0;
+                this.styleObj.top = '401px';
+                this.styleObj.float = '';
+                this.styleObj.maxWidth = '';
+            }
+            if (this.theme == 'banner_top') {
+                this.styleObj.color = 'white';
+                this.styleObj.width = '100%';
+                this.styleObj.margin = 0;
+                this.styleObj.padding = 0;
+                this.styleObj.top = 0;
+                this.styleObj.maxWidth = '';
+                this.styleObj.marginTop = '';
+                this.styleObj.marginLeft = '';
+                this.styleObj.borderRadius = '';
+                this.styleObj.float = '';
+            } else if (this.theme == 'banner_left') {
+                this.styleObj.bottom = '0px';
+                this.styleObj.margin = '';
+                this.styleObj.top = '0px';
+                this.styleObj.color = 'white';
+                this.styleObj.maxWidth = '24em';
+                this.styleObj.padding = '3em';
+                this.styleObj.marginTop = '291px';
+                this.styleObj.marginLeft = '15px';
+                this.styleObj.borderRadius = '10px';
+                this.styleObj.float = '';
+            } else if (this.theme == 'banner_right') {
+                this.styleObj.color = 'white';
+                this.styleObj.maxWidth = '24em';
+                this.styleObj.padding = '3em';
+                this.styleObj.marginTop = '276px';
+                this.styleObj.float = 'right';
+                this.styleObj.marginRight = '15px';
+                this.styleObj.borderRadius = '10px';
+                this.styleObj.top = '';
+                this.styleObj.margin = '';
+                this.styleObj.marginLeft = '';
+                this.styleObj.right = '9px';
+            }
+        },
+        bg_color: function bg_color() {
+            this.styleObj.background = this.bg_color;
+        },
+        text_color: function text_color() {
+            this.styleMsg.color = this.text_color;
+        },
+        btn_bg: function btn_bg() {
+            this.styleDismissBtn.background = this.btn_bg;
+            this.styleDismissBtn.borderColor = this.btn_bg;
+        },
+        fnt_size: function fnt_size() {
+            this.styleMsg.fontSize = this.fnt_size;
+        }
+    }
 });
 
 /***/ }),
@@ -60217,22 +60224,11 @@ var render = function() {
     _c("div", { staticClass: "preview" }, [
       _c(
         "div",
-        {
-          class: {
-            bannerBottom: _vm.bottom,
-            bannerTop: _vm.top,
-            bannerLeft: _vm.left,
-            bannerRight: _vm.right,
-            blackBgColor: _vm.bgBlackColor,
-            blueBgColor: _vm.bgBlueColor,
-            redBgColor: _vm.bgRedColor,
-            purpleBgColor: _vm.bgPurpleColor
-          }
-        },
+        { style: _vm.styleObj },
         [
-          _c("p", [_vm._v(_vm._s(_vm.message))]),
+          _c("p", { style: _vm.styleMsg }, [_vm._v(_vm._s(_vm.message))]),
           _vm._v(" "),
-          _c("a", { attrs: { href: "#" } }, [
+          _c("a", { style: _vm.stylePolicy, attrs: { href: "#" } }, [
             _vm._v(_vm._s(_vm.policyLinkText))
           ]),
           _vm._v(" "),
@@ -60240,6 +60236,7 @@ var render = function() {
             "el-button",
             {
               staticClass: "gotItBtn",
+              style: _vm.styleDismissBtn,
               attrs: { type: "primary", round: "", size: "mini" }
             },
             [_vm._v(_vm._s(_vm.dismissBtnText))]
@@ -60249,614 +60246,381 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "options" },
-      [
-        _c(
-          "el-collapse",
-          {
-            attrs: { accordion: "" },
-            model: {
-              value: _vm.activeName,
-              callback: function($$v) {
-                _vm.activeName = $$v
-              },
-              expression: "activeName"
-            }
-          },
-          [
-            _c(
-              "el-collapse-item",
-              { attrs: { title: "Select Theme", name: "1" } },
-              [
-                _c("ul", [
+    _c("div", { staticClass: "options" }, [
+      _c(
+        "div",
+        { staticClass: "options_customization" },
+        [
+          _c(
+            "el-collapse",
+            {
+              attrs: { accordion: "" },
+              model: {
+                value: _vm.activeName,
+                callback: function($$v) {
+                  _vm.activeName = $$v
+                },
+                expression: "activeName"
+              }
+            },
+            [
+              _c(
+                "el-collapse-item",
+                { attrs: { title: "Select Theme", name: "1" } },
+                [
+                  _c("ul", [
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "el-radio",
+                          {
+                            attrs: { label: "banner_bottom" },
+                            model: {
+                              value: _vm.theme,
+                              callback: function($$v) {
+                                _vm.theme = $$v
+                              },
+                              expression: "theme"
+                            }
+                          },
+                          [_vm._v("Banner Bottom")]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "el-radio",
+                          {
+                            attrs: { label: "banner_top" },
+                            model: {
+                              value: _vm.theme,
+                              callback: function($$v) {
+                                _vm.theme = $$v
+                              },
+                              expression: "theme"
+                            }
+                          },
+                          [_vm._v("Banner Top")]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "el-radio",
+                          {
+                            attrs: { label: "3" },
+                            model: {
+                              value: _vm.theme,
+                              callback: function($$v) {
+                                _vm.theme = $$v
+                              },
+                              expression: "theme"
+                            }
+                          },
+                          [_vm._v("Banner Top(Pushdown)")]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "el-radio",
+                          {
+                            attrs: { label: "banner_left" },
+                            model: {
+                              value: _vm.theme,
+                              callback: function($$v) {
+                                _vm.theme = $$v
+                              },
+                              expression: "theme"
+                            }
+                          },
+                          [_vm._v("Left")]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "el-radio",
+                          {
+                            attrs: { label: "banner_right" },
+                            model: {
+                              value: _vm.theme,
+                              callback: function($$v) {
+                                _vm.theme = $$v
+                              },
+                              expression: "theme"
+                            }
+                          },
+                          [_vm._v("Right")]
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "el-collapse-item",
+                {
+                  staticClass: "color-customization",
+                  attrs: { title: "Color Customization", name: "2" }
+                },
+                [
                   _c(
-                    "li",
+                    "div",
+                    { staticClass: "bgColorList" },
                     [
-                      _c(
-                        "el-radio",
-                        {
-                          attrs: { label: "banner_bottom" },
-                          model: {
-                            value: _vm.theme,
-                            callback: function($$v) {
-                              _vm.theme = $$v
-                            },
-                            expression: "theme"
-                          }
-                        },
-                        [_vm._v("Banner Bottom")]
-                      )
+                      _c("p", [_vm._v("Background Color")]),
+                      _vm._v(" "),
+                      _c("el-input", {
+                        attrs: { type: "text" },
+                        model: {
+                          value: _vm.bg_color,
+                          callback: function($$v) {
+                            _vm.bg_color = $$v
+                          },
+                          expression: "bg_color"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("el-color-picker", {
+                        staticClass: "gdpr_bg_color_picker",
+                        attrs: { size: "mini" },
+                        model: {
+                          value: _vm.bg_color,
+                          callback: function($$v) {
+                            _vm.bg_color = $$v
+                          },
+                          expression: "bg_color"
+                        }
+                      })
                     ],
                     1
                   ),
                   _vm._v(" "),
                   _c(
-                    "li",
+                    "div",
+                    { staticClass: "textColorList" },
                     [
-                      _c(
-                        "el-radio",
-                        {
-                          attrs: { label: "banner_top" },
-                          model: {
-                            value: _vm.theme,
-                            callback: function($$v) {
-                              _vm.theme = $$v
-                            },
-                            expression: "theme"
-                          }
-                        },
-                        [_vm._v("Banner Top")]
-                      )
+                      _c("p", [_vm._v("Text Color")]),
+                      _vm._v(" "),
+                      _c("el-input", {
+                        attrs: { type: "text" },
+                        model: {
+                          value: _vm.text_color,
+                          callback: function($$v) {
+                            _vm.text_color = $$v
+                          },
+                          expression: "text_color"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("el-color-picker", {
+                        staticClass: "gdpr_text_color-picker",
+                        attrs: { size: "mini" },
+                        model: {
+                          value: _vm.text_color,
+                          callback: function($$v) {
+                            _vm.text_color = $$v
+                          },
+                          expression: "text_color"
+                        }
+                      })
                     ],
                     1
                   ),
                   _vm._v(" "),
                   _c(
-                    "li",
+                    "div",
+                    { staticClass: "btnColorList" },
                     [
-                      _c(
-                        "el-radio",
-                        {
-                          attrs: { label: "3" },
-                          model: {
-                            value: _vm.theme,
-                            callback: function($$v) {
-                              _vm.theme = $$v
-                            },
-                            expression: "theme"
-                          }
-                        },
-                        [_vm._v("Banner Top(Pushdown)")]
-                      )
+                      _c("p", [_vm._v("Button Background")]),
+                      _vm._v(" "),
+                      _c("el-input", {
+                        attrs: { type: "text" },
+                        model: {
+                          value: _vm.btn_bg,
+                          callback: function($$v) {
+                            _vm.btn_bg = $$v
+                          },
+                          expression: "btn_bg"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("el-color-picker", {
+                        staticClass: "gdpr_btn_bg_color",
+                        attrs: { size: "mini" },
+                        model: {
+                          value: _vm.btn_bg,
+                          callback: function($$v) {
+                            _vm.btn_bg = $$v
+                          },
+                          expression: "btn_bg"
+                        }
+                      })
                     ],
                     1
                   ),
                   _vm._v(" "),
                   _c(
-                    "li",
+                    "div",
+                    { staticClass: "fntSize" },
                     [
+                      _c("p", [_vm._v("Font Size")]),
+                      _vm._v(" "),
                       _c(
-                        "el-radio",
+                        "el-select",
                         {
-                          attrs: { label: "banner_left" },
+                          attrs: { placeholder: "Select" },
                           model: {
-                            value: _vm.theme,
+                            value: _vm.fnt_size,
                             callback: function($$v) {
-                              _vm.theme = $$v
+                              _vm.fnt_size = $$v
                             },
-                            expression: "theme"
+                            expression: "fnt_size"
                           }
                         },
-                        [_vm._v("Left")]
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "li",
-                    [
-                      _c(
-                        "el-radio",
-                        {
-                          attrs: { label: "banner_right" },
-                          model: {
-                            value: _vm.theme,
-                            callback: function($$v) {
-                              _vm.theme = $$v
-                            },
-                            expression: "theme"
-                          }
-                        },
-                        [_vm._v("Right")]
+                        _vm._l(_vm.options, function(item) {
+                          return _c("el-option", {
+                            key: item.value,
+                            attrs: { label: item.label, value: item.value }
+                          })
+                        })
                       )
                     ],
                     1
                   )
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "el-collapse-item",
-              {
-                staticClass: "color-customization",
-                attrs: { title: "Color Customization", name: "2" }
-              },
-              [
-                _c("div", { staticClass: "bgColorList" }, [
-                  _c("p", [_vm._v("Background Color")]),
-                  _vm._v(" "),
-                  _c("ul", [
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "el-radio",
-                          {
-                            attrs: { label: "black" },
-                            model: {
-                              value: _vm.bg_color,
-                              callback: function($$v) {
-                                _vm.bg_color = $$v
-                              },
-                              expression: "bg_color"
-                            }
-                          },
-                          [_vm._v("Black")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "el-radio",
-                          {
-                            attrs: { label: "blue" },
-                            model: {
-                              value: _vm.bg_color,
-                              callback: function($$v) {
-                                _vm.bg_color = $$v
-                              },
-                              expression: "bg_color"
-                            }
-                          },
-                          [_vm._v("Blue")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "el-radio",
-                          {
-                            attrs: { label: "red" },
-                            model: {
-                              value: _vm.bg_color,
-                              callback: function($$v) {
-                                _vm.bg_color = $$v
-                              },
-                              expression: "bg_color"
-                            }
-                          },
-                          [_vm._v("Red")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "el-radio",
-                          {
-                            attrs: { label: "purple" },
-                            model: {
-                              value: _vm.bg_color,
-                              callback: function($$v) {
-                                _vm.bg_color = $$v
-                              },
-                              expression: "bg_color"
-                            }
-                          },
-                          [_vm._v("Purple")]
-                        )
-                      ],
-                      1
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "textColorList" }, [
-                  _c("p", [_vm._v("Text Color")]),
-                  _vm._v(" "),
-                  _c("ul", [
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "el-radio",
-                          {
-                            attrs: { label: "black" },
-                            model: {
-                              value: _vm.text_color,
-                              callback: function($$v) {
-                                _vm.text_color = $$v
-                              },
-                              expression: "text_color"
-                            }
-                          },
-                          [_vm._v("Black")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "el-radio",
-                          {
-                            attrs: { label: "blue" },
-                            model: {
-                              value: _vm.text_color,
-                              callback: function($$v) {
-                                _vm.text_color = $$v
-                              },
-                              expression: "text_color"
-                            }
-                          },
-                          [_vm._v("Blue")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "el-radio",
-                          {
-                            attrs: { label: "red" },
-                            model: {
-                              value: _vm.text_color,
-                              callback: function($$v) {
-                                _vm.text_color = $$v
-                              },
-                              expression: "text_color"
-                            }
-                          },
-                          [_vm._v("Red")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "el-radio",
-                          {
-                            attrs: { label: "purple" },
-                            model: {
-                              value: _vm.text_color,
-                              callback: function($$v) {
-                                _vm.text_color = $$v
-                              },
-                              expression: "text_color"
-                            }
-                          },
-                          [_vm._v("Purple")]
-                        )
-                      ],
-                      1
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "btnColorList" }, [
-                  _c("p", [_vm._v("Button Background")]),
-                  _vm._v(" "),
-                  _c("ul", [
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "el-radio",
-                          {
-                            attrs: { label: "black" },
-                            model: {
-                              value: _vm.btn_bg,
-                              callback: function($$v) {
-                                _vm.btn_bg = $$v
-                              },
-                              expression: "btn_bg"
-                            }
-                          },
-                          [_vm._v("Black")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "el-radio",
-                          {
-                            attrs: { label: "blue" },
-                            model: {
-                              value: _vm.btn_bg,
-                              callback: function($$v) {
-                                _vm.btn_bg = $$v
-                              },
-                              expression: "btn_bg"
-                            }
-                          },
-                          [_vm._v("Blue")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "el-radio",
-                          {
-                            attrs: { label: "red" },
-                            model: {
-                              value: _vm.btn_bg,
-                              callback: function($$v) {
-                                _vm.btn_bg = $$v
-                              },
-                              expression: "btn_bg"
-                            }
-                          },
-                          [_vm._v("Red")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "el-radio",
-                          {
-                            attrs: { label: "purple" },
-                            model: {
-                              value: _vm.btn_bg,
-                              callback: function($$v) {
-                                _vm.btn_bg = $$v
-                              },
-                              expression: "btn_bg"
-                            }
-                          },
-                          [_vm._v("Purple")]
-                        )
-                      ],
-                      1
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "fntSize" }, [
-                  _c("p", [_vm._v("Font Size")]),
-                  _vm._v(" "),
-                  _c("ul", [
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "el-radio",
-                          {
-                            attrs: { label: "5px" },
-                            model: {
-                              value: _vm.fnt_size,
-                              callback: function($$v) {
-                                _vm.fnt_size = $$v
-                              },
-                              expression: "fnt_size"
-                            }
-                          },
-                          [_vm._v("5px")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "el-radio",
-                          {
-                            attrs: { label: "10px" },
-                            model: {
-                              value: _vm.fnt_size,
-                              callback: function($$v) {
-                                _vm.fnt_size = $$v
-                              },
-                              expression: "fnt_size"
-                            }
-                          },
-                          [_vm._v("10px")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "el-radio",
-                          {
-                            attrs: { label: "15px" },
-                            model: {
-                              value: _vm.fnt_size,
-                              callback: function($$v) {
-                                _vm.fnt_size = $$v
-                              },
-                              expression: "fnt_size"
-                            }
-                          },
-                          [_vm._v("15px")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "el-radio",
-                          {
-                            attrs: { label: "20px" },
-                            model: {
-                              value: _vm.fnt_size,
-                              callback: function($$v) {
-                                _vm.fnt_size = $$v
-                              },
-                              expression: "fnt_size"
-                            }
-                          },
-                          [_vm._v("20px")]
-                        )
-                      ],
-                      1
-                    )
-                  ])
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "el-collapse-item",
-              { attrs: { title: "Custom Text", name: "3" } },
-              [
-                _c(
-                  "div",
-                  { staticClass: "cstm_text" },
-                  [
-                    _c(
-                      "el-row",
-                      { staticClass: "cstm_msg", attrs: { gutter: 12 } },
-                      [
-                        _c(
-                          "el-col",
-                          { attrs: { span: 24 } },
-                          [
-                            _c("label", [_vm._v("Message")]),
-                            _vm._v(" "),
-                            _c("el-input", {
-                              attrs: {
-                                type: "textarea",
-                                rows: 3,
-                                placeholder:
-                                  "This website uses cookies to ensure you get the best experience on our website."
-                              },
-                              model: {
-                                value: _vm.message,
-                                callback: function($$v) {
-                                  _vm.message = $$v
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "el-collapse-item",
+                { attrs: { title: "Custom Text", name: "3" } },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "cstm_text" },
+                    [
+                      _c(
+                        "el-row",
+                        { staticClass: "cstm_msg", attrs: { gutter: 12 } },
+                        [
+                          _c(
+                            "el-col",
+                            { attrs: { span: 24 } },
+                            [
+                              _c("label", [_vm._v("Message")]),
+                              _vm._v(" "),
+                              _c("el-input", {
+                                attrs: {
+                                  type: "textarea",
+                                  rows: 3,
+                                  placeholder:
+                                    "This website uses cookies to ensure you get the best experience on our website."
                                 },
-                                expression: "message"
-                              }
-                            })
-                          ],
-                          1
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "el-row",
-                      { attrs: { gutter: 12 } },
-                      [
-                        _c(
-                          "el-col",
-                          { attrs: { span: 12 } },
-                          [
-                            _c("label", [_vm._v("Dismiss button text")]),
-                            _vm._v(" "),
-                            _c("el-input", {
-                              attrs: { placeholder: "Got it!" },
-                              model: {
-                                value: _vm.dismissBtnText,
-                                callback: function($$v) {
-                                  _vm.dismissBtnText = $$v
-                                },
-                                expression: "dismissBtnText"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "el-col",
-                          { attrs: { span: 12 } },
-                          [
-                            _c("label", [_vm._v("Policy link text")]),
-                            _vm._v(" "),
-                            _c("el-input", {
-                              attrs: { placeholder: "Learn More" },
-                              model: {
-                                value: _vm.policyLinkText,
-                                callback: function($$v) {
-                                  _vm.policyLinkText = $$v
-                                },
-                                expression: "policyLinkText"
-                              }
-                            })
-                          ],
-                          1
-                        )
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "el-collapse-item",
-              { attrs: { title: "Settings", name: "4" } },
-              [
-                _c("p", [
-                  _vm._v(
-                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n\t\t    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n\t\t    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n\t\t    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n\t\t    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n\t\t    proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                model: {
+                                  value: _vm.message,
+                                  callback: function($$v) {
+                                    _vm.message = $$v
+                                  },
+                                  expression: "message"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "el-row",
+                        { attrs: { gutter: 12 } },
+                        [
+                          _c(
+                            "el-col",
+                            { attrs: { span: 12 } },
+                            [
+                              _c("label", [_vm._v("Dismiss button text")]),
+                              _vm._v(" "),
+                              _c("el-input", {
+                                attrs: { placeholder: "Got it!" },
+                                model: {
+                                  value: _vm.dismissBtnText,
+                                  callback: function($$v) {
+                                    _vm.dismissBtnText = $$v
+                                  },
+                                  expression: "dismissBtnText"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "el-col",
+                            { attrs: { span: 12 } },
+                            [
+                              _c("label", [_vm._v("Policy link text")]),
+                              _vm._v(" "),
+                              _c("el-input", {
+                                attrs: { placeholder: "Learn More" },
+                                model: {
+                                  value: _vm.policyLinkText,
+                                  callback: function($$v) {
+                                    _vm.policyLinkText = $$v
+                                  },
+                                  expression: "policyLinkText"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
                   )
-                ])
-              ]
-            )
-          ],
-          1
-        )
-      ],
-      1
-    )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "el-collapse-item",
+                { attrs: { title: "Settings", name: "4" } },
+                [
+                  _c("p", [
+                    _vm._v(
+                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    )
+                  ])
+                ]
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ])
   ])
 }
 var staticRenderFns = []
@@ -60899,7 +60663,11 @@ var render = function() {
                 [
                   _c(
                     "el-button",
-                    { staticClass: "common_btn", attrs: { type: "success" } },
+                    {
+                      staticClass: "common_btn",
+                      attrs: { type: "success" },
+                      on: { click: _vm.updateGDPR }
+                    },
                     [_vm._v("Update")]
                   ),
                   _vm._v(" "),
