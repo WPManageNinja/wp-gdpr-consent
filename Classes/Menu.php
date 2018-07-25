@@ -54,19 +54,12 @@ class Menu
 	{
 		
 
-		$consentKey = update_option('_gdpr_option_consent', $gdprConfig);
-		
+		update_option('_gdpr_option_consent', $gdprConfig);
+		$consentKey = get_option('_gdpr_option_consent', false);
 		wp_send_json_success(array(
             
-            'updatedData' => $consentKey,
-
-		$consentKey = update_option('sssdsasadfsdsss', $gdprConfig);
-
-
-		wp_send_json_success(array(
-            
-            'updatedData' => $consentKey,
-            'message' => 'Successfuly added'
+            'message' => $consentKey,
+            // 'message' => 'Successfuly added'
 
         ));
 	}
