@@ -28,7 +28,10 @@ class Menu
 	{
 		wp_enqueue_script('ninja_wp_gdpr_js', WP_GDPR_PLUGIN_DIR_URL.'public/js/ninja_wp_gdpr.js', array('jquery'), WP_GDPR_PLUGIN_DIR_VERSION, true );
 		include	WP_GDPR_PLUGIN_DIR_PATH.'views/admin_view.php';
-		
+
+
+		// $getGdprConfig = GdprHandler::get_gdpr($getGdprConfig);
+		// wp_localize_script('ninja_wp_gdpr_js', 'getGdprConfig_vars', array($getGdprConfig) );
 	}
 
 }

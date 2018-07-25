@@ -19,37 +19,42 @@ class GdprHandler
 
 	}
 
-
+	/**
+     *  Fatching data
+    */
 	public static function get_gdpr($returnType = 'ajax')
-	
 	{
 		$getGdprConfig = get_option('_gdpr_option_consent', false);
 		wp_send_json_success(array(
 			'getGdprConfig' => $getGdprConfig,
 		));
+
+		
 	}
 
-
+	/**
+     *  Data Update when update button click..
+    */
 	public static function updateGdprOption($gdprConfig)
 	{
-		
-		$consentKey =  update_option('_gdpr_option_consent', $gdprConfig);
-
-		// $update =  get_option('_gdpr_option_consent', false);
+		update_option('_gdpr_option_consent', $gdprConfig);
 		wp_send_json_success(array(
-            // 'message' => $update,
             'message' => __('Successfuly updated', 'wp_gdpr')
 		));
 	}
 
-
+	/**
+     *  initially Added data..
+     */
 	public static function populateDemoAddData()
 	{
 		$demoData = static::getGDPRConfig(); 
 		add_option( '_gdpr_option_consent',  $demoData, '', 'yes' );
 	}
 
-
+	/**
+     *  Demo data..
+     */
 	public static function getGDPRConfig()
 	{
 		return array(
