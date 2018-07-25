@@ -53,11 +53,21 @@ class Menu
 	public static function updateGdprOption($gdprConfig)
 	{
 		
+
 		$consentKey = update_option('_gdpr_option_consent', $gdprConfig);
 		
 		wp_send_json_success(array(
             
             'updatedData' => $consentKey,
+
+		$consentKey = update_option('sssdsasadfsdsss', $gdprConfig);
+
+
+		wp_send_json_success(array(
+            
+            'updatedData' => $consentKey,
+            'message' => 'Successfuly added'
+
         ));
 	}
 
