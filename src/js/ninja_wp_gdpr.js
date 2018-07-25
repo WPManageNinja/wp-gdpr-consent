@@ -43,9 +43,12 @@ Vue.use(Popover)
 Vue.use(Switch)
 Vue.use(Radio)
 
+Vue.use(Loading.directive);
+Vue.prototype.$loading = Loading.service;
 Vue.prototype.$notify = Notification;
 
 import 'element-ui/lib/theme-chalk/notification.css';
+import 'element-ui/lib/theme-chalk/loading.css';
 
 import App from './AdminApp';
 
@@ -53,5 +56,3 @@ new Vue({
 	el: "#ninja_wp_gdpr",
 	render: h => h(App)
 })
-
-console.log('Js rendered successfully');

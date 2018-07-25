@@ -69,7 +69,8 @@ class GdprHandler
 				'maxWidth'	  => '',
 				'marginTop'	  => '0px',
 				'marginLeft'  =>'0px',
-				'float'		  =>'',
+                'float'		  =>'',
+                'display'     => 'block'
 			),
 
 	 		'styleMsg'=> array(
@@ -77,7 +78,7 @@ class GdprHandler
                 'margin'	=> '0',
                 'display'	=> 'inline-block',
                 'color'		=> '#fff',
-                'fontSize'	=> ''
+                'fontSize'	=> '10px'
 			),
                     
             'stylePolicy' => array (
@@ -89,12 +90,20 @@ class GdprHandler
                 'marginTop'	 => '9px',
                 'marginRight'=> '8px',
                 'background' => '#152CB5',
-                'borderColor'=> '#152CB5'
+                'borderColor'=> '#152CB5',
+                'color' => '#fff'
+            ),
+
+            'settings' => array(
+                'duration'  => '20',
+                'delay' => '',
+                'showDeclineBtn'  => false
             ),
             
             'message' => 'This website uses cookies to ensure you get the best experience on our website.',
 			'policyLinkText' => 'Learn More',
-			'dismissBtnText' => 'Got it!'
+            'dismissBtnText' => 'Got it!',
+            'customLink' => ''
 
 		);
 

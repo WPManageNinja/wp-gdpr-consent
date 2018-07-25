@@ -21,9 +21,12 @@
                         :message="message"
                         :policyLinkText="policyLinkText" 
                         :dismissBtnText="dismissBtnText"
+                        :customLink="customLink"
+                        :settingsObj="settings"
                         @showMsg="show_msg($event)"
                         @postPolicy="post_policy($event)"
-                        @postDismissBtn="postDismissBtn($event)" />
+                        @postDismissBtn="postDismissBtn($event)"
+                        @setCustomLink="postCustomLink($event)" />
 	</div>
 </template>
 
@@ -40,9 +43,12 @@
                 styleMsg: {},
                 stylePolicy: {},
                 styleDismissBtn: {},
+                settings: {},
                 message: '',
 				policyLinkText: '',
-				dismissBtnText: ''
+                dismissBtnText: '',
+                customLink: '',
+                loadGdpr: false
             }
         },
         created() {
@@ -51,13 +57,19 @@
                 route: 'get_gdprconfig'
             }).then(
                 response => {
-                    console.log(response.data.getGdprConfig.styleObj)
+                    console.log(response.data.getGdprConfig)
                     this.styleObj = response.data.getGdprConfig.styleObj;
                     this.styleMsg = response.data.getGdprConfig.styleMsg;
                     this.styleDismissBtn = response.data.getGdprConfig.styleDismissBtn;
                     this.message = response.data.getGdprConfig.message;
                     this.dismissBtnText = response.data.getGdprConfig.dismissBtnText;
-                    this.policyLinkText = response.data.getGdprConfig.policyLinkText; 
+                    this.policyLinkText = response.data.getGdprConfig.policyLinkText;
+                    this.customLink = response.data.getGdprConfig.customLink; 
+                    this.settings = response.data.getGdprConfig.settings;
+                }
+            ).always(
+                () => {
+                    this.loadGdpr = false;
                 }
             )
         },
@@ -70,9 +82,11 @@
                     styleDismissBtn: this.styleDismissBtn,
                     message: this.message,
                     policyLinkText: this.policyLinkText,
-                    dismissBtnText: this.dismissBtnText
+                    dismissBtnText: this.dismissBtnText,
+                    customLink: this.customLink,
+                    settings: this.settings
                 }
-                // console.log(allGdprObj);
+                console.log(allGdprObj);
                 jQuery.post(ajaxurl, {
                     action:'ninja_gdpr_ajax_actions',
                     route: 'update_config',
@@ -103,12 +117,17 @@
 
             postDismissBtn(val) {
                 this.dismissBtnText = val;
+            },
+
+            postCustomLink(val) {
+                this.customLink = val;
             }
         }
 	}
 </script>
 
 <style lang="scss">
+    @import '../css/style.scss';
 	.wp_gdpr_root_component {
 		.header {
 			font-size: 20px;
