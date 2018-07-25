@@ -141,9 +141,6 @@
 				bgPurpleColor: false,
 				btn_bg: '#152CB5',
                 fnt_size: '',
-                show_message: '',
-                getPolicy: '',
-                getDismissBtn: '',
                 link: '',
                 comp_type: '',
                 options: [
@@ -156,9 +153,34 @@
         },
 
         created() {
-            this.show_message = this.message;
-            this.getPolicy = this.policyLinkText;
             this.getDismissBtn = this.dismissBtnText;
+        },
+
+        computed: {
+            show_message: {
+                get() {
+                    return this.message;
+                },
+                set(newValue) {
+                    this.updateMessage(newValue)
+                }
+            },
+            getPolicy: {
+                get() {
+                    return this.policyLinkText;
+                },
+                set(newValue) {
+                    this.updatePolicy(newValue)
+                }
+            },
+            getDismissBtn: {
+                get() {
+                    return this.dismissBtnText
+                },
+                set(newValue) {
+                    this.updateDismissBtn(newValue)
+                }
+            }
         },
 
 		watch: {
@@ -222,14 +244,17 @@
             },
             fnt_size() {
                 this.styleMsg.fontSize = this.fnt_size;
+            }
+        },
+
+        methods: {
+            updateMessage(val) {
+                this.$emit('showMsg', val)
             },
-            show_message() {
-                this.$emit('showMsg', this.show_message)
+            updatePolicy(val) {
+                this.$emit('postPolicy', val);
             },
-            getPolicy() {
-                this.$emit('postPolicy', this.getPolicy);
-            },
-            getDismissBtn() {
+            updateDismissBtn(val) {
                 this.$emit('postDismissBtn', this.getDismissBtn);
             }
         }
