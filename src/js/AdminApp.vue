@@ -75,6 +75,16 @@
 				dismissBtnText: 'Got it!'
             }
         },
+        created() {
+            jQuery.get(ajaxurl, {
+                action: 'ninja_gdpr_ajax_actions',
+                route: 'get_gdprconfig'
+            }).then(
+                response => {
+                    console.log(response)
+                }
+            )
+        },
         methods: {
             updateGDPR() {
                 let allGdprObj = {

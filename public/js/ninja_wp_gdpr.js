@@ -59945,6 +59945,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             dismissBtnText: 'Got it!'
         };
     },
+    created: function created() {
+        jQuery.get(ajaxurl, {
+            action: 'ninja_gdpr_ajax_actions',
+            route: 'get_gdprconfig'
+        }).then(function (response) {
+            console.log(response);
+        });
+    },
 
     methods: {
         updateGDPR: function updateGDPR() {
