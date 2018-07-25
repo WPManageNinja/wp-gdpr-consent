@@ -36,43 +36,13 @@
         },
         data() {
             return {
-                styleObj: {
-                    bottom: '0px',
-                    background: '#A3549E',
-                    color: 'white',
-                    position: 'relative',
-                    width: '100%',
-                    top: '403px',
-                    margin: '0',
-                    padding: '0px',
-                    left: '0px',
-                    right: '0px',
-                    borderRadius: '0px',
-                    maxWidth: '',
-                    marginTop: '0px',
-                    marginLeft: '0px',
-                    float: ''
-                },
-                styleMsg: {
-                    padding: '15px',
-                    margin: '0',
-                    display: 'inline-block',
-                    color: '#fff',
-                    fontSize: ''
-                },
-                stylePolicy: {
-                    color: 'wheat'
-                },
-                styleDismissBtn: {
-                    float: 'right',
-                    marginTop: '9px',
-                    marginRight: '8px',
-                    background: '#152CB5',
-                    borderColor: '#152CB5'
-                },
-                message: 'This website uses cookies to ensure you get the best experience on our website.',
-				policyLinkText: 'Learn More',
-				dismissBtnText: 'Got it!'
+                styleObj: {},
+                styleMsg: {},
+                stylePolicy: {},
+                styleDismissBtn: {},
+                message: '',
+				policyLinkText: '',
+				dismissBtnText: ''
             }
         },
         created() {
@@ -81,7 +51,13 @@
                 route: 'get_gdprconfig'
             }).then(
                 response => {
-                    console.log(response)
+                    console.log(response.data.getGdprConfig.styleObj)
+                    this.styleObj = response.data.getGdprConfig.styleObj;
+                    this.styleMsg = response.data.getGdprConfig.styleMsg;
+                    this.styleDismissBtn = response.data.getGdprConfig.styleDismissBtn;
+                    this.message = response.data.getGdprConfig.message;
+                    this.dismissBtnText = response.data.getGdprConfig.dismissBtnText;
+                    this.policyLinkText = response.data.getGdprConfig.policyLinkText; 
                 }
             )
         },

@@ -59906,57 +59906,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
-            styleObj: {
-                bottom: '0px',
-                background: '#A3549E',
-                color: 'white',
-                position: 'relative',
-                width: '100%',
-                top: '403px',
-                margin: '0',
-                padding: '0px',
-                left: '0px',
-                right: '0px',
-                borderRadius: '0px',
-                maxWidth: '',
-                marginTop: '0px',
-                marginLeft: '0px',
-                float: ''
-            },
-            styleMsg: {
-                padding: '15px',
-                margin: '0',
-                display: 'inline-block',
-                color: '#fff',
-                fontSize: ''
-            },
-            stylePolicy: {
-                color: 'wheat'
-            },
-            styleDismissBtn: {
-                float: 'right',
-                marginTop: '9px',
-                marginRight: '8px',
-                background: '#152CB5',
-                borderColor: '#152CB5'
-            },
-            message: 'This website uses cookies to ensure you get the best experience on our website.',
-            policyLinkText: 'Learn More',
-            dismissBtnText: 'Got it!'
+            styleObj: {},
+            styleMsg: {},
+            stylePolicy: {},
+            styleDismissBtn: {},
+            message: '',
+            policyLinkText: '',
+            dismissBtnText: ''
         };
     },
     created: function created() {
+        var _this = this;
+
         jQuery.get(ajaxurl, {
             action: 'ninja_gdpr_ajax_actions',
             route: 'get_gdprconfig'
         }).then(function (response) {
-            console.log(response);
+            console.log(response.data.getGdprConfig.styleObj);
+            _this.styleObj = response.data.getGdprConfig.styleObj;
+            _this.styleMsg = response.data.getGdprConfig.styleMsg;
+            _this.styleDismissBtn = response.data.getGdprConfig.styleDismissBtn;
+            _this.message = response.data.getGdprConfig.message;
+            _this.dismissBtnText = response.data.getGdprConfig.dismissBtnText;
+            _this.policyLinkText = response.data.getGdprConfig.policyLinkText;
         });
     },
 
     methods: {
         updateGDPR: function updateGDPR() {
-            var _this = this;
+            var _this2 = this;
 
             var allGdprObj = {
                 styleObj: this.styleObj,
@@ -59973,12 +59951,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 gdprConfig: JSON.stringify(allGdprObj)
             }).then(function (response) {
                 console.log(response);
-                _this.$notify.success({
+                _this2.$notify.success({
                     title: 'Success',
                     message: response.data.message
                 });
             }).fail(function (error) {
-                _this.$notify.error({
+                _this2.$notify.error({
                     title: 'Error',
                     message: error.responseJSON.data.message
                 });
@@ -60228,20 +60206,42 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             bgPurpleColor: false,
             btn_bg: '#152CB5',
             fnt_size: '',
-            show_message: '',
-            getPolicy: '',
-            getDismissBtn: '',
             link: '',
             comp_type: '',
             options: [{ value: '10px', label: '10px' }, { value: '15px', label: '15px' }, { value: '20px', label: '20px' }, { value: '25px', label: '25px' }]
         };
     },
     created: function created() {
-        this.show_message = this.message;
-        this.getPolicy = this.policyLinkText;
         this.getDismissBtn = this.dismissBtnText;
     },
 
+
+    computed: {
+        show_message: {
+            get: function get() {
+                return this.message;
+            },
+            set: function set(newValue) {
+                this.updateMessage(newValue);
+            }
+        },
+        getPolicy: {
+            get: function get() {
+                return this.policyLinkText;
+            },
+            set: function set(newValue) {
+                this.updatePolicy(newValue);
+            }
+        },
+        getDismissBtn: {
+            get: function get() {
+                return this.dismissBtnText;
+            },
+            set: function set(newValue) {
+                this.updateDismissBtn(newValue);
+            }
+        }
+    },
 
     watch: {
         theme: function theme() {
@@ -60302,14 +60302,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         fnt_size: function fnt_size() {
             this.styleMsg.fontSize = this.fnt_size;
+        }
+    },
+
+    methods: {
+        updateMessage: function updateMessage(val) {
+            this.$emit('showMsg', val);
         },
-        show_message: function show_message() {
-            this.$emit('showMsg', this.show_message);
+        updatePolicy: function updatePolicy(val) {
+            this.$emit('postPolicy', val);
         },
-        getPolicy: function getPolicy() {
-            this.$emit('postPolicy', this.getPolicy);
-        },
-        getDismissBtn: function getDismissBtn() {
+        updateDismissBtn: function updateDismissBtn(val) {
             this.$emit('postDismissBtn', this.getDismissBtn);
         }
     }
