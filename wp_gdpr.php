@@ -36,13 +36,16 @@ class NINJAWPGDPR
 	{
 		add_action('wp_enqueue_scripts', array($this, 'enqueueScripts') );
 
+
 	}
 	
 	public function adminHooks()
 	{
 	
 		add_action('admin_menu', array('WP_GDPR\Classes\Menu','addAdminMenuPages'));
-		add_action('wp_ajax_ninja_gdpr_ajax_actions', array('WP_GDPR\Classes\Menu','handleAjaxCalls'));
+		add_action('wp_ajax_ninja_gdpr_ajax_actions', array('WP_GDPR\Classes\GdprHandler','handleAjaxCalls'));
+		add_action('init', array('WP_GDPR\Classes\GdprHandler','populateDemoAddData'));
+
 	}
 
 

@@ -80,6 +80,7 @@
                 let allGdprObj = {
                     styleObj: this.styleObj,
                     styleMsg: this.styleMsg,
+                    stylePolicy: this.stylePolicy,
                     styleDismissBtn: this.styleDismissBtn,
                     message: this.message,
                     policyLinkText: this.policyLinkText,

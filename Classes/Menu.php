@@ -4,7 +4,6 @@
 class Menu 
 {
 
-
 	public static function addAdminMenuPages()
 	{
 		
@@ -19,8 +18,6 @@ class Menu
         );
 	}
 
-
-
 	public static function managePermission()
 	{
 		return apply_filters('ninja_wp_gdpr_menu_manager_permission', 'manage_options');
@@ -33,70 +30,6 @@ class Menu
 		include	WP_GDPR_PLUGIN_DIR_PATH.'views/admin_view.php';
 		
 	}
-
-
-
-	public static function handleAjaxCalls()
-	{
-		$route = sanitize_text_field( $_REQUEST['route'] );
-
-		if($route == 'update_config'){
-			$gdpr_Con = wp_unslash($_REQUEST['gdprConfig']); 
-			$gdprConfig = json_decode(trim(stripslashes($gdpr_Con)), true);
-			static::updateGdprOption($gdprConfig);
-		}
-
-	}
-
-
-
-	public static function updateGdprOption($gdprConfig)
-	{
-		
-
-		update_option('_gdpr_option_consent', $gdprConfig);
-		$consentKey = get_option('_gdpr_option_consent', false);
-		wp_send_json_success(array(
-            
-            'message' => $consentKey,
-            // 'message' => 'Successfuly added'
-
-        ));
-	}
-
-
-
-	public static function getGDPRConfig()
-	{
-		return array(
-			
-	 	'backgroundColor' => array(
-                 'bgColor' 	  => 'red',
-                'text' 	  	  => 'hi',
-                'theme' 	  => 'border bottom',
-             ),
-		 	'settings' 		  => false
-		);
-	}
-
-
-
-
-
-
-		public static function get_gdpr($value='')
-	{
-		# code...
-	}
-
-
-
-
-
-
-
-
-
 
 }
 
