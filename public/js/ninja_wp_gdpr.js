@@ -59945,6 +59945,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             dismissBtnText: 'Got it!'
         };
     },
+    created: function created() {
+        jQuery.get(ajaxurl, {
+            action: 'ninja_gdpr_ajax_actions',
+            route: 'get_gdprconfig'
+        }).then(function (response) {
+            console.log(response);
+        });
+    },
 
     methods: {
         updateGDPR: function updateGDPR() {
@@ -60183,6 +60191,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['styleObj', 'styleMsg', 'stylePolicy', 'styleDismissBtn', 'message', 'policyLinkText', 'dismissBtnText'],
@@ -60193,6 +60218,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             top: false,
             left: false,
             right: false,
+            duration: '',
             theme: 'banner_bottom',
             bg_color: '#A3549E',
             text_color: '#fff',
@@ -60205,6 +60231,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             show_message: '',
             getPolicy: '',
             getDismissBtn: '',
+            link: '',
+            comp_type: '',
             options: [{ value: '10px', label: '10px' }, { value: '15px', label: '15px' }, { value: '20px', label: '20px' }, { value: '25px', label: '25px' }]
         };
     },
@@ -60680,14 +60708,147 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "el-collapse-item",
-                { attrs: { title: "Settings", name: "4" } },
+                { attrs: { title: "Learn More Link", name: "4" } },
                 [
-                  _c("p", [
-                    _vm._v(
-                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    )
-                  ])
-                ]
+                  _c(
+                    "el-row",
+                    { staticStyle: { padding: "15px" } },
+                    [
+                      _c(
+                        "el-col",
+                        { attrs: { span: 24 } },
+                        [
+                          _c(
+                            "el-radio",
+                            {
+                              attrs: { label: "your_website" },
+                              model: {
+                                value: _vm.link,
+                                callback: function($$v) {
+                                  _vm.link = $$v
+                                },
+                                expression: "link"
+                              }
+                            },
+                            [_vm._v("Link to your website")]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "el-col",
+                        { attrs: { span: 24 } },
+                        [
+                          _c(
+                            "el-radio",
+                            {
+                              attrs: { label: "custom_link" },
+                              model: {
+                                value: _vm.link,
+                                callback: function($$v) {
+                                  _vm.link = $$v
+                                },
+                                expression: "link"
+                              }
+                            },
+                            [_vm._v("Custom Link")]
+                          ),
+                          _vm._v(" "),
+                          _vm.link == "custom_link"
+                            ? _c("el-input", {
+                                staticStyle: { "margin-top": "20px" },
+                                attrs: {
+                                  type: "text",
+                                  placeholder: "Custom Link"
+                                }
+                              })
+                            : _vm._e()
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-collapse-item",
+                { attrs: { title: "Complience Type", name: "5" } },
+                [
+                  _c(
+                    "el-row",
+                    [
+                      _c(
+                        "el-col",
+                        { attrs: { span: 24 } },
+                        [
+                          _c(
+                            "el-radio",
+                            {
+                              attrs: { label: "just_tell_user" },
+                              model: {
+                                value: _vm.comp_type,
+                                callback: function($$v) {
+                                  _vm.comp_type = $$v
+                                },
+                                expression: "comp_type"
+                              }
+                            },
+                            [_vm._v("Just tell user we use cookie")]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "el-col",
+                        { attrs: { span: 24 } },
+                        [
+                          _c(
+                            "el-radio",
+                            {
+                              attrs: { label: "let_user_opt" },
+                              model: {
+                                value: _vm.comp_type,
+                                callback: function($$v) {
+                                  _vm.comp_type = $$v
+                                },
+                                expression: "comp_type"
+                              }
+                            },
+                            [_vm._v("Let users opt out of cookies (Advanced)")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-collapse-item",
+                { attrs: { title: "Settings", name: "6" } },
+                [
+                  _c("p", [_vm._v("Duration of Cookie(in days)")]),
+                  _vm._v(" "),
+                  _c("el-input", {
+                    attrs: { type: "number" },
+                    model: {
+                      value: _vm.duration,
+                      callback: function($$v) {
+                        _vm.duration = $$v
+                      },
+                      expression: "duration"
+                    }
+                  })
+                ],
+                1
               )
             ],
             1
