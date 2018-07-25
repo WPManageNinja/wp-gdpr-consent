@@ -82,13 +82,30 @@
                             </el-row>
                         </div>
                     </el-collapse-item>
-                    <el-collapse-item title="Settings" name="4">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <el-collapse-item title="Learn More Link" name="4">
+                        <el-row style="padding: 15px;">
+                            <el-col :span="24">
+                                <el-radio v-model="link" label="your_website">Link to your website</el-radio>
+                            </el-col>
+                            <el-col :span="24">
+                                <el-radio v-model="link" label="custom_link">Custom Link</el-radio>
+                                <el-input type="text" placeholder="Custom Link" v-if="link=='custom_link'" style="margin-top: 20px;"></el-input>
+                            </el-col>
+                        </el-row>
+                    </el-collapse-item>
+                    <el-collapse-item title="Complience Type" name="5">
+                        <el-row>
+                            <el-col :span="24">
+                                <el-radio v-model="comp_type" label="just_tell_user">Just tell user we use cookie</el-radio>
+                            </el-col>
+                            <el-col :span="24">
+                                <el-radio v-model="comp_type" label="let_user_opt">Let users opt out of cookies (Advanced)</el-radio>
+                            </el-col>
+                        </el-row>
+                    </el-collapse-item>
+                    <el-collapse-item title="Settings" name="6">
+                        <p>Duration of Cookie(in days)</p>
+                        <el-input v-model="duration" type="number"></el-input>
                     </el-collapse-item>
                     </el-collapse>
             </div>
@@ -113,7 +130,8 @@
 				bottom: true,
 				top: false,
 				left: false,
-				right: false,
+                right: false,
+                duration: '',
 				theme: 'banner_bottom',
 				bg_color: '#A3549E',
 				text_color: '#fff',
@@ -126,6 +144,8 @@
                 show_message: '',
                 getPolicy: '',
                 getDismissBtn: '',
+                link: '',
+                comp_type: '',
                 options: [
                     { value: '10px', label: '10px' },
                     { value: '15px', label: '15px' },
