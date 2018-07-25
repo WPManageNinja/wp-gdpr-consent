@@ -47510,8 +47510,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_element_ui_lib_locale___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_element_ui_lib_locale__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_element_ui_lib_locale_lang_en__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_element_ui_lib_locale_lang_en___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_element_ui_lib_locale_lang_en__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__AdminApp__ = __webpack_require__(163);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__AdminApp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__AdminApp__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_element_ui_lib_theme_chalk_notification_css__ = __webpack_require__(176);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_element_ui_lib_theme_chalk_notification_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_element_ui_lib_theme_chalk_notification_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__AdminApp__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__AdminApp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__AdminApp__);
 
 
 
@@ -47537,13 +47539,18 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_elem
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_element_ui__["Popover"]);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_element_ui__["Switch"]);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_element_ui__["Radio"]);
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_element_ui__["ColorPicker"]);
+
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.prototype.$notify = __WEBPACK_IMPORTED_MODULE_1_element_ui__["Notification"];
+
+
 
 
 
 new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 	el: "#ninja_wp_gdpr",
 	render: function render(h) {
-		return h(__WEBPACK_IMPORTED_MODULE_5__AdminApp___default.a);
+		return h(__WEBPACK_IMPORTED_MODULE_6__AdminApp___default.a);
 	}
 });
 
@@ -59942,6 +59949,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         updateGDPR: function updateGDPR() {
+            var _this = this;
+
             var allGdprObj = {
                 styleObj: this.styleObj,
                 styleMsg: this.styleMsg,
@@ -59956,6 +59965,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 gdprConfig: JSON.stringify(allGdprObj)
             }).then(function (response) {
                 console.log(response);
+                _this.$notify.success({
+                    title: 'Success',
+                    message: response.data.message
+                });
+            }).fail(function (error) {
+                _this.$notify.error({
+                    title: 'Error',
+                    message: error.responseJSON.data.message
+                });
             });
         },
         show_msg: function show_msg(val) {
@@ -60796,6 +60814,52 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 175 */,
+/* 176 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(177);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(160)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../css-loader/index.js!./notification.css", function() {
+			var newContent = require("!!../../../css-loader/index.js!./notification.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 177 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(45)(false);
+// imports
+
+
+// module
+exports.push([module.i, ".el-notification{display:-webkit-box;display:-ms-flexbox;display:flex;width:330px;padding:14px 26px 14px 13px;border-radius:8px;-webkit-box-sizing:border-box;box-sizing:border-box;border:1px solid #ebeef5;position:fixed;background-color:#fff;-webkit-box-shadow:0 2px 12px 0 rgba(0,0,0,.1);box-shadow:0 2px 12px 0 rgba(0,0,0,.1);-webkit-transition:opacity .3s,left .3s,right .3s,top .4s,bottom .3s,-webkit-transform .3s;transition:opacity .3s,left .3s,right .3s,top .4s,bottom .3s,-webkit-transform .3s;transition:opacity .3s,transform .3s,left .3s,right .3s,top .4s,bottom .3s;transition:opacity .3s,transform .3s,left .3s,right .3s,top .4s,bottom .3s,-webkit-transform .3s;overflow:hidden}.el-notification.right{right:16px}.el-notification.left{left:16px}.el-notification__group{margin-left:13px}.el-notification__title{font-weight:700;font-size:16px;color:#303133;margin:0}.el-notification__content{font-size:14px;line-height:21px;margin:6px 0 0;color:#606266;text-align:justify}.el-notification__content p{margin:0}.el-notification__icon{height:24px;width:24px;font-size:24px}.el-notification__closeBtn{position:absolute;top:18px;right:15px;cursor:pointer;color:#909399;font-size:16px}.el-notification__closeBtn:hover{color:#606266}.el-notification .el-icon-success{color:#67c23a}.el-notification .el-icon-error{color:#f56c6c}.el-notification .el-icon-info{color:#909399}.el-notification .el-icon-warning{color:#e6a23c}.el-notification-fade-enter.right{right:0;-webkit-transform:translateX(100%);transform:translateX(100%)}.el-notification-fade-enter.left{left:0;-webkit-transform:translateX(-100%);transform:translateX(-100%)}.el-notification-fade-leave-active{opacity:0}", ""]);
+
+// exports
+
 
 /***/ })
 /******/ ]);

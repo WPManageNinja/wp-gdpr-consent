@@ -93,6 +93,17 @@
                 }).then(
                     response => {
                         console.log(response)
+                        this.$notify.success({
+                            title: 'Success',
+                            message: response.data.message
+                        });
+                    }
+                ).fail(
+                    error => {
+                        this.$notify.error({
+                            title: 'Error',
+                            message: error.responseJSON.data.message
+                        });
                     }
                 );
             },

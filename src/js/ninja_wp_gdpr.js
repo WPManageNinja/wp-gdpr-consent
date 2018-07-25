@@ -24,7 +24,7 @@ import {
 	Switch, 
 	Message, 
 	Collapse,
-	Radio } from 'element-ui';
+    Radio,
 
 Vue.use(ElementUI)
 Vue.use(Button)
@@ -41,6 +41,11 @@ Vue.use(Pagination)
 Vue.use(Popover)
 Vue.use(Switch)
 Vue.use(Radio)
+Vue.use(ColorPicker)
+
+Vue.prototype.$notify = Notification;
+
+import 'element-ui/lib/theme-chalk/notification.css';
 
 import App from './AdminApp';
 
