@@ -96,7 +96,8 @@ class GdprHandler
                 'marginRight'=> '8px',
                 'background' => '#152CB5',
                 'borderColor'=> '#152CB5',
-                'color' => '#fff'
+                'color' => '#fff',
+                'display' => ''
             ),
 
             'settings' => array(
