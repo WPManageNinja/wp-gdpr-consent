@@ -3,7 +3,11 @@
 		<div class="preview">
             <div :style="styleObj">
 				<p :style="styleMsg">{{ message }}</p>
-				<a href="#" :style="styleMsg" v-if="bool">{{ policyLinkText }}</a> <a style="display: block; color: #fff" v-if="settingsObj.showDeclineBtn==true">Decline</a> <el-button type="primary" round size="mini" class="gotItBtn" :style="styleDismissBtn">{{ dismissBtnText }}</el-button>
+				<a href="#" :style="styleMsg" v-if="bool">{{ policyLinkText }}</a> 
+                <div class="confirmationBtn">
+                    <a style="display: block; color: #fff" v-if="settingsObj.showDeclineBtn==true">Decline</a> 
+                    <el-button type="primary" round size="mini" class="gotItBtn" :style="styleDismissBtn">{{ dismissBtnText }}</el-button>
+                </div>
 			</div>
 		</div>
 		<div class="options">
@@ -31,39 +35,52 @@
                             </li>
                         </ul>
                     </el-collapse-item>
-                    <el-collapse-item title="Color Customization" name="2" class="color-customization">
-                        <div class="bgColorList">
-                            <p>Background Color</p>
+                    <el-collapse-item title="Color Customization" name="2">
+                        <div class="color-customization"> 
+                             <div class="bgColorList">
+                                <p>Background Color</p>
 
-                            <el-input type="text" v-model="bg_color"></el-input>
+                                <el-input type="text" v-model="bg_color"></el-input>
 
-                            <el-color-picker @active-change="(color) => {bg_color = color}" v-model="bg_color" size="mini" class="gdpr_bg_color_picker"></el-color-picker>
-                        </div>
-                        <div class=textColorList>
-                            <p>Text Color</p>
+                                <el-color-picker @active-change="(color) => {bg_color = color}" v-model="bg_color" size="mini" class="gdpr_bg_color_picker"></el-color-picker>
+                            </div>
+                            <div class=textColorList>
+                                <p>Text Color</p>
 
-                            <el-input type="text" v-model="text_color"></el-input>
+                                <el-input type="text" v-model="text_color"></el-input>
 
-                            <el-color-picker @active-change="(color) => {text_color = color}" v-model="text_color" size="mini" class="gdpr_text_color-picker"></el-color-picker>
-                        </div>
-                        <div class=btnColorList>
-                            <p>Button Background</p>
+                                <el-color-picker @active-change="(color) => {text_color = color}" v-model="text_color" size="mini" class="gdpr_text_color-picker"></el-color-picker>
+                            </div>
+                            <div class=btnbackground>
+                                <p>Button Background</p>
 
-                            <el-input type="text" v-model="btn_bg"></el-input>
+                                <el-input type="text" v-model="btn_bg"></el-input>
 
-                            <el-color-picker @active-change="(color) => {btn_bg = color}" v-model="btn_bg" size="mini" class="gdpr_btn_bg_color"></el-color-picker>
-                        </div>
-                        <div class=btnColorList>
-                            <p>Button Color</p>
+                                <el-color-picker @active-change="(color) => {btn_bg = color}" v-model="btn_bg" size="mini" class="gdpr_btn_bg_color"></el-color-picker>
+                            </div>
+                            <div class=btnColorList>
+                                <p>Button Color</p>
 
-                            <el-input type="text" v-model="btn_clr"></el-input>
+                                <el-input type="text" v-model="btn_clr"></el-input>
 
+                                <el-color-picker @active-change="(color) => {btn_clr = color}" v-model="btn_clr" size="mini" class="gdpr_btn_bg_color"></el-color-picker>
+                            </div>
+                            <!-- <div class="fntSize">
+                                <p>Font Size</p>
+                                <el-input type="number" v-model="styleMsg.fontSize" min="15" max="20"></el-input>
+                            </div> -->
+
+<<<<<<< HEAD
                             <el-color-picker @active-change="(color) => {btn_clr = color}" v-model="btn_clr" size="mini" class="gdpr_btn_bg_color"></el-color-picker>
                         </div>
                         <!-- <div class="fntSize">
                             <p>Font Size</p>
                             <el-input type="number" v-model="styleMsg.fontSize" min="15" max="20"></el-input>
                         </div> -->
+=======
+                        </div>
+
+>>>>>>> abc1bd8a16b77abacb1ae63a2181ca9e458e830d
                     </el-collapse-item>
                     <el-collapse-item title="Custom Text" name="3">
                         <div class="cstm_text">
@@ -86,29 +103,34 @@
                         </div>
                     </el-collapse-item>
                     <el-collapse-item title="Policy Link" name="4">
-                        <el-row style="padding: 15px;">
+                        <el-row>
                             <el-col :span="24">
-                                <label>Custom Link</label>
-                                <el-input type="text" placeholder="Custom Link" v-model="link" style="margin-top: 20px;"></el-input>
+                                <div class="custom_link">
+                                    <label>Custom Link</label>
+                                    <el-input type="text" placeholder="Custom Link" v-model="link"></el-input>
+                               </div>
                             </el-col>
                         </el-row>
                     </el-collapse-item>
                     <el-collapse-item title="Settings" name="6">
-                        <el-row :gutter="15" style="padding: 15px">
-                            <el-col :span="24">
-                                <label>Duration of Cookie(in days)</label>
-                                <el-input v-model="settingsObj.duration" type="number"></el-input>
-                            </el-col>
-                            <el-col :span="24">
-                                <label>Delay of Cookie(in sec)</label>
-                                <el-input v-model="settingsObj.delay" type="number"></el-input>
-                            </el-col>
-                            <el-col :span="24">
-                                <label>Show Decline Button</label>
-                                <el-switch v-model="settingsObj.showDeclineBtn">
-                                </el-switch>
-                            </el-col>
-                        </el-row>
+                        <div class="settings">
+                            <el-row :gutter="15">
+                                <el-col :span="24">
+                                    <label class="settings_label">Duration of Cookie(in days)</label>
+                                    <el-input v-model="settingsObj.duration" type="number"></el-input>
+                                </el-col>
+                                <el-col :span="24">
+                                    <label class="settings_label">Delay of Cookie(in sec)</label>
+                                    <el-input v-model="settingsObj.delay" type="number"></el-input>
+                                </el-col>
+                                <el-col :span="24">
+                                    <label class="settings_label">Show Decline Button</label>
+                                    <el-switch v-model="settingsObj.showDeclineBtn">
+                                    </el-switch>
+                                </el-col>
+                            </el-row>
+                        </div>
+
                     </el-collapse-item>
                     </el-collapse>
             </div>
@@ -244,6 +266,8 @@
                     this.styleObj.float = '';
                     this.styleObj.maxWidth = '';
                     this.styleObj.display = 'block';
+                    this.styleDismissBtn.display = 'inline';
+                    this.styleDismissBtn.float = 'right';
 				}
 				if( this.theme == 'banner_top' ) {
                     this.styleObj.color = 'white';
@@ -375,72 +399,111 @@
 		.is-active {
 			background: #078BA2;
 		}
-		.bgColorList {
-			width: 48%;
-			float: left;
-            .gdpr_bg_color_picker {
-                position: relative;
-                top: -34px;
-                left: 200px;
-                display: block;
-            }
-		}
 
-		.textColorList {
-			width: 48%;
-			float: right;
-            .gdpr_text_color-picker {
-                position: relative;
-                top: -34px;
-                left: 200px;
-                display: block;
-            }
-		}
 
-		.btnColorList {
-			width: 48%;
-			float: left;
-            margin-top: -6px;
-            .gdpr_btn_bg_color {
-                position: relative;
-                top: -34px;
-                left: 200px;
-                display: block;
+        .color-customization{
+          padding:15px;
+            .bgColorList {
+                width: 48%;
+                float: left;
+                .gdpr_bg_color_picker {
+                    position: relative;
+                    top: -34px;
+                    left: 189px;
+                    display: block;
+                }
             }
-		}
+             
+            .textColorList {
+                width: 48%;
+                float: right;
+                .gdpr_text_color-picker {
+                    position: relative;
+                    top: -34px;
+                    left: 189px;
+                    display: block;
+                }
+            }
 
-		.fntSize {
-			width: 48%;
-			float: right;
+
+            .btnbackground {
+                width: 48%;
+                float: left;
+                margin-top: -23px;
+                .gdpr_btn_bg_color {
+                    position: relative;
+                    top: -34px;
+                    left: 189px;
+                    display: block;
+                }
+            } 
+
+            .btnColorList {
+                width: 48%;
+                float: right;
+                margin-top: -23px;
+                .gdpr_btn_bg_color {
+                    position: relative;
+                    top: -34px;
+                    left: 189px;
+                    display: block;
+                }
+            }
+        }
+
+		
+        .cstm_text {
+            padding: 20px 20px 0 20px;
+             .cstm_msg {
+                 padding-bottom: 10px;
+             }
+        }
+        
+        .custom_link{
+            padding: 15px 15px 0 15px;
+            label{
+                margin-left: 2px;
+            }
+            .el-input{
+                padding-top:5px;
+            }
+        }
+
+		.settings{
+            padding:20px 20px 0px 20px;
+
             .el-input {
-                margin-top: -6px;
-                width: 100%;
-                padding: 15px;
+                padding-top: 5px;
+                 padding-bottom: 5px;
             }
-		}
+        }
 
-		.cstm_text {
-			padding: 20px;
-			.cstm_msg {
-				padding-bottom: 10px;
-			}
-		}
+		// .fntSize {
+		// 	width: 48%;
+		// 	float: right;
+  //           .el-input {
+  //               margin-top: -6px;
+  //               width: 100%;
+  //               padding: 15px;
+  //           }
+		// }
 
+		
 
-		.blackBgColor {
-			background: black;
-		}
+		// .blackBgColor {
+		// 	background: black;
+		// }
 
-		.blueBgColor {
-			background: blue;
-		}
+		// .blueBgColor {
+		// 	background: blue;
+		// }
 
-		.redBgColor {
-			background: red;
-		}
+		// .redBgColor {
+		// 	background: red;
+		// }
 
-		.purpleBgColor {
-			background: purple;
-		}
+		// .purpleBgColor {
+		// 	background: purple;
+		// }
 	}
 </style>
