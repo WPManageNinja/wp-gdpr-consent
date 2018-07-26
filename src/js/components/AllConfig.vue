@@ -60,10 +60,10 @@
 
                             <el-color-picker @active-change="(color) => {btn_clr = color}" v-model="btn_clr" size="mini" class="gdpr_btn_bg_color"></el-color-picker>
                         </div>
-                        <div class="fntSize">
+                        <!-- <div class="fntSize">
                             <p>Font Size</p>
                             <el-input type="number" v-model="styleMsg.fontSize" min="15" max="20"></el-input>
-                        </div>
+                        </div> -->
                     </el-collapse-item>
                     <el-collapse-item title="Custom Text" name="3">
                         <div class="cstm_text">
@@ -224,12 +224,12 @@
                     this.setCustomLink(newValue)
                 }
             },
-            fontSize() {
-                var res = this.styleMsg.fontSize;
-                this.styleMsg.fontSize = res;
-                return this.styleMsg.fontSize;
-                console.log(this.styleMsg.fontSize);
-            }
+            // fontSize() {
+            //     var res = this.styleMsg.fontSize;
+            //     this.styleMsg.fontSize = res;
+            //     return this.styleMsg.fontSize;
+            //     console.log(this.styleMsg.fontSize);
+            // }
         },
 
 		watch: {
