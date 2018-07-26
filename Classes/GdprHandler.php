@@ -17,6 +17,8 @@ class GdprHandler
 			static::get_gdpr('ajax');
 		}
 
+
+		
 	}
 
 	/**
@@ -28,9 +30,18 @@ class GdprHandler
 		wp_send_json_success(array(
 			'getGdprConfig' => $getGdprConfig,
 		));
-
-		
 	}
+
+
+
+	public static function gdprConfigVars()
+	{	
+		$gdprConfigData = get_option('_gdpr_option_consent', false);
+		wp_enqueue_script('wp_gdpr_user_display', WP_GDPR_PLUGIN_DIR_URL.'public/js/wp_gdpr_user_display.js', array('jquery'), WP_GDPR_PLUGIN_DIR_VERSION, true );
+		wp_localize_script('wp_gdpr_user_display', 'getGdprConfig_vars',  $gdprConfigData) ;
+		return "<div id='wp_gdpr_userDisplay'></div>";
+	}
+
 
 	/**
      *  Data Update when update button click..
