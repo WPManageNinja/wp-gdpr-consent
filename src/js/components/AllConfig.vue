@@ -236,12 +236,13 @@
 				if( this.theme == 'banner_bottom' ) {
                     this.styleObj.color = 'white';
                     this.styleObj.width = '100%';
-                    this.styleObj.margin = 0;
-                    this.styleObj.padding = 0;
-                    this.styleObj.top = '401px';
+                    this.styleObj.margin = '0px';
+                    this.styleObj.padding = '0px';
+                    this.styleObj.marginTop = '401px';
                     this.styleObj.float = '';
                     this.styleObj.maxWidth = '';
                     this.styleObj.display = 'block';
+                    this.styleObj.borderRadius = '';
                     this.confirmationBtn.display = 'inline';
                     this.confirmationBtn.float = 'right';
                     this.confirmationBtn.marginTop = '10px';
@@ -254,53 +255,59 @@
 				if( this.theme == 'banner_top' ) {
                     this.styleObj.color = 'white';
                     this.styleObj.width = '100%';
-                    this.styleObj.margin = 0;
-                    this.styleObj.padding = 0;
-                    this.styleObj.top = 0;
+                    this.styleObj.margin = '0px';
+                    this.styleObj.padding = '0px';
+                    this.styleObj.top = '0px';
                     this.styleObj.maxWidth = '';
-                    this.styleObj.marginTop = '';
-                    this.styleObj.marginLeft = '';
-                    this.styleObj.borderRadius = '';
+                    this.styleObj.marginTop = '0px';
+                    this.styleObj.marginLeft = '0px';
+                    this.styleObj.marginRight = '0px'
+                    this.styleObj.borderRadius = '0px';
                     this.styleObj.float = '';
                     this.styleObj.display = 'block';
 				}
 				else if( this.theme == 'banner_left' ) {
                     this.styleObj.bottom = '0px';
                     this.styleObj.margin = '';
-                    this.styleObj.top = '0px';
+                    this.styleObj.top = '';
                     this.styleObj.color = 'white';
                     this.styleObj.maxWidth = '24em';
                     this.styleObj.padding = '3em';
-                    this.styleObj.marginTop = '291px';
-                    this.styleObj.marginLeft = '15px';
+                    this.styleObj.marginTop = '276px';
+                    this.styleObj.marginLeft = '15px'; 
                     this.styleObj.borderRadius = '10px';
                     this.styleObj.float = '';
                     this.styleObj.display = 'block';
 				}
 				else if( this.theme == 'banner_right' ) {
+                    this.styleObj.bottom = '0px';
                     this.styleObj.color = 'white';
                     this.styleObj.maxWidth = '24em';
                     this.styleObj.padding = '3em';
-                    this.styleObj.marginTop = '276px';
                     this.styleObj.float = 'right';
                     this.styleObj.marginRight = '15px';
                     this.styleObj.borderRadius = '10px';
                     this.styleObj.top = '';
-                    this.styleObj.margin = '';
-                    this.styleObj.marginLeft = '';
+                    this.styleObj.marginTop = '276px';
+                    this.styleObj.marginLeft = '0px';
                     this.styleObj.right = '9px';
                     this.styleObj.display = 'block';
                 }
                 else if( this.theme == 'hide' ) {
                     this.styleObj.display = 'none';
+                    this.styleObj.bottom = '0px';
+                    this.styleObj.color = 'white';
+                    this.styleObj.maxWidth = '0px';
+                    this.styleObj.padding = '0px';
+                    this.styleObj.float = 'right';
+                    this.styleObj.marginRight = '0px';
+                    this.styleObj.borderRadius = '0px';
+                    this.styleObj.top = '0px';
+                    this.styleObj.marginTop = '0px';
+                    this.styleObj.marginLeft = '0px';
+                    this.styleObj.right = '0px';
                 }
-			},
-            // fnt_size() {
-            //     this.styleMsg.fontSize = this.fnt_size + "px";
-            //     console.log(this.styleMsg.fontSize)
-            // }
-            fontSize() {
-            }
+			}
         },
 
         methods: {
@@ -459,33 +466,5 @@
                  padding-bottom: 5px;
             }
         }
-
-		// .fntSize {
-		// 	width: 48%;
-		// 	float: right;
-  //           .el-input {
-  //               margin-top: -6px;
-  //               width: 100%;
-  //               padding: 15px;
-  //           }
-		// }
-
-		
-
-		// .blackBgColor {
-		// 	background: black;
-		// }
-
-		// .blueBgColor {
-		// 	background: blue;
-		// }
-
-		// .redBgColor {
-		// 	background: red;
-		// }
-
-		// .purpleBgColor {
-		// 	background: purple;
-		// }
 	}
 </style>
