@@ -23,6 +23,7 @@
                         :dismissBtnText="dismissBtnText"
                         :customLink="customLink"
                         :settingsObj="settings"
+                        :confirmationBtn="confirmationBtn"
                         @showMsg="show_msg($event)"
                         @postPolicy="post_policy($event)"
                         @postDismissBtn="postDismissBtn($event)"
@@ -44,6 +45,7 @@
                 stylePolicy: {},
                 styleDismissBtn: {},
                 settings: {},
+                confirmationBtn: {},
                 message: '',
 				policyLinkText: '',
                 dismissBtnText: '',
@@ -57,7 +59,7 @@
                 route: 'get_gdprconfig'
             }).then(
                 response => {
-                    console.log(response.data.getGdprConfig)
+                    console.log(response)
                     this.styleObj = response.data.getGdprConfig.styleObj;
                     this.styleMsg = response.data.getGdprConfig.styleMsg;
                     this.styleDismissBtn = response.data.getGdprConfig.styleDismissBtn;
@@ -66,6 +68,8 @@
                     this.policyLinkText = response.data.getGdprConfig.policyLinkText;
                     this.customLink = response.data.getGdprConfig.customLink; 
                     this.settings = response.data.getGdprConfig.settings;
+                    this.confirmationBtn = response.data.getGdprConfig.confirmationBtn;
+                    console.log(this.confirmationBtn)
                 }
             ).always(
                 () => {
@@ -80,6 +84,7 @@
                     styleMsg: this.styleMsg,
                     stylePolicy: this.stylePolicy,
                     styleDismissBtn: this.styleDismissBtn,
+                    confirmationBtn: this.confirmationBtn,
                     message: this.message,
                     policyLinkText: this.policyLinkText,
                     dismissBtnText: this.dismissBtnText,

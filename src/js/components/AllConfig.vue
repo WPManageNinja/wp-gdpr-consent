@@ -4,9 +4,9 @@
             <div :style="styleObj">
 				<p :style="styleMsg">{{ message }}</p>
 				<a href="#" :style="styleMsg" v-if="bool">{{ policyLinkText }}</a> 
-                <div class="confirmationBtn">
-                    <a style="display: block; color: #fff" v-if="settingsObj.showDeclineBtn==true">Decline</a> 
-                    <el-button type="primary" round size="mini" class="gotItBtn" :style="styleDismissBtn">{{ dismissBtnText }}</el-button>
+                <div :style="confirmationBtn">
+                    <a style="display: inline; color: #fff" v-if="settingsObj.showDeclineBtn==true">Decline</a> 
+                    <el-button type="primary" round size="mini" :style="styleDismissBtn">{{ dismissBtnText }}</el-button>
                 </div>
 			</div>
 		</div>
@@ -20,9 +20,6 @@
                             </li>
                             <li>
                                 <el-radio v-model="theme" label="banner_top">Banner Top</el-radio>
-                            </li>
-                            <li>
-                                <el-radio v-model="theme" label="3">Banner Top(Pushdown)</el-radio>
                             </li>
                             <li>
                                 <el-radio v-model="theme" label="banner_left">Left</el-radio>
@@ -65,23 +62,9 @@
 
                                 <el-color-picker @active-change="(color) => {btn_clr = color}" v-model="btn_clr" size="mini" class="gdpr_btn_bg_color"></el-color-picker>
                             </div>
-                            <!-- <div class="fntSize">
-                                <p>Font Size</p>
-                                <el-input type="number" v-model="styleMsg.fontSize" min="15" max="20"></el-input>
-                            </div> -->
-
-<<<<<<< HEAD
                             <el-color-picker @active-change="(color) => {btn_clr = color}" v-model="btn_clr" size="mini" class="gdpr_btn_bg_color"></el-color-picker>
                         </div>
-                        <!-- <div class="fntSize">
-                            <p>Font Size</p>
-                            <el-input type="number" v-model="styleMsg.fontSize" min="15" max="20"></el-input>
-                        </div> -->
-=======
-                        </div>
-
->>>>>>> abc1bd8a16b77abacb1ae63a2181ca9e458e830d
-                    </el-collapse-item>
+                    </el-collapse-item>    
                     <el-collapse-item title="Custom Text" name="3">
                         <div class="cstm_text">
                             <el-row :gutter="12" class="cstm_msg">
@@ -149,7 +132,8 @@
             'policyLinkText',
             'dismissBtnText',
             'customLink',
-            'settingsObj'
+            'settingsObj',
+            'confirmationBtn'
         ],
 		data() {
 			return {
@@ -176,9 +160,7 @@
 			}
         },
 
-        created() {
-            console.log(this.settingsObj)
-        },
+        created() {},
 
         computed: {
             show_message: {
@@ -245,13 +227,7 @@
                 set(newValue) {
                     this.setCustomLink(newValue)
                 }
-            },
-            // fontSize() {
-            //     var res = this.styleMsg.fontSize;
-            //     this.styleMsg.fontSize = res;
-            //     return this.styleMsg.fontSize;
-            //     console.log(this.styleMsg.fontSize);
-            // }
+            }
         },
 
 		watch: {
@@ -266,8 +242,14 @@
                     this.styleObj.float = '';
                     this.styleObj.maxWidth = '';
                     this.styleObj.display = 'block';
+                    this.confirmationBtn.display = 'inline';
+                    this.confirmationBtn.float = 'right';
+                    this.confirmationBtn.marginTop = '10px';
+                    this.confirmationBtn.marginRight = '12px';
                     this.styleDismissBtn.display = 'inline';
-                    this.styleDismissBtn.float = 'right';
+                    this.styleDismissBtn.float = '';
+                    this.styleDismissBtn.marginTop = '0px';
+                    this.styleDismissBtn.marginRight = '0px';
 				}
 				if( this.theme == 'banner_top' ) {
                     this.styleObj.color = 'white';

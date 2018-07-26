@@ -88,12 +88,20 @@ class GdprHandler
                     
             'stylePolicy' => array (
             	'color'=> 'wheat'
-			),
+            ),
+            
+            'confirmationBtn' => array(
+                'display' => 'inline',
+                'float' => 'right',
+                'margin-top' => '10px',
+                'margin-right' => '12px'            
+            ),
                 
             'styleDismissBtn'  => array(
-                'float'		 => 'right',
-                'marginTop'	 => '9px',
-                'marginRight'=> '8px',
+                'float'		 => '',
+                'marginTop'	 => '0px',
+                'marginRight'=> '0px',
+                'marginLeft' => '10px',
                 'background' => '#152CB5',
                 'borderColor'=> '#152CB5',
                 'color' => '#fff',

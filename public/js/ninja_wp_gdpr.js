@@ -60006,6 +60006,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -60020,6 +60021,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             stylePolicy: {},
             styleDismissBtn: {},
             settings: {},
+            confirmationBtn: {},
             message: '',
             policyLinkText: '',
             dismissBtnText: '',
@@ -60034,7 +60036,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             action: 'ninja_gdpr_ajax_actions',
             route: 'get_gdprconfig'
         }).then(function (response) {
-            console.log(response.data.getGdprConfig);
+            console.log(response);
             _this.styleObj = response.data.getGdprConfig.styleObj;
             _this.styleMsg = response.data.getGdprConfig.styleMsg;
             _this.styleDismissBtn = response.data.getGdprConfig.styleDismissBtn;
@@ -60043,6 +60045,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             _this.policyLinkText = response.data.getGdprConfig.policyLinkText;
             _this.customLink = response.data.getGdprConfig.customLink;
             _this.settings = response.data.getGdprConfig.settings;
+            _this.confirmationBtn = response.data.getGdprConfig.confirmationBtn;
+            console.log(_this.confirmationBtn);
         }).always(function () {
             _this.loadGdpr = false;
         });
@@ -60057,6 +60061,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 styleMsg: this.styleMsg,
                 stylePolicy: this.stylePolicy,
                 styleDismissBtn: this.styleDismissBtn,
+                confirmationBtn: this.confirmationBtn,
                 message: this.message,
                 policyLinkText: this.policyLinkText,
                 dismissBtnText: this.dismissBtnText,
@@ -60316,26 +60321,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['styleObj', 'styleMsg', 'stylePolicy', 'styleDismissBtn', 'message', 'policyLinkText', 'dismissBtnText', 'customLink', 'settingsObj'],
+    props: ['styleObj', 'styleMsg', 'stylePolicy', 'styleDismissBtn', 'message', 'policyLinkText', 'dismissBtnText', 'customLink', 'settingsObj', 'confirmationBtn'],
     data: function data() {
         return {
             activeName: '',
@@ -60355,9 +60343,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             bool: false
         };
     },
-    created: function created() {
-        console.log(this.settingsObj);
-    },
+    created: function created() {},
 
 
     computed: {
@@ -60426,12 +60412,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.setCustomLink(newValue);
             }
         }
-        // fontSize() {
-        //     var res = this.styleMsg.fontSize;
-        //     this.styleMsg.fontSize = res;
-        //     return this.styleMsg.fontSize;
-        //     console.log(this.styleMsg.fontSize);
-        // }
     },
 
     watch: {
@@ -60445,8 +60425,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.styleObj.float = '';
                 this.styleObj.maxWidth = '';
                 this.styleObj.display = 'block';
+                this.confirmationBtn.display = 'inline';
+                this.confirmationBtn.float = 'right';
+                this.confirmationBtn.marginTop = '10px';
+                this.confirmationBtn.marginRight = '12px';
                 this.styleDismissBtn.display = 'inline';
-                this.styleDismissBtn.float = 'right';
+                this.styleDismissBtn.float = '';
+                this.styleDismissBtn.marginTop = '0px';
+                this.styleDismissBtn.marginRight = '0px';
             }
             if (this.theme == 'banner_top') {
                 this.styleObj.color = 'white';
@@ -60530,7 +60516,584 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports={render:function(){},staticRenderFns:[]}
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "wp_gdpr_all_config" }, [
+    _c("div", { staticClass: "preview" }, [
+      _c("div", { style: _vm.styleObj }, [
+        _c("p", { style: _vm.styleMsg }, [_vm._v(_vm._s(_vm.message))]),
+        _vm._v(" "),
+        _vm.bool
+          ? _c("a", { style: _vm.styleMsg, attrs: { href: "#" } }, [
+              _vm._v(_vm._s(_vm.policyLinkText))
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _c(
+          "div",
+          { style: _vm.confirmationBtn },
+          [
+            _vm.settingsObj.showDeclineBtn == true
+              ? _c("a", { staticStyle: { display: "inline", color: "#fff" } }, [
+                  _vm._v("Decline")
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _c(
+              "el-button",
+              {
+                style: _vm.styleDismissBtn,
+                attrs: { type: "primary", round: "", size: "mini" }
+              },
+              [_vm._v(_vm._s(_vm.dismissBtnText))]
+            )
+          ],
+          1
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "options" }, [
+      _c(
+        "div",
+        { staticClass: "options_customization" },
+        [
+          _c(
+            "el-collapse",
+            {
+              attrs: { accordion: "" },
+              model: {
+                value: _vm.activeName,
+                callback: function($$v) {
+                  _vm.activeName = $$v
+                },
+                expression: "activeName"
+              }
+            },
+            [
+              _c(
+                "el-collapse-item",
+                { attrs: { title: "Select Theme", name: "1" } },
+                [
+                  _c("ul", [
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "el-radio",
+                          {
+                            attrs: { label: "banner_bottom" },
+                            model: {
+                              value: _vm.theme,
+                              callback: function($$v) {
+                                _vm.theme = $$v
+                              },
+                              expression: "theme"
+                            }
+                          },
+                          [_vm._v("Banner Bottom")]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "el-radio",
+                          {
+                            attrs: { label: "banner_top" },
+                            model: {
+                              value: _vm.theme,
+                              callback: function($$v) {
+                                _vm.theme = $$v
+                              },
+                              expression: "theme"
+                            }
+                          },
+                          [_vm._v("Banner Top")]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "el-radio",
+                          {
+                            attrs: { label: "banner_left" },
+                            model: {
+                              value: _vm.theme,
+                              callback: function($$v) {
+                                _vm.theme = $$v
+                              },
+                              expression: "theme"
+                            }
+                          },
+                          [_vm._v("Left")]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "el-radio",
+                          {
+                            attrs: { label: "banner_right" },
+                            model: {
+                              value: _vm.theme,
+                              callback: function($$v) {
+                                _vm.theme = $$v
+                              },
+                              expression: "theme"
+                            }
+                          },
+                          [_vm._v("Right")]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "el-radio",
+                          {
+                            attrs: { label: "hide" },
+                            model: {
+                              value: _vm.theme,
+                              callback: function($$v) {
+                                _vm.theme = $$v
+                              },
+                              expression: "theme"
+                            }
+                          },
+                          [_vm._v("Hide")]
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "el-collapse-item",
+                { attrs: { title: "Color Customization", name: "2" } },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "color-customization" },
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "bgColorList" },
+                        [
+                          _c("p", [_vm._v("Background Color")]),
+                          _vm._v(" "),
+                          _c("el-input", {
+                            attrs: { type: "text" },
+                            model: {
+                              value: _vm.bg_color,
+                              callback: function($$v) {
+                                _vm.bg_color = $$v
+                              },
+                              expression: "bg_color"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("el-color-picker", {
+                            staticClass: "gdpr_bg_color_picker",
+                            attrs: { size: "mini" },
+                            on: {
+                              "active-change": function(color) {
+                                _vm.bg_color = color
+                              }
+                            },
+                            model: {
+                              value: _vm.bg_color,
+                              callback: function($$v) {
+                                _vm.bg_color = $$v
+                              },
+                              expression: "bg_color"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "textColorList" },
+                        [
+                          _c("p", [_vm._v("Text Color")]),
+                          _vm._v(" "),
+                          _c("el-input", {
+                            attrs: { type: "text" },
+                            model: {
+                              value: _vm.text_color,
+                              callback: function($$v) {
+                                _vm.text_color = $$v
+                              },
+                              expression: "text_color"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("el-color-picker", {
+                            staticClass: "gdpr_text_color-picker",
+                            attrs: { size: "mini" },
+                            on: {
+                              "active-change": function(color) {
+                                _vm.text_color = color
+                              }
+                            },
+                            model: {
+                              value: _vm.text_color,
+                              callback: function($$v) {
+                                _vm.text_color = $$v
+                              },
+                              expression: "text_color"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "btnbackground" },
+                        [
+                          _c("p", [_vm._v("Button Background")]),
+                          _vm._v(" "),
+                          _c("el-input", {
+                            attrs: { type: "text" },
+                            model: {
+                              value: _vm.btn_bg,
+                              callback: function($$v) {
+                                _vm.btn_bg = $$v
+                              },
+                              expression: "btn_bg"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("el-color-picker", {
+                            staticClass: "gdpr_btn_bg_color",
+                            attrs: { size: "mini" },
+                            on: {
+                              "active-change": function(color) {
+                                _vm.btn_bg = color
+                              }
+                            },
+                            model: {
+                              value: _vm.btn_bg,
+                              callback: function($$v) {
+                                _vm.btn_bg = $$v
+                              },
+                              expression: "btn_bg"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "btnColorList" },
+                        [
+                          _c("p", [_vm._v("Button Color")]),
+                          _vm._v(" "),
+                          _c("el-input", {
+                            attrs: { type: "text" },
+                            model: {
+                              value: _vm.btn_clr,
+                              callback: function($$v) {
+                                _vm.btn_clr = $$v
+                              },
+                              expression: "btn_clr"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("el-color-picker", {
+                            staticClass: "gdpr_btn_bg_color",
+                            attrs: { size: "mini" },
+                            on: {
+                              "active-change": function(color) {
+                                _vm.btn_clr = color
+                              }
+                            },
+                            model: {
+                              value: _vm.btn_clr,
+                              callback: function($$v) {
+                                _vm.btn_clr = $$v
+                              },
+                              expression: "btn_clr"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("el-color-picker", {
+                        staticClass: "gdpr_btn_bg_color",
+                        attrs: { size: "mini" },
+                        on: {
+                          "active-change": function(color) {
+                            _vm.btn_clr = color
+                          }
+                        },
+                        model: {
+                          value: _vm.btn_clr,
+                          callback: function($$v) {
+                            _vm.btn_clr = $$v
+                          },
+                          expression: "btn_clr"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "el-collapse-item",
+                { attrs: { title: "Custom Text", name: "3" } },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "cstm_text" },
+                    [
+                      _c(
+                        "el-row",
+                        { staticClass: "cstm_msg", attrs: { gutter: 12 } },
+                        [
+                          _c(
+                            "el-col",
+                            { attrs: { span: 24 } },
+                            [
+                              _c("label", [_vm._v("Message")]),
+                              _vm._v(" "),
+                              _c("el-input", {
+                                attrs: {
+                                  type: "textarea",
+                                  rows: 3,
+                                  placeholder:
+                                    "This website uses cookies to ensure you get the best experience on our website."
+                                },
+                                model: {
+                                  value: _vm.show_message,
+                                  callback: function($$v) {
+                                    _vm.show_message = $$v
+                                  },
+                                  expression: "show_message"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "el-row",
+                        { attrs: { gutter: 12 } },
+                        [
+                          _c(
+                            "el-col",
+                            { attrs: { span: 12 } },
+                            [
+                              _c("label", [_vm._v("Dismiss button text")]),
+                              _vm._v(" "),
+                              _c("el-input", {
+                                attrs: { placeholder: "Got it!" },
+                                model: {
+                                  value: _vm.getDismissBtn,
+                                  callback: function($$v) {
+                                    _vm.getDismissBtn = $$v
+                                  },
+                                  expression: "getDismissBtn"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "el-col",
+                            { attrs: { span: 12 } },
+                            [
+                              _c("label", [_vm._v("Policy link text")]),
+                              _vm._v(" "),
+                              _c("el-input", {
+                                attrs: { placeholder: "Learn More" },
+                                model: {
+                                  value: _vm.getPolicy,
+                                  callback: function($$v) {
+                                    _vm.getPolicy = $$v
+                                  },
+                                  expression: "getPolicy"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "el-collapse-item",
+                { attrs: { title: "Policy Link", name: "4" } },
+                [
+                  _c(
+                    "el-row",
+                    [
+                      _c("el-col", { attrs: { span: 24 } }, [
+                        _c(
+                          "div",
+                          { staticClass: "custom_link" },
+                          [
+                            _c("label", [_vm._v("Custom Link")]),
+                            _vm._v(" "),
+                            _c("el-input", {
+                              attrs: {
+                                type: "text",
+                                placeholder: "Custom Link"
+                              },
+                              model: {
+                                value: _vm.link,
+                                callback: function($$v) {
+                                  _vm.link = $$v
+                                },
+                                expression: "link"
+                              }
+                            })
+                          ],
+                          1
+                        )
+                      ])
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-collapse-item",
+                { attrs: { title: "Settings", name: "6" } },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "settings" },
+                    [
+                      _c(
+                        "el-row",
+                        { attrs: { gutter: 15 } },
+                        [
+                          _c(
+                            "el-col",
+                            { attrs: { span: 24 } },
+                            [
+                              _c("label", { staticClass: "settings_label" }, [
+                                _vm._v("Duration of Cookie(in days)")
+                              ]),
+                              _vm._v(" "),
+                              _c("el-input", {
+                                attrs: { type: "number" },
+                                model: {
+                                  value: _vm.settingsObj.duration,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.settingsObj, "duration", $$v)
+                                  },
+                                  expression: "settingsObj.duration"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "el-col",
+                            { attrs: { span: 24 } },
+                            [
+                              _c("label", { staticClass: "settings_label" }, [
+                                _vm._v("Delay of Cookie(in sec)")
+                              ]),
+                              _vm._v(" "),
+                              _c("el-input", {
+                                attrs: { type: "number" },
+                                model: {
+                                  value: _vm.settingsObj.delay,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.settingsObj, "delay", $$v)
+                                  },
+                                  expression: "settingsObj.delay"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "el-col",
+                            { attrs: { span: 24 } },
+                            [
+                              _c("label", { staticClass: "settings_label" }, [
+                                _vm._v("Show Decline Button")
+                              ]),
+                              _vm._v(" "),
+                              _c("el-switch", {
+                                model: {
+                                  value: _vm.settingsObj.showDeclineBtn,
+                                  callback: function($$v) {
+                                    _vm.$set(
+                                      _vm.settingsObj,
+                                      "showDeclineBtn",
+                                      $$v
+                                    )
+                                  },
+                                  expression: "settingsObj.showDeclineBtn"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ]
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
@@ -60613,7 +61176,8 @@ var render = function() {
           policyLinkText: _vm.policyLinkText,
           dismissBtnText: _vm.dismissBtnText,
           customLink: _vm.customLink,
-          settingsObj: _vm.settings
+          settingsObj: _vm.settings,
+          confirmationBtn: _vm.confirmationBtn
         },
         on: {
           showMsg: function($event) {
