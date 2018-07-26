@@ -60530,11 +60530,14 @@ var render = function() {
       _c("div", { style: _vm.styleObj }, [
         _c("p", { style: _vm.styleMsg }, [_vm._v(_vm._s(_vm.message))]),
         _vm._v(" "),
-        _vm.bool
-          ? _c("a", { style: _vm.styleMsg, attrs: { href: "#" } }, [
-              _vm._v(_vm._s(_vm.policyLinkText))
-            ])
-          : _vm._e(),
+        _c(
+          "a",
+          {
+            style: _vm.styleMsg,
+            attrs: { href: _vm.customLink, target: "_blank" }
+          },
+          [_vm._v(_vm._s(_vm.policyLinkText))]
+        ),
         _vm._v(" "),
         _c(
           "div",
@@ -60956,7 +60959,8 @@ var render = function() {
                             _c("el-input", {
                               attrs: {
                                 type: "text",
-                                placeholder: "Custom Link"
+                                placeholder:
+                                  "Custom Link(ex - https://www.google.com/)"
                               },
                               model: {
                                 value: _vm.link,
