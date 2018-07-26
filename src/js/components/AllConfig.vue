@@ -3,7 +3,7 @@
 		<div class="preview">
             <div :style="styleObj">
 				<p :style="styleMsg">{{ message }}</p>
-				<a href="#" :style="styleMsg" v-if="bool">{{ policyLinkText }}</a> 
+				<a :href="customLink" target="_blank" :style="styleMsg">{{ policyLinkText }}</a> 
                 <div :style="confirmationBtn">
                     <a style="display: inline; color: #fff" v-if="settingsObj.showDeclineBtn==true">Decline</a> 
                     <el-button type="primary" round size="mini" :style="styleDismissBtn">{{ dismissBtnText }}</el-button>
@@ -89,7 +89,7 @@
                             <el-col :span="24">
                                 <div class="custom_link">
                                     <label>Custom Link</label>
-                                    <el-input type="text" placeholder="Custom Link" v-model="link"></el-input>
+                                    <el-input type="text" placeholder="Custom Link(ex - https://www.google.com/)" v-model="link"></el-input>
                                </div>
                             </el-col>
                         </el-row>
