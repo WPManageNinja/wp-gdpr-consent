@@ -62,7 +62,6 @@
 
                                 <el-color-picker @active-change="(color) => {btn_clr = color}" v-model="btn_clr" size="mini" class="gdpr_btn_bg_color"></el-color-picker>
                             </div>
-                            <el-color-picker @active-change="(color) => {btn_clr = color}" v-model="btn_clr" size="mini" class="gdpr_btn_bg_color"></el-color-picker>
                         </div>
                     </el-collapse-item>    
                     <el-collapse-item title="Custom Text" name="3">
@@ -268,7 +267,6 @@
 				}
 				else if( this.theme == 'banner_left' ) {
                     this.styleObj.bottom = '0px';
-                    this.styleObj.margin = '';
                     this.styleObj.top = '';
                     this.styleObj.color = 'white';
                     this.styleObj.maxWidth = '24em';

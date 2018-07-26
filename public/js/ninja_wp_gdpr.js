@@ -60320,7 +60320,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['styleObj', 'styleMsg', 'stylePolicy', 'styleDismissBtn', 'message', 'policyLinkText', 'dismissBtnText', 'customLink', 'settingsObj', 'confirmationBtn'],
@@ -60450,7 +60449,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.styleObj.display = 'block';
             } else if (this.theme == 'banner_left') {
                 this.styleObj.bottom = '0px';
-                this.styleObj.margin = '';
                 this.styleObj.top = '';
                 this.styleObj.color = 'white';
                 this.styleObj.maxWidth = '24em';
@@ -60697,177 +60695,155 @@ var render = function() {
                 "el-collapse-item",
                 { attrs: { title: "Color Customization", name: "2" } },
                 [
-                  _c(
-                    "div",
-                    { staticClass: "color-customization" },
-                    [
-                      _c(
-                        "div",
-                        { staticClass: "bgColorList" },
-                        [
-                          _c("p", [_vm._v("Background Color")]),
-                          _vm._v(" "),
-                          _c("el-input", {
-                            attrs: { type: "text" },
-                            model: {
-                              value: _vm.bg_color,
-                              callback: function($$v) {
-                                _vm.bg_color = $$v
-                              },
-                              expression: "bg_color"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("el-color-picker", {
-                            staticClass: "gdpr_bg_color_picker",
-                            attrs: { size: "mini" },
-                            on: {
-                              "active-change": function(color) {
-                                _vm.bg_color = color
-                              }
+                  _c("div", { staticClass: "color-customization" }, [
+                    _c(
+                      "div",
+                      { staticClass: "bgColorList" },
+                      [
+                        _c("p", [_vm._v("Background Color")]),
+                        _vm._v(" "),
+                        _c("el-input", {
+                          attrs: { type: "text" },
+                          model: {
+                            value: _vm.bg_color,
+                            callback: function($$v) {
+                              _vm.bg_color = $$v
                             },
-                            model: {
-                              value: _vm.bg_color,
-                              callback: function($$v) {
-                                _vm.bg_color = $$v
-                              },
-                              expression: "bg_color"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "textColorList" },
-                        [
-                          _c("p", [_vm._v("Text Color")]),
-                          _vm._v(" "),
-                          _c("el-input", {
-                            attrs: { type: "text" },
-                            model: {
-                              value: _vm.text_color,
-                              callback: function($$v) {
-                                _vm.text_color = $$v
-                              },
-                              expression: "text_color"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("el-color-picker", {
-                            staticClass: "gdpr_text_color-picker",
-                            attrs: { size: "mini" },
-                            on: {
-                              "active-change": function(color) {
-                                _vm.text_color = color
-                              }
-                            },
-                            model: {
-                              value: _vm.text_color,
-                              callback: function($$v) {
-                                _vm.text_color = $$v
-                              },
-                              expression: "text_color"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "btnbackground" },
-                        [
-                          _c("p", [_vm._v("Button Background")]),
-                          _vm._v(" "),
-                          _c("el-input", {
-                            attrs: { type: "text" },
-                            model: {
-                              value: _vm.btn_bg,
-                              callback: function($$v) {
-                                _vm.btn_bg = $$v
-                              },
-                              expression: "btn_bg"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("el-color-picker", {
-                            staticClass: "gdpr_btn_bg_color",
-                            attrs: { size: "mini" },
-                            on: {
-                              "active-change": function(color) {
-                                _vm.btn_bg = color
-                              }
-                            },
-                            model: {
-                              value: _vm.btn_bg,
-                              callback: function($$v) {
-                                _vm.btn_bg = $$v
-                              },
-                              expression: "btn_bg"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "btnColorList" },
-                        [
-                          _c("p", [_vm._v("Button Color")]),
-                          _vm._v(" "),
-                          _c("el-input", {
-                            attrs: { type: "text" },
-                            model: {
-                              value: _vm.btn_clr,
-                              callback: function($$v) {
-                                _vm.btn_clr = $$v
-                              },
-                              expression: "btn_clr"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("el-color-picker", {
-                            staticClass: "gdpr_btn_bg_color",
-                            attrs: { size: "mini" },
-                            on: {
-                              "active-change": function(color) {
-                                _vm.btn_clr = color
-                              }
-                            },
-                            model: {
-                              value: _vm.btn_clr,
-                              callback: function($$v) {
-                                _vm.btn_clr = $$v
-                              },
-                              expression: "btn_clr"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("el-color-picker", {
-                        staticClass: "gdpr_btn_bg_color",
-                        attrs: { size: "mini" },
-                        on: {
-                          "active-change": function(color) {
-                            _vm.btn_clr = color
+                            expression: "bg_color"
                           }
-                        },
-                        model: {
-                          value: _vm.btn_clr,
-                          callback: function($$v) {
-                            _vm.btn_clr = $$v
+                        }),
+                        _vm._v(" "),
+                        _c("el-color-picker", {
+                          staticClass: "gdpr_bg_color_picker",
+                          attrs: { size: "mini" },
+                          on: {
+                            "active-change": function(color) {
+                              _vm.bg_color = color
+                            }
                           },
-                          expression: "btn_clr"
-                        }
-                      })
-                    ],
-                    1
-                  )
+                          model: {
+                            value: _vm.bg_color,
+                            callback: function($$v) {
+                              _vm.bg_color = $$v
+                            },
+                            expression: "bg_color"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "textColorList" },
+                      [
+                        _c("p", [_vm._v("Text Color")]),
+                        _vm._v(" "),
+                        _c("el-input", {
+                          attrs: { type: "text" },
+                          model: {
+                            value: _vm.text_color,
+                            callback: function($$v) {
+                              _vm.text_color = $$v
+                            },
+                            expression: "text_color"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("el-color-picker", {
+                          staticClass: "gdpr_text_color-picker",
+                          attrs: { size: "mini" },
+                          on: {
+                            "active-change": function(color) {
+                              _vm.text_color = color
+                            }
+                          },
+                          model: {
+                            value: _vm.text_color,
+                            callback: function($$v) {
+                              _vm.text_color = $$v
+                            },
+                            expression: "text_color"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "btnbackground" },
+                      [
+                        _c("p", [_vm._v("Button Background")]),
+                        _vm._v(" "),
+                        _c("el-input", {
+                          attrs: { type: "text" },
+                          model: {
+                            value: _vm.btn_bg,
+                            callback: function($$v) {
+                              _vm.btn_bg = $$v
+                            },
+                            expression: "btn_bg"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("el-color-picker", {
+                          staticClass: "gdpr_btn_bg_color",
+                          attrs: { size: "mini" },
+                          on: {
+                            "active-change": function(color) {
+                              _vm.btn_bg = color
+                            }
+                          },
+                          model: {
+                            value: _vm.btn_bg,
+                            callback: function($$v) {
+                              _vm.btn_bg = $$v
+                            },
+                            expression: "btn_bg"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "btnColorList" },
+                      [
+                        _c("p", [_vm._v("Button Color")]),
+                        _vm._v(" "),
+                        _c("el-input", {
+                          attrs: { type: "text" },
+                          model: {
+                            value: _vm.btn_clr,
+                            callback: function($$v) {
+                              _vm.btn_clr = $$v
+                            },
+                            expression: "btn_clr"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("el-color-picker", {
+                          staticClass: "gdpr_btn_bg_color",
+                          attrs: { size: "mini" },
+                          on: {
+                            "active-change": function(color) {
+                              _vm.btn_clr = color
+                            }
+                          },
+                          model: {
+                            value: _vm.btn_clr,
+                            callback: function($$v) {
+                              _vm.btn_clr = $$v
+                            },
+                            expression: "btn_clr"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ])
                 ]
               ),
               _vm._v(" "),
