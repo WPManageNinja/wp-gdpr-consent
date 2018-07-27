@@ -242,6 +242,7 @@
                     this.styleObj.maxWidth = '';
                     this.styleObj.display = 'block';
                     this.styleObj.borderRadius = '';
+                    this.styleObj.selectedBanner = 'banner_bottom';
                     this.confirmationBtn.display = 'inline';
                     this.confirmationBtn.float = 'right';
                     this.confirmationBtn.marginTop = '10px';
@@ -264,6 +265,8 @@
                     this.styleObj.borderRadius = '0px';
                     this.styleObj.float = '';
                     this.styleObj.display = 'block';
+
+                    this.styleObj.selectedBanner = 'banner_top';
 				}
 				else if( this.theme == 'banner_left' ) {
                     this.styleObj.bottom = '0px';
@@ -271,11 +274,14 @@
                     this.styleObj.color = 'white';
                     this.styleObj.maxWidth = '24em';
                     this.styleObj.padding = '3em';
+                    this.styleObj.float = 'left';
                     this.styleObj.marginTop = '276px';
                     this.styleObj.marginLeft = '15px'; 
                     this.styleObj.borderRadius = '10px';
                     this.styleObj.float = '';
                     this.styleObj.display = 'block';
+
+                    this.styleObj.selectedBanner = 'banner_left';
 				}
 				else if( this.theme == 'banner_right' ) {
                     this.styleObj.bottom = '0px';
@@ -290,6 +296,8 @@
                     this.styleObj.marginLeft = '0px';
                     this.styleObj.right = '9px';
                     this.styleObj.display = 'block';
+
+                    this.styleObj.selectedBanner = 'banner_right';
                 }
                 else if( this.theme == 'hide' ) {
                     this.styleObj.display = 'none';
@@ -304,6 +312,8 @@
                     this.styleObj.marginTop = '0px';
                     this.styleObj.marginLeft = '0px';
                     this.styleObj.right = '0px';
+
+                    this.styleObj.selectedBanner = 'hide';
                 }
 			}
         },
