@@ -36,11 +36,80 @@ class GdprHandler
 
 	public static function gdprConfigVars()
 	{	
-		$gdprConfigData = get_option('_gdpr_option_consent', false);
+		
 		wp_enqueue_script('wp_gdpr_user_display', WP_GDPR_PLUGIN_DIR_URL.'public/js/wp_gdpr_user_display.js', array('jquery'), WP_GDPR_PLUGIN_DIR_VERSION, true );
-		wp_localize_script('wp_gdpr_user_display', 'getGdprConfig_vars',  $gdprConfigData) ;
-		return "<div id='wp_gdpr_userDisplay'></div>";
+		$ConfigDatas = get_option('_gdpr_option_consent', false);
+
+	// styleObj
+		$background 	= $ConfigDatas['styleObj']['background'];
+		$bottom 		= $ConfigDatas['styleObj']['bottom'];
+		$color 			= $ConfigDatas['styleObj']['color'];
+		$position		= $ConfigDatas['styleObj']['position'];
+		$width 			= $ConfigDatas['styleObj']['width'];
+		$top 			= $ConfigDatas['styleObj']['top'];
+		$margin 		= $ConfigDatas['styleObj']['margin'];
+		$padding		= $ConfigDatas['styleObj']['padding'];
+		$left 			= $ConfigDatas['styleObj']['left'];
+		$right 			= $ConfigDatas['styleObj']['right'];
+		$borderRadius 	= $ConfigDatas['styleObj']['borderRadius'];
+		$maxWidth 		= $ConfigDatas['styleObj']['maxWidth'];
+		$marginTop 		= $ConfigDatas['styleObj']['marginTop'];
+		$marginLeft 	= $ConfigDatas['styleObj']['marginLeft'];
+		$float 		    = $ConfigDatas['styleObj']['float'];
+		$display 		= $ConfigDatas['styleObj']['display'];
+
+		// styleMsg
+		$padding_msg = $ConfigDatas['styleMsg']['padding'];
+		$margin_msg = $ConfigDatas['styleMsg']['margin'];
+		$display_msg = $ConfigDatas['styleMsg']['display'];
+		$color_msg = $ConfigDatas['styleMsg']['color'];
+		$fontSize_msg = $ConfigDatas['styleMsg']['fontSize'];
+
+		// Confirmation BTN 
+		$display_conf = $ConfigDatas['confirmationBtn']['display'];
+		$float_conf = $ConfigDatas['confirmationBtn']['float'];
+		$marginTop_conf = $ConfigDatas['confirmationBtn']['margin-top'];
+		$marginRight_conf = $ConfigDatas['confirmationBtn']['margin-right'];
+
+			
+			
+				echo "<div style=' background:".$background."; bottom:".$bottom."; color:".$color."; position:".$position.";
+				 width:".$width.";   top:".$top.";   margin:".$margin.";   padding:".$padding.";  left:".$left.";  right:".$right."; 
+				  borderRadius:".$borderRadius.";   maxWidth:".$maxWidth.";   marginTop:".$marginTop.";   marginLeft:".$marginLeft."; 
+				    float:".$float.";   display:".$display.";  '".  ">
+							<p style='padding:" .$padding_msg. "; margin:".$margin_msg."; display:".$display_msg."; color:" .$color_msg."; font-size:" .$fontSize_msg."'>" .$ConfigDatas['message'] . "</p>
+							<p style='padding:" .$padding_msg. "; margin:".$margin_msg."; display:".$display_msg."; color:" .$color_msg."; font-size:" .$fontSize_msg."'> " . $ConfigDatas['policyLinkText']. "</p>
+							<div style=' display:" .$display_conf."; float:" .$float_conf."; margin-top:" .$marginTop_conf."; margin-right:" .$marginRight_conf.";'>
+						    <p> " . $ConfigDatas['dismissBtnText']. "</p>
+						    </div>
+
+					</div>";
+			
+			
+		
+
+		
+
+
+
+		// echo '<div style="margin-top:-100px; background-color:red">
+		// 		<p style="">hi ruhel khan</p> 
+		// 			<a href="" target="_blank" style="">Learn More</a>
+		// 			<div style="">
+		// 				<a style="">Decline</a> 
+		// 				<button type="button" class="" style="">
+		// 					<span>Got it!</span>
+		// 				</button>
+		// 			</div>
+		// 	</div>
+
+
+		// ';
+
 	}
+
+
+
 
 
 	/**
