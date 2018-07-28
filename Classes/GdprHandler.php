@@ -41,40 +41,28 @@ class GdprHandler
         
         $ConfigDatas = get_option('_gdpr_option_consent', false);
         
-    // styleObj
+    	// styleObj
     
 		$background 	= $ConfigDatas['styleObj']['background'];
 		$color 			= $ConfigDatas['styleObj']['color'];
-		$padding		= $ConfigDatas['styleObj']['padding'];
-        $left 			= $ConfigDatas['styleObj']['left'];
-        $float 		    = $ConfigDatas['styleObj']['float'];
-		$right 			= $ConfigDatas['styleObj']['right'];
-		$borderRadius 	= $ConfigDatas['styleObj']['borderRadius'];
-		$maxWidth 		= $ConfigDatas['styleObj']['maxWidth'];
-		$marginTop_db 	= $ConfigDatas['styleObj']['marginTop'];
-		$marginLeft 	= $ConfigDatas['styleObj']['marginLeft'];
-		$float_db 		= $ConfigDatas['styleObj']['float'];
-        $display 		= $ConfigDatas['styleObj']['display'];
-        $selected_obj   = $ConfigDatas['styleObj']['selectedBanner'];
-        $link 			= $ConfigDatas['customLink'];
-       
-        // styleMsg
-		 $color_msg 	= $ConfigDatas['styleMsg']['color'];
+		$selected_obj   = $ConfigDatas['styleObj']['selectedBanner'];
+		$link 			= $ConfigDatas['customLink'];
+		
+		// styleMsg
+		$color_msg 	= $ConfigDatas['styleMsg']['color'];
 
 		// styleDismissBtn
-		 $dismissBtnBg 		= $ConfigDatas['styleDismissBtn']['background'];
-		 $dismissBtnColor 	= $ConfigDatas['styleDismissBtn']['color'];
-
+		$dismissBtnBg 		= $ConfigDatas['styleDismissBtn']['background'];
+		$dismissBtnColor 	= $ConfigDatas['styleDismissBtn']['color'];
 		// settings
 		$showDeclineBtn 	= $ConfigDatas['settings']['showDeclineBtn'];
-		
 		$delay				= $ConfigDatas['settings']['delay'];
 
 
 
         if( $selected_obj == 'banner_top'){
             
-            echo "<div style='position:fixed; top:0px; width:100%; background:".$background."; color:".$color."; z-index: 99999; padding: 10px;'>
+            echo "<div style='position:fixed; top:0px; width:100%; background:".$background."; color:".$color."; z-index: 9999999999; padding: 10px;'>
             		<p style='margin-left: 20px; display: inline; position: relative; top: 8px; color:".$color_msg.";'>" .$ConfigDatas['message'] . "</p>
                     <a href='".$link."' target='_blank' style='margin-left:7px; display: inline; position: relative; top:7px; color:". $color_msg.";'>" . $ConfigDatas['policyLinkText']. "</a>
                     	<div style='display:inline; float:right; margin-right:20px'> 
