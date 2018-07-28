@@ -35,9 +35,7 @@ class NINJAWPGDPR
 	public function commonHooks()
 	{
 		add_action('wp_enqueue_scripts', array($this, 'enqueueScripts') );
-
 		add_action('wp_footer', array('WP_GDPR\Classes\GdprHandler','gdprConfigVars'));
-
 	}
 	
 	public function adminHooks()

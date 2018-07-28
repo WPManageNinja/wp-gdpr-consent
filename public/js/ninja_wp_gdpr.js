@@ -60538,12 +60538,20 @@ var render = function() {
   return _c("div", { staticClass: "wp_gdpr_all_config" }, [
     _c("div", { staticClass: "preview" }, [
       _c("div", { style: _vm.styleObj }, [
-        _c("p", { style: _vm.styleMsg }, [_vm._v(_vm._s(_vm.message))]),
+        _c("p", { staticStyle: { "font-size": "16px" }, style: _vm.styleMsg }, [
+          _vm._v(_vm._s(_vm.message))
+        ]),
         _vm._v(" "),
         _c(
           "a",
           {
-            style: _vm.styleMsg,
+            staticStyle: {
+              color: "#A2A1A1",
+              "padding-left": "15px",
+              margin: "0px",
+              display: "inline-block",
+              "font-size": "16px"
+            },
             attrs: { href: _vm.customLink, target: "_blank" }
           },
           [_vm._v(_vm._s(_vm.policyLinkText))]

@@ -2,8 +2,8 @@
 	<div class="wp_gdpr_all_config">
 		<div class="preview">
             <div :style="styleObj">
-				<p :style="styleMsg">{{ message }}</p>
-				<a :href="customLink" target="_blank" :style="styleMsg">{{ policyLinkText }}</a> 
+				<p :style="styleMsg" style="font-size: 16px;">{{ message }}</p>
+				<a :href="customLink" target="_blank" style="color:#A2A1A1; padding-left:15px; margin:0px; display:inline-block; font-size:16px">{{ policyLinkText }}</a> 
                 <div :style="confirmationBtn">
                     <a style="display: inline; color: #fff" v-if="settingsObj.showDeclineBtn==true">Decline</a> 
                     <el-button type="primary" round size="mini" :style="styleDismissBtn">{{ dismissBtnText }}</el-button>

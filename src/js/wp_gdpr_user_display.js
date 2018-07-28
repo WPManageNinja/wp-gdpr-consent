@@ -8,6 +8,10 @@ var banner_left = document.getElementById('wpgdpr_banner_left');
 
 var permission = getCookie("wp_gdpr_permission");
 
+var delay = gpd_settings_vars.delay * 1000;
+var duration = gpd_settings_vars.duration;
+
+
 if ( permission != "") {
 
     if( banner_top ) {
@@ -29,7 +33,7 @@ if ( permission != "") {
 
         gdprAcptBtn[i].addEventListener("click", function() {
             val = "Accepted";
-            setCookie("wp_gdpr_permission", val, 30);
+            setCookie("wp_gdpr_permission", val, duration);
         })
 
     }
@@ -38,7 +42,7 @@ if ( permission != "") {
 
         gdprDecBtn[i].addEventListener("click", function() {
             val = "Declined";
-            setCookie("wp_gdpr_permission", val, 30);
+            setCookie("wp_gdpr_permission", val, duration);
         })
 
     }
@@ -103,4 +107,20 @@ for( var i = 0; i < gdprAcptBtn.length; i++ ) {
         }
     });
 };
+
+
+setTimeout(() => {
+    if( banner_top ) {
+            banner_top.remove();
+    }
+    else if( banner_bottom ) {
+        banner_bottom.remove();
+    }
+    else if( banner_right ) {
+        banner_right.remove();
+    }
+    else if( banner_left ) {
+        banner_left.remove();
+    }
+}, delay)
 
