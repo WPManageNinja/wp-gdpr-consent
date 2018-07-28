@@ -2,11 +2,16 @@
 
 class GdprHandler
 {
-	
+	public $config;
+
 	public static function handleAjaxCalls()
 	{
 		$route = sanitize_text_field( $_REQUEST['route'] );
 		
+		if( $_COOKIE['wp_gdpr_permission'] != '' ) {
+			return;
+		}
+
 		if($route == 'update_config'){
 			$gdpr_Con = wp_unslash($_REQUEST['gdprConfig']); 
 			$gdprConfig = json_decode(trim(stripslashes($gdpr_Con)), true);
@@ -16,9 +21,6 @@ class GdprHandler
 		if( $route == 'get_gdprconfig' ){
 			static::get_gdpr('ajax');
 		}
-
-
-		
 	}
 
 	/**
@@ -40,7 +42,7 @@ class GdprHandler
 		wp_enqueue_script('wp_gdpr_user_display', WP_GDPR_PLUGIN_DIR_URL.'public/js/wp_gdpr_user_display.js', array('jquery'), WP_GDPR_PLUGIN_DIR_VERSION, true );
         
         $ConfigDatas = get_option('_gdpr_option_consent', false);
-        
+    
     	// styleObj
     
 		$background 	= $ConfigDatas['styleObj']['background'];
@@ -56,83 +58,66 @@ class GdprHandler
 		$dismissBtnColor 	= $ConfigDatas['styleDismissBtn']['color'];
 		// settings
 		$showDeclineBtn 	= $ConfigDatas['settings']['showDeclineBtn'];
+		$duration 			= $ConfigDatas['settings']['duration'];
 		$delay				= $ConfigDatas['settings']['delay'];
 
+		$script = static::getScript( $ConfigDatas );
+
+		add_action('wp_footer', function() use ($script) {
+			echo $script;
+		});
 
 
-        if( $selected_obj == 'banner_top'){
-            
-            echo "<div style='position:fixed; top:0px; width:100%; background:".$background."; color:".$color."; z-index: 9999999999; padding: 10px;'>
-            		<p style='margin-left: 20px; display: inline; position: relative; top: 8px; color:".$color_msg.";'>" .$ConfigDatas['message'] . "</p>
-                    <a href='".$link."' target='_blank' style='margin-left:7px; display: inline; position: relative; top:7px; color:". $color_msg.";'>" . $ConfigDatas['policyLinkText']. "</a>
-                    	<div style='display:inline; float:right; margin-right:20px'> 
-                        	<span style='margin-right:15px; position: relative; top: 10px;'> 
-                        		<a href='#' style='font-size:17px; color:#fff;'> ".($showDeclineBtn == true ? "Decline" : " ")." </a>
-                        	</span>
-							<span style='position: relative; float: right; background-color:".$dismissBtnBg."; padding:10px; margin-right: 10px;'>
-		                        <a href='#' style='font-size:17px; color:".$dismissBtnColor.";'>" . $ConfigDatas['dismissBtnText']. "</a>
-		                    </span>
-	                    </div>
+        if( $selected_obj == 'banner_top' && $_COOKIE['wp_gdpr_permission'] == '' ){
+			
+			include(WP_GDPR_PLUGIN_DIR_PATH.'views/banner_top.php');
+			die();
+
+        }
+
+		elseif( $selected_obj == 'banner_bottom' && $_COOKIE['wp_gdpr_permission'] == '') {
+			
+			include(WP_GDPR_PLUGIN_DIR_PATH.'views/banner_bottom.php');
+
+		}
+
+
+		elseif( $selected_obj == 'banner_right' && $_COOKIE['wp_gdpr_permission'] == '' ) {
+
+			echo "<div style='border-radius:10px; position:fixed; width: 25%; padding: 27px; bottom: 17px; right: 12px; background:".$background."; color:".$color."; z-index: 99999; margin-right: 9px;' id='wpgdpr_banner_right'>
+					<p style='position: relative; top: 15px; color:".$color_msg.";'>" .$ConfigDatas['message'] . "</p>
+					<a href='".$link."' target='_blank' style='display: inline; position: relative; font-size: 14px; color: #C5C5C5'>" . $ConfigDatas['policyLinkText']. "</a>
+					<div style='display:inline; float:right; '> 
+						<span style='margin-right:15px; position: relative; top: 10px;'> 
+							<a href='#' style='font-size:17px; color:#fff;' class='gdprDecBtn'> ".($showDeclineBtn == true ? "Decline" : " ")." </a>
+						</span>
+						<a href='#' style='font-size:17px; color:".$dismissBtnColor.";' class='gdprAcptBtn'>
+							<span style='position: relative; float: right; background-color:".$dismissBtnBg."; padding:10px;'>
+								". $ConfigDatas['dismissBtnText']." 
+							</span>
+						</a>
+					</div>
 				</div>";
+		}
 
-           }
+		elseif( $selected_obj == 'banner_left' && $_COOKIE['wp_gdpr_permission'] == '' ) {
 
-           elseif( $selected_obj == 'banner_bottom') {
-
-                echo "<div style='position:fixed; bottom:0px; width:100%; background:".$background."; color:".$color."; z-index: 99999; padding: 10px;'>
-                        <p style='margin-left: 20px; display: inline; position: relative; top: 12px; color:".$color_msg.";'>" .$ConfigDatas['message'] . "</p>
-                        <a href='".$link."' target='_blank' style='display: inline; position: relative; top: 12px; margin-left:8px; color:". $color_msg.";'>" . $ConfigDatas['policyLinkText']. "</a>
-                        <div style='display:inline; float:right; margin-right:20px'> 
-                        	<span style='margin-right:15px; position: relative; top: 10px;'> 
-                        		<a href='#' style='font-size:17px; color:#fff;'> ".($showDeclineBtn == true ? "Decline" : " ")." </a>
-                        	</span>
-							<span style='position: relative; float: right; background-color:".$dismissBtnBg."; padding:10px; margin-right: 10px;'>
-		                        <a href='#' style='font-size:17px; color:".$dismissBtnColor.";'>" . $ConfigDatas['dismissBtnText']. "</a>
-		                    </span>
-	                    </div>
-					</div>";
-
-           }
-
-
-           elseif( $selected_obj == 'banner_right' ) {
-
-            echo "<div style='border-radius:10px; position:fixed; width: 25%; padding: 27px; bottom: 17px; right: 12px; background:".$background."; color:".$color."; z-index: 99999; margin-right: 9px;'>
-                    <p style='position: relative; top: 15px; color:".$color_msg.";'>" .$ConfigDatas['message'] . "</p>
-                    <a href='".$link."' target='_blank' style='display: inline; position: relative; color:". $color_msg.";'>" . $ConfigDatas['policyLinkText']. "</a>
-                    <div style='display:inline; float:right; '> 
-                    	<span style='margin-right:15px; position: relative; top: 10px;'> 
-                    		<a href='#' style='font-size:17px; color:#fff;'> ".($showDeclineBtn == true ? "Decline" : " ")." </a>
-                    	</span>
-						<span style='position: relative; float: right; background-color:".$dismissBtnBg."; padding:10px;'>
-	                        <a href='#' style='font-size:17px; color:".$dismissBtnColor.";'>" . $ConfigDatas['dismissBtnText']. "</a>
-	                    </span>
-                    </div>
+			echo "<div style='border-radius:10px; position:fixed; width: 25%; padding: 27px; bottom: 17px; background:".$background."; color:".$color."; z-index: 99999; margin-left: 20px;' id='wpgdpr_banner_left'>
+					<p style='position: relative; top: 15px; color:".$color_msg.";'>" .$ConfigDatas['message'] . "</p>
+					<a href='".$link."' target='_blank' style='display: inline; position: relative; color:". $color_msg.";'>" . $ConfigDatas['policyLinkText']. "</a>
+					<div style='display:inline; float:right; '> 
+						<span style='margin-right:15px; position: relative; top: 10px;'> 
+							<a href='#' style='font-size:17px; color:#fff;' class='gdprDecBtn'> ".($showDeclineBtn == true ? "Decline" : " ")." </a>
+						</span>
+						<a href='#' style='font-size:17px; color:".$dismissBtnColor.";' class='gdprAcptBtn'>
+							<span style='position: relative; float: right; background-color:".$dismissBtnBg."; padding:10px;'>
+								". $ConfigDatas['dismissBtnText']." 
+							</span>
+						</a>
+					</div>
 				</div>";
-			}
-
-           elseif( $selected_obj == 'banner_left' ) {
-
-            echo "<div style='border-radius:10px; position:fixed; width: 25%; padding: 27px; bottom: 17px; background:".$background."; color:".$color."; z-index: 99999; margin-left: 20px;'>
-                    <p style='position: relative; top: 15px; color:".$color_msg.";'>" .$ConfigDatas['message'] . "</p>
-                    <a href='".$link."' target='_blank' style='display: inline; position: relative; color:". $color_msg.";'>" . $ConfigDatas['policyLinkText']. "</a>
-                    <div style='display:inline; float:right; '> 
-                    	<span style='margin-right:15px; position: relative; top: 10px;'> 
-                    		<a href='#' style='font-size:17px; color:#fff;'> ".($showDeclineBtn == true ? "Decline" : " ")." </a>
-                    	</span>
-						<span style='position: relative; float: right; background-color:".$dismissBtnBg."; padding:10px;'>
-	                        <a href='#' style='font-size:17px; color:".$dismissBtnColor.";'>" . $ConfigDatas['dismissBtnText']. "</a>
-	                    </span>
-                    </div>
-				</div>";
-			}
-
-
+		}
 	}
-
-
-
-
 
 	/**
      *  Data Update when update button click..
@@ -185,8 +170,7 @@ class GdprHandler
 				'padding'	=> '15px',
                 'margin'	=> '0',
                 'display'	=> 'inline-block',
-                'color'		=> '#fff',
-                'fontSize'	=> '10px'
+                'color'		=> '#fff'
 			),
                     
             'stylePolicy' => array (
@@ -225,6 +209,26 @@ class GdprHandler
 		);
 
 	}
+
+	public function getScript($config)
+	{
+	
+		ob_start();
+
+		?>
+
+			<script type="text/javascript">
+				var config = "<?php print_r($config); ?>";
+				console.log(config)
+			</script>
+
+
+		<?php
+		return ob_get_clean();
+		
+	}
+
+
 
 
 }
