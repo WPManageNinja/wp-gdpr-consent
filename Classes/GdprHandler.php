@@ -51,87 +51,94 @@ class GdprHandler
 		$right 			= $ConfigDatas['styleObj']['right'];
 		$borderRadius 	= $ConfigDatas['styleObj']['borderRadius'];
 		$maxWidth 		= $ConfigDatas['styleObj']['maxWidth'];
-		$marginTop_db 		= $ConfigDatas['styleObj']['marginTop'];
+		$marginTop_db 	= $ConfigDatas['styleObj']['marginTop'];
 		$marginLeft 	= $ConfigDatas['styleObj']['marginLeft'];
-		$float_db 		    = $ConfigDatas['styleObj']['float'];
+		$float_db 		= $ConfigDatas['styleObj']['float'];
         $display 		= $ConfigDatas['styleObj']['display'];
-        $selected_obj = $ConfigDatas['styleObj']['selectedBanner'];
-        $delay = $ConfigDatas['settings']['delay'];
+        $selected_obj   = $ConfigDatas['styleObj']['selectedBanner'];
+        $link 			= $ConfigDatas['customLink'];
+       
         // styleMsg
-		 $color_msg = $ConfigDatas['styleMsg']['color'];
+		 $color_msg 	= $ConfigDatas['styleMsg']['color'];
+
+		// styleDismissBtn
+		 $dismissBtnBg 		= $ConfigDatas['styleDismissBtn']['background'];
+		 $dismissBtnColor 	= $ConfigDatas['styleDismissBtn']['color'];
+
+		// settings
+		$showDeclineBtn 	= $ConfigDatas['settings']['showDeclineBtn'];
+		
+		$delay				= $ConfigDatas['settings']['delay'];
+
+
 
         if( $selected_obj == 'banner_top'){
             
-            echo "<div style='position:fixed; top:0px; width:100%; background:".$background."; color:".$color."; z-index: 99999'>
-                    
-                            <p style='display: inline; position: relative; top: 15px; color:".$color_msg.";'>" .$ConfigDatas['message'] . "</p>
-                            
-                            <p style='display: inline; position: relative; top: 15px;color:". $color_msg.";'>" . $ConfigDatas['policyLinkText']. "</p>
-                            
-                            <div style='display: inline; position: relative; top: -5px; float: right'>
-                            
-                                <button>" . $ConfigDatas['dismissBtnText']. "</button>
-                            
-						    </di>
-
-                    </div>";
+            echo "<div style='position:fixed; top:0px; width:100%; background:".$background."; color:".$color."; z-index: 99999; padding: 10px;'>
+            		<p style='margin-left: 20px; display: inline; position: relative; top: 8px; color:".$color_msg.";'>" .$ConfigDatas['message'] . "</p>
+                    <a href='".$link."' target='_blank' style='margin-left:7px; display: inline; position: relative; top:7px; color:". $color_msg.";'>" . $ConfigDatas['policyLinkText']. "</a>
+                    	<div style='display:inline; float:right; margin-right:20px'> 
+                        	<span style='margin-right:15px; position: relative; top: 10px;'> 
+                        		<a href='#' style='font-size:17px; color:#fff;'> ".($showDeclineBtn == true ? "Decline" : " ")." </a>
+                        	</span>
+							<span style='position: relative; float: right; background-color:".$dismissBtnBg."; padding:10px; margin-right: 10px;'>
+		                        <a href='#' style='font-size:17px; color:".$dismissBtnColor.";'>" . $ConfigDatas['dismissBtnText']. "</a>
+		                    </span>
+	                    </div>
+				</div>";
 
            }
 
            elseif( $selected_obj == 'banner_bottom') {
 
-                echo "<div style='position:fixed; bottom:0px; width:100%; background:".$background."; color:".$color."; z-index: 99999'>
-                        
-                        <p style='display: inline; position: relative; top: 15px; color:".$color_msg.";'>" .$ConfigDatas['message'] . "</p>
-                        
-                        <p style='display: inline; position: relative; top: 15px;color:". $color_msg.";'>" . $ConfigDatas['policyLinkText']. "</p>
-                        
-                        <div style='display: inline; position: relative; top: -5px; float: right'>
-                        
-                            <button>" . $ConfigDatas['dismissBtnText']. "</button>
-                        
-                        </di>
-
-                </div>";
+                echo "<div style='position:fixed; bottom:0px; width:100%; background:".$background."; color:".$color."; z-index: 99999; padding: 10px;'>
+                        <p style='margin-left: 20px; display: inline; position: relative; top: 12px; color:".$color_msg.";'>" .$ConfigDatas['message'] . "</p>
+                        <a href='".$link."' target='_blank' style='display: inline; position: relative; top: 12px; margin-left:8px; color:". $color_msg.";'>" . $ConfigDatas['policyLinkText']. "</a>
+                        <div style='display:inline; float:right; margin-right:20px'> 
+                        	<span style='margin-right:15px; position: relative; top: 10px;'> 
+                        		<a href='#' style='font-size:17px; color:#fff;'> ".($showDeclineBtn == true ? "Decline" : " ")." </a>
+                        	</span>
+							<span style='position: relative; float: right; background-color:".$dismissBtnBg."; padding:10px; margin-right: 10px;'>
+		                        <a href='#' style='font-size:17px; color:".$dismissBtnColor.";'>" . $ConfigDatas['dismissBtnText']. "</a>
+		                    </span>
+	                    </div>
+					</div>";
 
            }
 
 
            elseif( $selected_obj == 'banner_right' ) {
 
-            echo "<div style='position:fixed; width: 25%; padding: 27px; bottom: 17px; right: 12px; background:".$background."; color:".$color."; z-index: 99999'>
-                        
-                    <p style='display: inline; position: relative; top: 15px; color:".$color_msg.";'>" .$ConfigDatas['message'] . "</p>
-                    
-                    <p style='display: inline; position: relative; top: 15px;color:". $color_msg.";'>" . $ConfigDatas['policyLinkText']. "</p>
-                    
-                    <div style='display: inline; position: relative; top: -5px; float: right'>
-                    
-                        <button>" . $ConfigDatas['dismissBtnText']. "</button>
-                    
-                    </di>
-
-            </div>";
-
-           }
+            echo "<div style='border-radius:10px; position:fixed; width: 25%; padding: 27px; bottom: 17px; right: 12px; background:".$background."; color:".$color."; z-index: 99999; margin-right: 9px;'>
+                    <p style='position: relative; top: 15px; color:".$color_msg.";'>" .$ConfigDatas['message'] . "</p>
+                    <a href='".$link."' target='_blank' style='display: inline; position: relative; color:". $color_msg.";'>" . $ConfigDatas['policyLinkText']. "</a>
+                    <div style='display:inline; float:right; '> 
+                    	<span style='margin-right:15px; position: relative; top: 10px;'> 
+                    		<a href='#' style='font-size:17px; color:#fff;'> ".($showDeclineBtn == true ? "Decline" : " ")." </a>
+                    	</span>
+						<span style='position: relative; float: right; background-color:".$dismissBtnBg."; padding:10px;'>
+	                        <a href='#' style='font-size:17px; color:".$dismissBtnColor.";'>" . $ConfigDatas['dismissBtnText']. "</a>
+	                    </span>
+                    </div>
+				</div>";
+			}
 
            elseif( $selected_obj == 'banner_left' ) {
 
-            echo "<div style='position:fixed; width: 25%; padding: 27px; bottom: 17px; background:".$background."; color:".$color."; z-index: 99999;'>
-                        
-                    <p style='display: inline; position: relative; top: 15px; color:".$color_msg.";'>" .$ConfigDatas['message'] . "</p>
-                    
-                    <p style='display: inline; position: relative; top: 15px;color:". $color_msg.";'>" . $ConfigDatas['policyLinkText']. "</p>
-                    
-                    <div style='display: inline; position: relative; top: -5px; float: right'>
-                    
-                        <button>" . $ConfigDatas['dismissBtnText']. "</button>
-                    
-                    </di>
+            echo "<div style='border-radius:10px; position:fixed; width: 25%; padding: 27px; bottom: 17px; background:".$background."; color:".$color."; z-index: 99999; margin-left: 20px;'>
+                    <p style='position: relative; top: 15px; color:".$color_msg.";'>" .$ConfigDatas['message'] . "</p>
+                    <a href='".$link."' target='_blank' style='display: inline; position: relative; color:". $color_msg.";'>" . $ConfigDatas['policyLinkText']. "</a>
+                    <div style='display:inline; float:right; '> 
+                    	<span style='margin-right:15px; position: relative; top: 10px;'> 
+                    		<a href='#' style='font-size:17px; color:#fff;'> ".($showDeclineBtn == true ? "Decline" : " ")." </a>
+                    	</span>
+						<span style='position: relative; float: right; background-color:".$dismissBtnBg."; padding:10px;'>
+	                        <a href='#' style='font-size:17px; color:".$dismissBtnColor.";'>" . $ConfigDatas['dismissBtnText']. "</a>
+	                    </span>
+                    </div>
+				</div>";
+			}
 
-            </div>";
-
-           }
 
 	}
 
@@ -230,9 +237,6 @@ class GdprHandler
 		);
 
 	}
-
-
-
 
 
 }
