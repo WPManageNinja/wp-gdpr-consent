@@ -61300,7 +61300,7 @@ var render = function() {
                   "el-button",
                   {
                     style: _vm.styleDismissBtn,
-                    attrs: { type: "primary", round: "", size: "mini" }
+                    attrs: { type: "primary", size: "mini" }
                   },
                   [_vm._v(_vm._s(_vm.dismissBtnText))]
                 )
