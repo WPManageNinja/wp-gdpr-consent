@@ -61290,9 +61290,17 @@ var render = function() {
           { style: _vm.confirmationBtn },
           [
             _vm.settingsObj.showDeclineBtn == true
-              ? _c("a", { staticStyle: { display: "inline", color: "#fff" } }, [
-                  _vm._v("Decline")
-                ])
+              ? _c(
+                  "a",
+                  {
+                    staticStyle: {
+                      display: "inline",
+                      color: "#fff",
+                      cursor: "pointer"
+                    }
+                  },
+                  [_vm._v("Decline")]
+                )
               : _vm._e(),
             _vm._v(" "),
             _vm.dismissBtnText

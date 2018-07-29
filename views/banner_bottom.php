@@ -4,9 +4,9 @@ echo"<div style='position:fixed; bottom:0px; width:100%; background:".$backgroun
     ".($link ? "<a href='".$link."' target='_blank' style='display:inline; position:relative; top:12px; font-size:16px; color:#A2A1A1; margin-left:8px; '>". $ConfigDatas['policyLinkText']. "</a>" : " ")."
    <div style='display:inline; float:right; margin-right:20px'> 
         <span style='margin-right:15px; position: relative; top: 10px;'> 
-            <a href='#' style='font-size:17px; color:#fff;' class='gdprDecBtn'> ".($showDeclineBtn == true ? "Decline" : " ")." </a>
+            <a style='font-size:17px; color:#fff; cursor: pointer;' class='gdprDecBtn'> ".($showDeclineBtn == true ? "Decline" : " ")." </a>
         </span>
-        <a href='#' style='font-size:17px; color:".$dismissBtnColor.";' class='gdprAcptBtn'>
+        <a style='font-size:17px; color:".$dismissBtnColor."; cursor: pointer;' class='gdprAcptBtn'>
             <span style='position: relative; float: right; background-color:".$dismissBtnBg."; padding:10px; margin-right: 10px;'>
                 ".$ConfigDatas['dismissBtnText']."
             </span>

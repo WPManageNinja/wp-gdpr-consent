@@ -7,7 +7,7 @@
                     <a v-else-if="!validateLink && !show_message">{{ policyLinkText }}</a>
                 </p>
                 <div :style="confirmationBtn">
-                    <a style="display: inline; color: #fff" v-if="settingsObj.showDeclineBtn==true">Decline</a> 
+                    <a style="display: inline; color: #fff; cursor: pointer;" v-if="settingsObj.showDeclineBtn==true">Decline</a> 
                     <el-button type="primary" round size="mini" :style="styleDismissBtn" v-if="dismissBtnText">{{ dismissBtnText }}</el-button>
                 </div>
 			</div>
