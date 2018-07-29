@@ -347,6 +347,7 @@
                     this.confirmationBtn.marginTop = '10px';
                 }
                 else if( this.styleObj.selectedBanner == 'hide' ) {
+                    this.styleObj.display = 'none';
                     this.styleObj.selectedBanner = 'hide';
                 }
 			}

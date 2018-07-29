@@ -60539,6 +60539,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.styleObj.selectedBanner = 'banner_right';
                 this.confirmationBtn.marginTop = '10px';
             } else if (this.styleObj.selectedBanner == 'hide') {
+                this.styleObj.display = 'none';
                 this.styleObj.selectedBanner = 'hide';
             }
         }
