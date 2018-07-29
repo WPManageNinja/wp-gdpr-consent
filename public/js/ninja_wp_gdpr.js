@@ -61292,14 +61292,16 @@ var render = function() {
                 ])
               : _vm._e(),
             _vm._v(" "),
-            _c(
-              "el-button",
-              {
-                style: _vm.styleDismissBtn,
-                attrs: { type: "primary", round: "", size: "mini" }
-              },
-              [_vm._v(_vm._s(_vm.dismissBtnText))]
-            )
+            _vm.dismissBtnText
+              ? _c(
+                  "el-button",
+                  {
+                    style: _vm.styleDismissBtn,
+                    attrs: { type: "primary", round: "", size: "mini" }
+                  },
+                  [_vm._v(_vm._s(_vm.dismissBtnText))]
+                )
+              : _vm._e()
           ],
           1
         )
