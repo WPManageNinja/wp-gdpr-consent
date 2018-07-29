@@ -142,7 +142,6 @@
         },
 		data() {
 			return {
-
                 radio_options: [
                     {
                         label:'Banner Bottom',
@@ -261,7 +260,7 @@
 		watch: { 
 			'styleObj.selectedBanner'() {
 				if( this.styleObj.selectedBanner == 'banner_bottom' ) {
-                    // styling the root div
+                    // styling the root div of GDPR Concent
                     this.styleObj.position = 'absolute';
                     this.styleObj.color = 'white';
                     this.styleObj.width = '100%';
@@ -275,17 +274,21 @@
                     this.styleObj.selectedBanner = 'banner_bottom';
 
 
-
+                    // styling the confirmation button of GDPR Concent
                     this.confirmationBtn.display = 'inline';
                     this.confirmationBtn.float = 'right';
                     this.confirmationBtn.marginTop = '10px';
                     this.confirmationBtn.marginRight = '12px';
+                    this.confirmationBtn.marginTop = '13px';
+
+                    // styling the dismiss button of GDPR Concent
                     this.styleDismissBtn.display = 'inline';
                     this.styleDismissBtn.float = '';
                     this.styleDismissBtn.marginTop = '0px';
                     this.styleDismissBtn.marginRight = '0px';
-                    this.confirmationBtn.marginTop = '13px';
+                    
 
+                    // styling the message of GDPR Concent
                     this.styleMsg.padding = '15px';
 				}
 				if( this.styleObj.selectedBanner == 'banner_top' ) {
@@ -300,6 +303,8 @@
                     this.styleObj.display = 'inline-block';
                     this.styleObj.right = '0px';
                     this.styleObj.left = '0px';
+
+
                     this.confirmationBtn.marginTop = '13px';
 
                     this.styleMsg.padding = '15px';

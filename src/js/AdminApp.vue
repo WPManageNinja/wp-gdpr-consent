@@ -83,8 +83,8 @@
                     .always(() => {})
             },
             updateGDPR() {
-                let regexp = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gi;
-                this.customLink = this.customLink.match(regexp) ? this.customLink : "";
+                let regexp = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gi; 
+                this.customLink = this.customLink.match(regexp) ? this.customLink : ""; // Using the regular expression to check if it is a valid url or not
                 let allGdprObj = {
                     styleObj: this.styleObj,
                     styleMsg: this.styleMsg,

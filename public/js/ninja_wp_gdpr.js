@@ -60036,7 +60036,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this2 = this;
 
             var regexp = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gi;
-            this.customLink = this.customLink.match(regexp) ? this.customLink : "";
+            this.customLink = this.customLink.match(regexp) ? this.customLink : ""; // Using the regular expression to check if it is a valid url or not
             var allGdprObj = {
                 styleObj: this.styleObj,
                 styleMsg: this.styleMsg,
@@ -60318,7 +60318,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
-
             radio_options: [{
                 label: 'Banner Bottom',
                 value: 'banner_bottom'
@@ -60425,7 +60424,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     watch: {
         'styleObj.selectedBanner': function styleObjSelectedBanner() {
             if (this.styleObj.selectedBanner == 'banner_bottom') {
-                // styling the root div
+                // styling the root div of GDPR Concent
                 this.styleObj.position = 'absolute';
                 this.styleObj.color = 'white';
                 this.styleObj.width = '100%';
@@ -60438,16 +60437,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.styleObj.left = '0px';
                 this.styleObj.selectedBanner = 'banner_bottom';
 
+                // styling the confirmation button of GDPR Concent
                 this.confirmationBtn.display = 'inline';
                 this.confirmationBtn.float = 'right';
                 this.confirmationBtn.marginTop = '10px';
                 this.confirmationBtn.marginRight = '12px';
+                this.confirmationBtn.marginTop = '13px';
+
+                // styling the dismiss button of GDPR Concent
                 this.styleDismissBtn.display = 'inline';
                 this.styleDismissBtn.float = '';
                 this.styleDismissBtn.marginTop = '0px';
                 this.styleDismissBtn.marginRight = '0px';
-                this.confirmationBtn.marginTop = '13px';
 
+                // styling the message of GDPR Concent
                 this.styleMsg.padding = '15px';
             }
             if (this.styleObj.selectedBanner == 'banner_top') {
@@ -60462,6 +60465,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.styleObj.display = 'inline-block';
                 this.styleObj.right = '0px';
                 this.styleObj.left = '0px';
+
                 this.confirmationBtn.marginTop = '13px';
 
                 this.styleMsg.padding = '15px';
