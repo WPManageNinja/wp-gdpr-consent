@@ -39,17 +39,16 @@
         },
         data() {
             return {
+                message: '',
+                settings: {},
                 styleObj: {},
                 styleMsg: {},
+                customLink: '',
                 stylePolicy: {},
                 styleDismissBtn: {},
-                settings: {},
                 confirmationBtn: {},
-                message: '',
 				policyLinkText: '',
-                dismissBtnText: '',
-                customLink: '',
-                loadGdpr: false
+                dismissBtnText: ''
             }
         },
         created() {
@@ -81,10 +80,7 @@
                     .fail(error=>{
                         console.log(error.data.response);
                     })
-                    .always(() => {
-                            this.loadGdpr = false;
-                        }
-                    )
+                    .always(() => {})
             },
             updateGDPR() {
                 let regexp = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gi;
