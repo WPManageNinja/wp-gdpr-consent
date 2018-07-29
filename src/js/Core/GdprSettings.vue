@@ -6,7 +6,7 @@
             <el-input v-model="setting.duration" type="number"></el-input>
         </el-col>
         <el-col :span="24">
-            <label class="settings_label">Delay of Cookie(in sec)</label>
+            <label class="settings_label">Hide GDP Concent(after <span v-if="setting.delay==''">0</span><span v-else>{{setting.delay}}</span> sec)</label>
             <el-input v-model="setting.delay" type="number"></el-input>
         </el-col>
         <el-col :span="24">

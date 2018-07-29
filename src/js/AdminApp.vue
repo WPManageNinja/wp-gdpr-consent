@@ -6,10 +6,7 @@
 					<h1>WP GDPR CONSENT</h1>
 				</el-col>
 				<el-col :span="4">
-					<el-button class="common_btn" type="success" @click="updateGDPR">Update</el-button>
-					<a style="color: #fff; text-decoration: none;">
-						<el-button class="common_btn" type="primary">Preview</el-button>
-					</a>
+					<el-button class="common_btn" type="success" @click="updateGDPR" size="small">Update</el-button>
 				</el-col>
 			</el-col>
 		</el-row>
@@ -70,8 +67,6 @@
                 jQuery.get(ajaxurl,data)
                     .then(
                         response => {
-                            console.log(response.data);
-
                             this.styleObj = response.data.getGdprConfig.styleObj;
                             this.styleMsg = response.data.getGdprConfig.styleMsg;
                             this.styleDismissBtn = response.data.getGdprConfig.styleDismissBtn;
@@ -94,7 +89,6 @@
             updateGDPR() {
                 let regexp = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gi;
                 this.customLink = this.customLink.match(regexp) ? this.customLink : "";
-                console.log(this.customLink);
                 let allGdprObj = {
                     styleObj: this.styleObj,
                     styleMsg: this.styleMsg,
@@ -153,10 +147,19 @@
 		    padding-bottom: 10px;
 		    background: #fff;
 		    margin-top: -20px;
-		    padding-top: 22px;
+		    padding-top: 20px;
 		    margin-right: -20px;
 		    margin-left: -20px;
 		    padding-left: 24px;
+
+            .el-col {
+                .el-button--small {
+                    float: right;
+                    position: relative;
+                    right: 19px;
+                    top: 6px;
+                }
+            }
 		}
 
 		.common_btn {

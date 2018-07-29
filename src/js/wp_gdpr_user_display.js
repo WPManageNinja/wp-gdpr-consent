@@ -32,7 +32,7 @@ if ( permission != "") {
     for(var i = 0; i < gdprAcptBtn.length; i++) {
 
         gdprAcptBtn[i].addEventListener("click", function() {
-            val = "Accepted";
+            val = "accepted";
             setCookie("wp_gdpr_permission", val, duration);
         })
 
@@ -41,7 +41,7 @@ if ( permission != "") {
     for(var i = 0; i < gdprDecBtn.length; i++) {
 
         gdprDecBtn[i].addEventListener("click", function() {
-            val = "Declined";
+            val = "declined";
             setCookie("wp_gdpr_permission", val, duration);
         })
 

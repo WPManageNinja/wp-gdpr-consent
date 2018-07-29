@@ -7,7 +7,8 @@
             size="mini" 
             v-model="model" 
             @active-change="activeChangedEvent"
-            class="gdpr_bg_color_picker"></el-color-picker>
+            class="gdpr_bg_color_picker"
+            show-alpha></el-color-picker>
 
     </div>
 </template>

@@ -59916,7 +59916,7 @@ exports = module.exports = __webpack_require__(7)(false);
 
 
 // module
-exports.push([module.i, "\n@font-face {\n  font-family: element-icons;\n  src: url(" + escape(__webpack_require__(170)) + ") format(\"woff\"), url(" + escape(__webpack_require__(171)) + ") format(\"truetype\");\n  font-weight: 400;\n  font-style: normal;\n}\n[class*=\" el-icon-\"], [class^=el-icon-] {\n  font-family: element-icons !important;\n  speak: none;\n  font-style: normal;\n  font-weight: 400;\n  font-variant: normal;\n  text-transform: none;\n  line-height: 1;\n  vertical-align: baseline;\n  display: inline-block;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.el-icon-info:before {\n  content: \"\\E61A\";\n}\n.el-icon-error:before {\n  content: \"\\E62C\";\n}\n.el-icon-success:before {\n  content: \"\\E62D\";\n}\n.el-icon-warning:before {\n  content: \"\\E62E\";\n}\n.el-icon-question:before {\n  content: \"\\E634\";\n}\n.el-icon-back:before {\n  content: \"\\E606\";\n}\n.el-icon-arrow-left:before {\n  content: \"\\E600\";\n}\n.el-icon-arrow-down:before {\n  content: \"\\E603\";\n}\n.el-icon-arrow-right:before {\n  content: \"\\E604\";\n}\n.el-icon-arrow-up:before {\n  content: \"\\E605\";\n}\n.el-icon-caret-left:before {\n  content: \"\\E60A\";\n}\n.el-icon-caret-bottom:before {\n  content: \"\\E60B\";\n}\n.el-icon-caret-top:before {\n  content: \"\\E60C\";\n}\n.el-icon-caret-right:before {\n  content: \"\\E60E\";\n}\n.el-icon-d-arrow-left:before {\n  content: \"\\E610\";\n}\n.el-icon-d-arrow-right:before {\n  content: \"\\E613\";\n}\n.el-icon-minus:before {\n  content: \"\\E621\";\n}\n.el-icon-plus:before {\n  content: \"\\E62B\";\n}\n.el-icon-remove:before {\n  content: \"\\E635\";\n}\n.el-icon-circle-plus:before {\n  content: \"\\E601\";\n}\n.el-icon-remove-outline:before {\n  content: \"\\E63C\";\n}\n.el-icon-circle-plus-outline:before {\n  content: \"\\E602\";\n}\n.el-icon-close:before {\n  content: \"\\E60F\";\n}\n.el-icon-check:before {\n  content: \"\\E611\";\n}\n.el-icon-circle-close:before {\n  content: \"\\E607\";\n}\n.el-icon-circle-check:before {\n  content: \"\\E639\";\n}\n.el-icon-circle-close-outline:before {\n  content: \"\\E609\";\n}\n.el-icon-circle-check-outline:before {\n  content: \"\\E63E\";\n}\n.el-icon-zoom-out:before {\n  content: \"\\E645\";\n}\n.el-icon-zoom-in:before {\n  content: \"\\E641\";\n}\n.el-icon-d-caret:before {\n  content: \"\\E615\";\n}\n.el-icon-sort:before {\n  content: \"\\E640\";\n}\n.el-icon-sort-down:before {\n  content: \"\\E630\";\n}\n.el-icon-sort-up:before {\n  content: \"\\E631\";\n}\n.el-icon-tickets:before {\n  content: \"\\E63F\";\n}\n.el-icon-document:before {\n  content: \"\\E614\";\n}\n.el-icon-goods:before {\n  content: \"\\E618\";\n}\n.el-icon-sold-out:before {\n  content: \"\\E63B\";\n}\n.el-icon-news:before {\n  content: \"\\E625\";\n}\n.el-icon-message:before {\n  content: \"\\E61B\";\n}\n.el-icon-date:before {\n  content: \"\\E608\";\n}\n.el-icon-printer:before {\n  content: \"\\E62F\";\n}\n.el-icon-time:before {\n  content: \"\\E642\";\n}\n.el-icon-bell:before {\n  content: \"\\E622\";\n}\n.el-icon-mobile-phone:before {\n  content: \"\\E624\";\n}\n.el-icon-service:before {\n  content: \"\\E63A\";\n}\n.el-icon-view:before {\n  content: \"\\E643\";\n}\n.el-icon-menu:before {\n  content: \"\\E620\";\n}\n.el-icon-more:before {\n  content: \"\\E646\";\n}\n.el-icon-more-outline:before {\n  content: \"\\E626\";\n}\n.el-icon-star-on:before {\n  content: \"\\E637\";\n}\n.el-icon-star-off:before {\n  content: \"\\E63D\";\n}\n.el-icon-location:before {\n  content: \"\\E61D\";\n}\n.el-icon-location-outline:before {\n  content: \"\\E61F\";\n}\n.el-icon-phone:before {\n  content: \"\\E627\";\n}\n.el-icon-phone-outline:before {\n  content: \"\\E628\";\n}\n.el-icon-picture:before {\n  content: \"\\E629\";\n}\n.el-icon-picture-outline:before {\n  content: \"\\E62A\";\n}\n.el-icon-delete:before {\n  content: \"\\E612\";\n}\n.el-icon-search:before {\n  content: \"\\E619\";\n}\n.el-icon-edit:before {\n  content: \"\\E61C\";\n}\n.el-icon-edit-outline:before {\n  content: \"\\E616\";\n}\n.el-icon-rank:before {\n  content: \"\\E632\";\n}\n.el-icon-refresh:before {\n  content: \"\\E633\";\n}\n.el-icon-share:before {\n  content: \"\\E636\";\n}\n.el-icon-setting:before {\n  content: \"\\E638\";\n}\n.el-icon-upload:before {\n  content: \"\\E60D\";\n}\n.el-icon-upload2:before {\n  content: \"\\E644\";\n}\n.el-icon-download:before {\n  content: \"\\E617\";\n}\n.el-icon-loading:before {\n  content: \"\\E61E\";\n}\n.el-icon-loading {\n  -webkit-animation: rotating 2s linear infinite;\n  animation: rotating 2s linear infinite;\n}\n.el-icon--right {\n  margin-left: 5px;\n}\n.el-icon--left {\n  margin-right: 5px;\n}\n@-webkit-keyframes rotating {\n0% {\n    -webkit-transform: rotateZ(0);\n    transform: rotateZ(0);\n}\n100% {\n    -webkit-transform: rotateZ(360deg);\n    transform: rotateZ(360deg);\n}\n}\n@keyframes rotating {\n0% {\n    -webkit-transform: rotateZ(0);\n    transform: rotateZ(0);\n}\n100% {\n    -webkit-transform: rotateZ(360deg);\n    transform: rotateZ(360deg);\n}\n}\n.wp_gdpr_root_component .header {\n  font-size: 20px;\n  padding-bottom: 10px;\n  background: #fff;\n  margin-top: -20px;\n  padding-top: 22px;\n  margin-right: -20px;\n  margin-left: -20px;\n  padding-left: 24px;\n}\n.wp_gdpr_root_component .common_btn {\n  margin: 0 !important;\n}\n", ""]);
+exports.push([module.i, "\n@font-face {\n  font-family: element-icons;\n  src: url(" + escape(__webpack_require__(170)) + ") format(\"woff\"), url(" + escape(__webpack_require__(171)) + ") format(\"truetype\");\n  font-weight: 400;\n  font-style: normal;\n}\n[class*=\" el-icon-\"], [class^=el-icon-] {\n  font-family: element-icons !important;\n  speak: none;\n  font-style: normal;\n  font-weight: 400;\n  font-variant: normal;\n  text-transform: none;\n  line-height: 1;\n  vertical-align: baseline;\n  display: inline-block;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.el-icon-info:before {\n  content: \"\\E61A\";\n}\n.el-icon-error:before {\n  content: \"\\E62C\";\n}\n.el-icon-success:before {\n  content: \"\\E62D\";\n}\n.el-icon-warning:before {\n  content: \"\\E62E\";\n}\n.el-icon-question:before {\n  content: \"\\E634\";\n}\n.el-icon-back:before {\n  content: \"\\E606\";\n}\n.el-icon-arrow-left:before {\n  content: \"\\E600\";\n}\n.el-icon-arrow-down:before {\n  content: \"\\E603\";\n}\n.el-icon-arrow-right:before {\n  content: \"\\E604\";\n}\n.el-icon-arrow-up:before {\n  content: \"\\E605\";\n}\n.el-icon-caret-left:before {\n  content: \"\\E60A\";\n}\n.el-icon-caret-bottom:before {\n  content: \"\\E60B\";\n}\n.el-icon-caret-top:before {\n  content: \"\\E60C\";\n}\n.el-icon-caret-right:before {\n  content: \"\\E60E\";\n}\n.el-icon-d-arrow-left:before {\n  content: \"\\E610\";\n}\n.el-icon-d-arrow-right:before {\n  content: \"\\E613\";\n}\n.el-icon-minus:before {\n  content: \"\\E621\";\n}\n.el-icon-plus:before {\n  content: \"\\E62B\";\n}\n.el-icon-remove:before {\n  content: \"\\E635\";\n}\n.el-icon-circle-plus:before {\n  content: \"\\E601\";\n}\n.el-icon-remove-outline:before {\n  content: \"\\E63C\";\n}\n.el-icon-circle-plus-outline:before {\n  content: \"\\E602\";\n}\n.el-icon-close:before {\n  content: \"\\E60F\";\n}\n.el-icon-check:before {\n  content: \"\\E611\";\n}\n.el-icon-circle-close:before {\n  content: \"\\E607\";\n}\n.el-icon-circle-check:before {\n  content: \"\\E639\";\n}\n.el-icon-circle-close-outline:before {\n  content: \"\\E609\";\n}\n.el-icon-circle-check-outline:before {\n  content: \"\\E63E\";\n}\n.el-icon-zoom-out:before {\n  content: \"\\E645\";\n}\n.el-icon-zoom-in:before {\n  content: \"\\E641\";\n}\n.el-icon-d-caret:before {\n  content: \"\\E615\";\n}\n.el-icon-sort:before {\n  content: \"\\E640\";\n}\n.el-icon-sort-down:before {\n  content: \"\\E630\";\n}\n.el-icon-sort-up:before {\n  content: \"\\E631\";\n}\n.el-icon-tickets:before {\n  content: \"\\E63F\";\n}\n.el-icon-document:before {\n  content: \"\\E614\";\n}\n.el-icon-goods:before {\n  content: \"\\E618\";\n}\n.el-icon-sold-out:before {\n  content: \"\\E63B\";\n}\n.el-icon-news:before {\n  content: \"\\E625\";\n}\n.el-icon-message:before {\n  content: \"\\E61B\";\n}\n.el-icon-date:before {\n  content: \"\\E608\";\n}\n.el-icon-printer:before {\n  content: \"\\E62F\";\n}\n.el-icon-time:before {\n  content: \"\\E642\";\n}\n.el-icon-bell:before {\n  content: \"\\E622\";\n}\n.el-icon-mobile-phone:before {\n  content: \"\\E624\";\n}\n.el-icon-service:before {\n  content: \"\\E63A\";\n}\n.el-icon-view:before {\n  content: \"\\E643\";\n}\n.el-icon-menu:before {\n  content: \"\\E620\";\n}\n.el-icon-more:before {\n  content: \"\\E646\";\n}\n.el-icon-more-outline:before {\n  content: \"\\E626\";\n}\n.el-icon-star-on:before {\n  content: \"\\E637\";\n}\n.el-icon-star-off:before {\n  content: \"\\E63D\";\n}\n.el-icon-location:before {\n  content: \"\\E61D\";\n}\n.el-icon-location-outline:before {\n  content: \"\\E61F\";\n}\n.el-icon-phone:before {\n  content: \"\\E627\";\n}\n.el-icon-phone-outline:before {\n  content: \"\\E628\";\n}\n.el-icon-picture:before {\n  content: \"\\E629\";\n}\n.el-icon-picture-outline:before {\n  content: \"\\E62A\";\n}\n.el-icon-delete:before {\n  content: \"\\E612\";\n}\n.el-icon-search:before {\n  content: \"\\E619\";\n}\n.el-icon-edit:before {\n  content: \"\\E61C\";\n}\n.el-icon-edit-outline:before {\n  content: \"\\E616\";\n}\n.el-icon-rank:before {\n  content: \"\\E632\";\n}\n.el-icon-refresh:before {\n  content: \"\\E633\";\n}\n.el-icon-share:before {\n  content: \"\\E636\";\n}\n.el-icon-setting:before {\n  content: \"\\E638\";\n}\n.el-icon-upload:before {\n  content: \"\\E60D\";\n}\n.el-icon-upload2:before {\n  content: \"\\E644\";\n}\n.el-icon-download:before {\n  content: \"\\E617\";\n}\n.el-icon-loading:before {\n  content: \"\\E61E\";\n}\n.el-icon-loading {\n  -webkit-animation: rotating 2s linear infinite;\n  animation: rotating 2s linear infinite;\n}\n.el-icon--right {\n  margin-left: 5px;\n}\n.el-icon--left {\n  margin-right: 5px;\n}\n@-webkit-keyframes rotating {\n0% {\n    -webkit-transform: rotateZ(0);\n    transform: rotateZ(0);\n}\n100% {\n    -webkit-transform: rotateZ(360deg);\n    transform: rotateZ(360deg);\n}\n}\n@keyframes rotating {\n0% {\n    -webkit-transform: rotateZ(0);\n    transform: rotateZ(0);\n}\n100% {\n    -webkit-transform: rotateZ(360deg);\n    transform: rotateZ(360deg);\n}\n}\n.wp_gdpr_root_component .header {\n  font-size: 20px;\n  padding-bottom: 10px;\n  background: #fff;\n  margin-top: -20px;\n  padding-top: 20px;\n  margin-right: -20px;\n  margin-left: -20px;\n  padding-left: 24px;\n}\n.wp_gdpr_root_component .header .el-col .el-button--small {\n    float: right;\n    position: relative;\n    right: 19px;\n    top: 6px;\n}\n.wp_gdpr_root_component .common_btn {\n  margin: 0 !important;\n}\n", ""]);
 
 // exports
 
@@ -60006,9 +60006,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -60045,8 +60042,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             };
 
             jQuery.get(ajaxurl, data).then(function (response) {
-                console.log(response.data);
-
                 _this.styleObj = response.data.getGdprConfig.styleObj;
                 _this.styleMsg = response.data.getGdprConfig.styleMsg;
                 _this.styleDismissBtn = response.data.getGdprConfig.styleDismissBtn;
@@ -60067,7 +60062,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             var regexp = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gi;
             this.customLink = this.customLink.match(regexp) ? this.customLink : "";
-            console.log(this.customLink);
             var allGdprObj = {
                 styleObj: this.styleObj,
                 styleMsg: this.styleMsg,
@@ -60386,13 +60380,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
     computed: {
-        validateLink: function validateLink() {
-            var regexp = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gi;
-            var check = this.customLink.match(regexp);
-            console.log(check);
-            return !!check ? this.customLink : '';
-        },
-
         show_message: {
             get: function get() {
                 return this.message;
@@ -60880,7 +60867,11 @@ var render = function() {
         { attrs: { span: 24 } },
         [
           _c("label", { staticClass: "settings_label" }, [
-            _vm._v("Delay of Cookie(in sec)")
+            _vm._v("Hide GDP Concent(after "),
+            _vm.setting.delay == ""
+              ? _c("span", [_vm._v("0")])
+              : _c("span", [_vm._v(_vm._s(_vm.setting.delay))]),
+            _vm._v(" sec)")
           ]),
           _vm._v(" "),
           _c("el-input", {
@@ -61166,7 +61157,7 @@ exports = module.exports = __webpack_require__(7)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -61177,6 +61168,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -61239,7 +61231,7 @@ var render = function() {
       _vm._v(" "),
       _c("el-color-picker", {
         staticClass: "gdpr_bg_color_picker",
-        attrs: { size: "mini" },
+        attrs: { size: "mini", "show-alpha": "" },
         on: { "active-change": _vm.activeChangedEvent },
         model: {
           value: _vm.model,
@@ -61276,11 +61268,11 @@ var render = function() {
       _c("div", { style: _vm.styleObj }, [
         _c("p", { staticStyle: { "font-size": "16px" }, style: _vm.styleMsg }, [
           _vm._v(_vm._s(_vm.message) + "\n                    "),
-          _vm.validateLink && _vm.show_message
-            ? _c("a", { attrs: { href: _vm.validateLink, target: "_blank" } }, [
+          _vm.link && _vm.show_message
+            ? _c("a", { attrs: { href: _vm.link, target: "_blank" } }, [
                 _c("span", [_vm._v(_vm._s(_vm.policyLinkText))])
               ])
-            : !_vm.validateLink && !_vm.show_message
+            : !_vm.link && !_vm.show_message
               ? _c("a", [_vm._v(_vm._s(_vm.policyLinkText))])
               : _vm._e()
         ]),
@@ -61605,28 +61597,10 @@ var render = function() {
                     "el-button",
                     {
                       staticClass: "common_btn",
-                      attrs: { type: "success" },
+                      attrs: { type: "success", size: "small" },
                       on: { click: _vm.updateGDPR }
                     },
                     [_vm._v("Update")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticStyle: { color: "#fff", "text-decoration": "none" }
-                    },
-                    [
-                      _c(
-                        "el-button",
-                        {
-                          staticClass: "common_btn",
-                          attrs: { type: "primary" }
-                        },
-                        [_vm._v("Preview")]
-                      )
-                    ],
-                    1
                   )
                 ],
                 1
