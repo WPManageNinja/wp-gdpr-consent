@@ -194,6 +194,7 @@
             validateLink() {
                 let regexp = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gi;
                 let check = this.customLink.match(regexp);
+                console.log(check)
                 return !!check ? this.customLink : '';
             },
             show_message: {

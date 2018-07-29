@@ -60388,6 +60388,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         validateLink: function validateLink() {
             var regexp = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gi;
             var check = this.customLink.match(regexp);
+            console.log(check);
             return !!check ? this.customLink : '';
         },
 
