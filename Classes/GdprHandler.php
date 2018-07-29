@@ -8,10 +8,6 @@ class GdprHandler
 	{
 		$route = sanitize_text_field( $_REQUEST['route'] );
 		
-		if( $_COOKIE['wp_gdpr_permission'] != '' ) {
-			return;
-		}
-
 		if($route == 'update_config'){
 			$gdpr_Con = wp_unslash($_REQUEST['gdprConfig']); 
 			$gdprConfig = json_decode(trim(stripslashes($gdpr_Con)), true);
