@@ -261,16 +261,21 @@
 		watch: { 
 			'styleObj.selectedBanner'() {
 				if( this.styleObj.selectedBanner == 'banner_bottom' ) {
+                    // styling the root div
+                    this.styleObj.position = 'absolute';
                     this.styleObj.color = 'white';
                     this.styleObj.width = '100%';
-                    this.styleObj.margin = '0px';
                     this.styleObj.padding = '0px';
-                    this.styleObj.marginTop = '401px';
-                    this.styleObj.float = '';
-                    this.styleObj.maxWidth = '';
                     this.styleObj.display = 'inline-block';
-                    this.styleObj.borderRadius = '';
+                    this.styleObj.borderRadius = '0px';
+                    this.styleObj.top = '';
+                    this.styleObj.bottom = 0;
+                    this.styleObj.right = '0px';
+                    this.styleObj.left = '0px';
                     this.styleObj.selectedBanner = 'banner_bottom';
+
+
+
                     this.confirmationBtn.display = 'inline';
                     this.confirmationBtn.float = 'right';
                     this.confirmationBtn.marginTop = '10px';
@@ -284,18 +289,17 @@
                     this.styleMsg.padding = '15px';
 				}
 				if( this.styleObj.selectedBanner == 'banner_top' ) {
+                    this.styleObj.position = 'absolute';
                     this.styleObj.color = 'white';
                     this.styleObj.width = '100%';
                     this.styleObj.margin = '0px';
                     this.styleObj.padding = '0px';
                     this.styleObj.top = '0px';
-                    this.styleObj.maxWidth = '';
-                    this.styleObj.marginTop = '0px';
-                    this.styleObj.marginLeft = '0px';
-                    this.styleObj.marginRight = '0px'
+                    this.styleObj.bottom = '';
                     this.styleObj.borderRadius = '0px';
-                    this.styleObj.float = '';
                     this.styleObj.display = 'inline-block';
+                    this.styleObj.right = '0px';
+                    this.styleObj.left = '0px';
                     this.confirmationBtn.marginTop = '13px';
 
                     this.styleMsg.padding = '15px';
@@ -303,19 +307,17 @@
                     this.styleObj.selectedBanner = 'banner_top';
 				}
 				else if( this.styleObj.selectedBanner == 'banner_left' ) {
-                    this.styleObj.bottom = '0px';
+
+                    this.styleObj.position = 'absolute';
+                    this.styleObj.bottom = '15px';
                     this.styleObj.top = '';
+                    this.styleObj.left = '15px';
                     this.styleObj.color = 'white';
-                    this.styleObj.maxWidth = '24em';
+                    this.styleObj.width = '24em';
                     this.styleObj.padding = '3em';
-                    this.styleObj.float = 'left';
-                    this.styleObj.marginTop = '276px';
-                    this.styleObj.marginLeft = '15px'; 
-                    this.styleObj.marginRight = '0px';
-                    this.styleObj.marginBottom = '0px';
                     this.styleObj.borderRadius = '10px';
-                    this.styleObj.float = '';
                     this.styleObj.display = 'inline-block';
+                    
                     this.confirmationBtn.marginTop = '10px';
 
                     this.styleMsg.padding = '';
@@ -323,17 +325,15 @@
                     this.styleObj.selectedBanner = 'banner_left';
 				}
 				else if( this.styleObj.selectedBanner == 'banner_right' ) {
-                    this.styleObj.bottom = '0px';
+                    this.styleObj.position = 'absolute';
+                    this.styleObj.bottom = '15px';
                     this.styleObj.color = 'white';
-                    this.styleObj.maxWidth = '24em';
+                    this.styleObj.width = '24em';
                     this.styleObj.padding = '3em';
-                    this.styleObj.float = 'right';
-                    this.styleObj.marginRight = '15px';
                     this.styleObj.borderRadius = '10px';
                     this.styleObj.top = '';
-                    this.styleObj.marginTop = '276px';
-                    this.styleObj.marginLeft = '0px';
-                    this.styleObj.right = '9px';
+                    this.styleObj.right = '15px';
+                    this.styleObj.left = '';
                     this.styleObj.display = 'inline-block';
 
                     this.styleMsg.padding = '';
@@ -388,6 +388,7 @@
 			min-height: 450px;
 			float: left;
 			background: #fff;
+            position: relative;
             
             .el-button {
                 letter-spacing: 2px;

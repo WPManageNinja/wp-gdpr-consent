@@ -60191,7 +60191,7 @@ exports = module.exports = __webpack_require__(7)(false);
 
 
 // module
-exports.push([module.i, "\n.wp_gdpr_all_config .preview {\n  width: 70%;\n  margin-top: 10px;\n  min-height: 450px;\n  float: left;\n  background: #fff;\n}\n.wp_gdpr_all_config .preview .el-button {\n    letter-spacing: 2px;\n}\n.wp_gdpr_all_config .options {\n  width: 29%;\n  margin-top: 10px;\n  float: right;\n}\n.wp_gdpr_all_config .options ul li {\n    padding: 0 0px 0px 13px;\n}\n.wp_gdpr_all_config .color-customization .el-collapse-item__content p {\n  margin-left: 13px;\n}\n.wp_gdpr_all_config .el-collapse-item .el-collapse-item__wrap {\n  padding-left: 10px;\n  padding-top: 20px;\n}\n.wp_gdpr_all_config .el-collapse-item__header {\n  background: #83C6CF;\n  color: #fff;\n}\n.wp_gdpr_all_config .el-collapse-item__header {\n  padding-left: 10px;\n  padding-right: 10px;\n  font-size: 16px;\n}\n.wp_gdpr_all_config .policy_link .el-collapse-item__wrap .el-row {\n  overflow: hidden;\n  width: 98%;\n}\n.wp_gdpr_all_config .is-active {\n  background: #078BA2;\n}\n.wp_gdpr_all_config .color-customization .bgColorList {\n  width: 49%;\n  float: left;\n  max-height: 100px;\n}\n.wp_gdpr_all_config .color-customization .bgColorList .gdpr_bg_color_picker {\n    position: relative;\n    top: -34px;\n    left: 189px;\n    display: block;\n}\n.wp_gdpr_all_config .color-customization .bgColorList .el-input {\n    width: 98%;\n}\n.wp_gdpr_all_config .color-customization .textColorList {\n  width: 48%;\n  float: right;\n}\n.wp_gdpr_all_config .color-customization .textColorList .gdpr_text_color-picker {\n    position: relative;\n    top: -34px;\n    left: 189px;\n    display: block;\n}\n.wp_gdpr_all_config .color-customization .btnbackground {\n  width: 48%;\n  float: left;\n  margin-top: -23px;\n}\n.wp_gdpr_all_config .color-customization .btnbackground .gdpr_btn_bg_color {\n    position: relative;\n    top: -34px;\n    left: 189px;\n    display: block;\n}\n.wp_gdpr_all_config .color-customization .btnColorList {\n  width: 48%;\n  float: right;\n  margin-top: -23px;\n}\n.wp_gdpr_all_config .color-customization .btnColorList .gdpr_btn_bg_color {\n    position: relative;\n    top: -34px;\n    left: 189px;\n    display: block;\n}\n.wp_gdpr_all_config .cstm_text .el-row {\n  overflow: hidden;\n  width: 100%;\n}\n.wp_gdpr_all_config .cstm_text .cstm_msg {\n  padding-bottom: 10px;\n}\n.wp_gdpr_all_config .el-collapse-item__content .el-row {\n  overflow: hidden;\n  width: 100%;\n}\n.wp_gdpr_all_config .settings .el-input {\n  padding-bottom: 5px;\n}\n", ""]);
+exports.push([module.i, "\n.wp_gdpr_all_config .preview {\n  width: 70%;\n  margin-top: 10px;\n  min-height: 450px;\n  float: left;\n  background: #fff;\n  position: relative;\n}\n.wp_gdpr_all_config .preview .el-button {\n    letter-spacing: 2px;\n}\n.wp_gdpr_all_config .options {\n  width: 29%;\n  margin-top: 10px;\n  float: right;\n}\n.wp_gdpr_all_config .options ul li {\n    padding: 0 0px 0px 13px;\n}\n.wp_gdpr_all_config .color-customization .el-collapse-item__content p {\n  margin-left: 13px;\n}\n.wp_gdpr_all_config .el-collapse-item .el-collapse-item__wrap {\n  padding-left: 10px;\n  padding-top: 20px;\n}\n.wp_gdpr_all_config .el-collapse-item__header {\n  background: #83C6CF;\n  color: #fff;\n}\n.wp_gdpr_all_config .el-collapse-item__header {\n  padding-left: 10px;\n  padding-right: 10px;\n  font-size: 16px;\n}\n.wp_gdpr_all_config .policy_link .el-collapse-item__wrap .el-row {\n  overflow: hidden;\n  width: 98%;\n}\n.wp_gdpr_all_config .is-active {\n  background: #078BA2;\n}\n.wp_gdpr_all_config .color-customization .bgColorList {\n  width: 49%;\n  float: left;\n  max-height: 100px;\n}\n.wp_gdpr_all_config .color-customization .bgColorList .gdpr_bg_color_picker {\n    position: relative;\n    top: -34px;\n    left: 189px;\n    display: block;\n}\n.wp_gdpr_all_config .color-customization .bgColorList .el-input {\n    width: 98%;\n}\n.wp_gdpr_all_config .color-customization .textColorList {\n  width: 48%;\n  float: right;\n}\n.wp_gdpr_all_config .color-customization .textColorList .gdpr_text_color-picker {\n    position: relative;\n    top: -34px;\n    left: 189px;\n    display: block;\n}\n.wp_gdpr_all_config .color-customization .btnbackground {\n  width: 48%;\n  float: left;\n  margin-top: -23px;\n}\n.wp_gdpr_all_config .color-customization .btnbackground .gdpr_btn_bg_color {\n    position: relative;\n    top: -34px;\n    left: 189px;\n    display: block;\n}\n.wp_gdpr_all_config .color-customization .btnColorList {\n  width: 48%;\n  float: right;\n  margin-top: -23px;\n}\n.wp_gdpr_all_config .color-customization .btnColorList .gdpr_btn_bg_color {\n    position: relative;\n    top: -34px;\n    left: 189px;\n    display: block;\n}\n.wp_gdpr_all_config .cstm_text .el-row {\n  overflow: hidden;\n  width: 100%;\n}\n.wp_gdpr_all_config .cstm_text .cstm_msg {\n  padding-bottom: 10px;\n}\n.wp_gdpr_all_config .el-collapse-item__content .el-row {\n  overflow: hidden;\n  width: 100%;\n}\n.wp_gdpr_all_config .settings .el-input {\n  padding-bottom: 5px;\n}\n", ""]);
 
 // exports
 
@@ -60450,16 +60450,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     watch: {
         'styleObj.selectedBanner': function styleObjSelectedBanner() {
             if (this.styleObj.selectedBanner == 'banner_bottom') {
+                // styling the root div
+                this.styleObj.position = 'absolute';
                 this.styleObj.color = 'white';
                 this.styleObj.width = '100%';
-                this.styleObj.margin = '0px';
                 this.styleObj.padding = '0px';
-                this.styleObj.marginTop = '401px';
-                this.styleObj.float = '';
-                this.styleObj.maxWidth = '';
                 this.styleObj.display = 'inline-block';
-                this.styleObj.borderRadius = '';
+                this.styleObj.borderRadius = '0px';
+                this.styleObj.top = '';
+                this.styleObj.bottom = 0;
+                this.styleObj.right = '0px';
+                this.styleObj.left = '0px';
                 this.styleObj.selectedBanner = 'banner_bottom';
+
                 this.confirmationBtn.display = 'inline';
                 this.confirmationBtn.float = 'right';
                 this.confirmationBtn.marginTop = '10px';
@@ -60473,54 +60476,49 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.styleMsg.padding = '15px';
             }
             if (this.styleObj.selectedBanner == 'banner_top') {
+                this.styleObj.position = 'absolute';
                 this.styleObj.color = 'white';
                 this.styleObj.width = '100%';
                 this.styleObj.margin = '0px';
                 this.styleObj.padding = '0px';
                 this.styleObj.top = '0px';
-                this.styleObj.maxWidth = '';
-                this.styleObj.marginTop = '0px';
-                this.styleObj.marginLeft = '0px';
-                this.styleObj.marginRight = '0px';
+                this.styleObj.bottom = '';
                 this.styleObj.borderRadius = '0px';
-                this.styleObj.float = '';
                 this.styleObj.display = 'inline-block';
+                this.styleObj.right = '0px';
+                this.styleObj.left = '0px';
                 this.confirmationBtn.marginTop = '13px';
 
                 this.styleMsg.padding = '15px';
 
                 this.styleObj.selectedBanner = 'banner_top';
             } else if (this.styleObj.selectedBanner == 'banner_left') {
-                this.styleObj.bottom = '0px';
+
+                this.styleObj.position = 'absolute';
+                this.styleObj.bottom = '15px';
                 this.styleObj.top = '';
+                this.styleObj.left = '15px';
                 this.styleObj.color = 'white';
-                this.styleObj.maxWidth = '24em';
+                this.styleObj.width = '24em';
                 this.styleObj.padding = '3em';
-                this.styleObj.float = 'left';
-                this.styleObj.marginTop = '276px';
-                this.styleObj.marginLeft = '15px';
-                this.styleObj.marginRight = '0px';
-                this.styleObj.marginBottom = '0px';
                 this.styleObj.borderRadius = '10px';
-                this.styleObj.float = '';
                 this.styleObj.display = 'inline-block';
+
                 this.confirmationBtn.marginTop = '10px';
 
                 this.styleMsg.padding = '';
 
                 this.styleObj.selectedBanner = 'banner_left';
             } else if (this.styleObj.selectedBanner == 'banner_right') {
-                this.styleObj.bottom = '0px';
+                this.styleObj.position = 'absolute';
+                this.styleObj.bottom = '15px';
                 this.styleObj.color = 'white';
-                this.styleObj.maxWidth = '24em';
+                this.styleObj.width = '24em';
                 this.styleObj.padding = '3em';
-                this.styleObj.float = 'right';
-                this.styleObj.marginRight = '15px';
                 this.styleObj.borderRadius = '10px';
                 this.styleObj.top = '';
-                this.styleObj.marginTop = '276px';
-                this.styleObj.marginLeft = '0px';
-                this.styleObj.right = '9px';
+                this.styleObj.right = '15px';
+                this.styleObj.left = '';
                 this.styleObj.display = 'inline-block';
 
                 this.styleMsg.padding = '';
