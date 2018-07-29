@@ -29,7 +29,7 @@
             @showMsg="show_msg($event)"
             @postPolicy="post_policy($event)"
             @postDismissBtn="postDismissBtn($event)"
-            @setCustomLink="postCustomLink($event)" />
+            @setCustomLink="postCustomLink($event)"></app-all-config>
 	</div>
 </template>
 

@@ -29,10 +29,10 @@ export default {
         title: {
             default: 'Please Input Title',
         },
+        pcHolder:'',
         setectedType: {
-            default:'text'
-        },
-        pcHolder:''
+            default: 'text'
+        }
     },
 
     computed: {

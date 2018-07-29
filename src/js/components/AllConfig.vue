@@ -2,9 +2,9 @@
 	<div class="wp_gdpr_all_config">
 		<div class="preview">
             <div :style="styleObj">
-				<p :style="styleMsg" style="font-size: 16px;">{{ message }}... 
-                    <a :href="validateLink" target="_blank" v-if="validateLink"><span>{{ policyLinkText }}</span></a>
-                    <a v-else>{{ policyLinkText }}</a>
+				<p :style="styleMsg" style="font-size: 16px;">{{ message }}
+                    <a :href="validateLink" target="_blank" v-if="validateLink && show_message"><span>{{ policyLinkText }}</span></a>
+                    <a v-else-if="!validateLink && !show_message">{{ policyLinkText }}</a>
                 </p>
                 <div :style="confirmationBtn">
                     <a style="display: inline; color: #fff" v-if="settingsObj.showDeclineBtn==true">Decline</a> 
@@ -54,12 +54,12 @@
                             <el-row :gutter="12" class="cstm_msg">
 
                                 <el-col :span="24">
-
-                                    <gdpr-input
-                                        title="Message"
-                                        pcHolder="This website uses cookies to ensure you get the best experience on our website."
-                                        selectedType="textarea"
-                                        v-model="show_message"></gdpr-input>
+                                    <label>Message</label>
+                                    <el-input
+                                        type="textarea"
+                                        :rows="2"
+                                        placeholder="This website uses cookies to ensure you get the best experience on our website."
+                                        v-model="show_message"></el-input>
 
                                 </el-col>
 
@@ -93,7 +93,7 @@
 
                         <gdpr-input
                             title="Custom Link"
-                            pcHolder="Custom Link"
+                            pcHolder="Custom Link(ex: https://www.google.com)"
                             selectedType="url"
                             v-model="link"></gdpr-input>
 
@@ -121,6 +121,7 @@
     import GdprColorCustomization from '../Core/GdprColorCustomization'
 
 	export default {
+        name: 'AllConfig',
         props: [
             'styleObj',
             'styleMsg',
@@ -272,7 +273,7 @@
                     this.styleObj.marginTop = '401px';
                     this.styleObj.float = '';
                     this.styleObj.maxWidth = '';
-                    this.styleObj.display = 'block';
+                    this.styleObj.display = 'inline-block';
                     this.styleObj.borderRadius = '';
                     this.styleObj.selectedBanner = 'banner_bottom';
                     this.confirmationBtn.display = 'inline';
@@ -283,6 +284,9 @@
                     this.styleDismissBtn.float = '';
                     this.styleDismissBtn.marginTop = '0px';
                     this.styleDismissBtn.marginRight = '0px';
+                    this.confirmationBtn.marginTop = '13px';
+
+                    this.styleMsg.padding = '15px';
 				}
 				if( this.styleObj.selectedBanner == 'banner_top' ) {
                     this.styleObj.color = 'white';
@@ -296,7 +300,10 @@
                     this.styleObj.marginRight = '0px'
                     this.styleObj.borderRadius = '0px';
                     this.styleObj.float = '';
-                    this.styleObj.display = 'block';
+                    this.styleObj.display = 'inline-block';
+                    this.confirmationBtn.marginTop = '13px';
+
+                    this.styleMsg.padding = '15px';
 
                     this.styleObj.selectedBanner = 'banner_top';
 				}
@@ -309,9 +316,14 @@
                     this.styleObj.float = 'left';
                     this.styleObj.marginTop = '276px';
                     this.styleObj.marginLeft = '15px'; 
+                    this.styleObj.marginRight = '0px';
+                    this.styleObj.marginBottom = '0px';
                     this.styleObj.borderRadius = '10px';
                     this.styleObj.float = '';
-                    this.styleObj.display = 'block';
+                    this.styleObj.display = 'inline-block';
+                    this.confirmationBtn.marginTop = '10px';
+
+                    this.styleMsg.padding = '';
 
                     this.styleObj.selectedBanner = 'banner_left';
 				}
@@ -327,24 +339,14 @@
                     this.styleObj.marginTop = '276px';
                     this.styleObj.marginLeft = '0px';
                     this.styleObj.right = '9px';
-                    this.styleObj.display = 'block';
+                    this.styleObj.display = 'inline-block';
+
+                    this.styleMsg.padding = '';
 
                     this.styleObj.selectedBanner = 'banner_right';
+                    this.confirmationBtn.marginTop = '10px';
                 }
                 else if( this.styleObj.selectedBanner == 'hide' ) {
-                    this.styleObj.display = 'none';
-                    this.styleObj.bottom = '0px';
-                    this.styleObj.color = 'white';
-                    this.styleObj.maxWidth = '0px';
-                    this.styleObj.padding = '0px';
-                    this.styleObj.float = 'right';
-                    this.styleObj.marginRight = '0px';
-                    this.styleObj.borderRadius = '0px';
-                    this.styleObj.top = '0px';
-                    this.styleObj.marginTop = '0px';
-                    this.styleObj.marginLeft = '0px';
-                    this.styleObj.right = '0px';
-
                     this.styleObj.selectedBanner = 'hide';
                 }
 			}
@@ -454,6 +456,7 @@
             .bgColorList {
                 width: 49%;
                 float: left;
+                max-height: 100px;
                 .gdpr_bg_color_picker {
                     position: relative;
                     top: -34px;
