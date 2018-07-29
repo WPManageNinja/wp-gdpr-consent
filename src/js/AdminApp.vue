@@ -101,7 +101,7 @@
                     message: this.message,
                     policyLinkText: this.policyLinkText,
                     dismissBtnText: this.dismissBtnText,
-                    customLink: this.customLink,
+                    customLink: (this.customLink ? this.customLink : ""),
                     settings: this.settings
                 }
                 console.log(allGdprObj);
