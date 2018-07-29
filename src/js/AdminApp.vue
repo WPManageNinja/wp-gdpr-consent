@@ -92,6 +92,9 @@
                     )
             },
             updateGDPR() {
+                let regexp = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gi;
+                this.customLink = this.customLink.match(regexp) ? this.customLink : "";
+                console.log(this.customLink);
                 let allGdprObj = {
                     styleObj: this.styleObj,
                     styleMsg: this.styleMsg,
@@ -101,17 +104,15 @@
                     message: this.message,
                     policyLinkText: this.policyLinkText,
                     dismissBtnText: this.dismissBtnText,
-                    customLink: (this.customLink ? this.customLink : ""),
+                    customLink: this.customLink,
                     settings: this.settings
                 }
-                console.log(allGdprObj);
                 jQuery.post(ajaxurl, {
                     action:'ninja_gdpr_ajax_actions',
                     route: 'update_config',
                     gdprConfig: JSON.stringify(allGdprObj),
                 }).then(
                     response => {
-                        console.log(response)
                         this.$notify.success({
                             title: 'Success',
                             message: response.data.message

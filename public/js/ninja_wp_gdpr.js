@@ -60065,6 +60065,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         updateGDPR: function updateGDPR() {
             var _this2 = this;
 
+            var regexp = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gi;
+            this.customLink = this.customLink.match(regexp) ? this.customLink : "";
+            console.log(this.customLink);
             var allGdprObj = {
                 styleObj: this.styleObj,
                 styleMsg: this.styleMsg,
@@ -60074,16 +60077,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 message: this.message,
                 policyLinkText: this.policyLinkText,
                 dismissBtnText: this.dismissBtnText,
-                customLink: this.customLink ? this.customLink : "",
+                customLink: this.customLink,
                 settings: this.settings
             };
-            console.log(allGdprObj);
             jQuery.post(ajaxurl, {
                 action: 'ninja_gdpr_ajax_actions',
                 route: 'update_config',
                 gdprConfig: JSON.stringify(allGdprObj)
             }).then(function (response) {
-                console.log(response);
                 _this2.$notify.success({
                     title: 'Success',
                     message: response.data.message
