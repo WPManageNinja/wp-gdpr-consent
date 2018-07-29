@@ -2,8 +2,10 @@
 	<div class="wp_gdpr_all_config">
 		<div class="preview">
             <div :style="styleObj">
-				<p :style="styleMsg" style="font-size: 16px;">{{ message }}</p>
-				<a :href="customLink" target="_blank" style="color:#A2A1A1; padding-left:15px; margin:0px; display:inline-block; font-size:16px">{{ policyLinkText }}</a> 
+				<p :style="styleMsg" style="font-size: 16px;">{{ message }}... 
+                    <a :href="validateLink" target="_blank" v-if="validateLink"><span>{{ policyLinkText }}</span></a>
+                    <a v-else>{{ policyLinkText }}</a>
+                </p>
                 <div :style="confirmationBtn">
                     <a style="display: inline; color: #fff" v-if="settingsObj.showDeclineBtn==true">Decline</a> 
                     <el-button type="primary" round size="mini" :style="styleDismissBtn">{{ dismissBtnText }}</el-button>
@@ -14,113 +16,110 @@
             <div class="options_customization">
                 <el-collapse v-model="activeName" accordion>
                     <el-collapse-item title="Select Theme" name="1">
-                        <ul>
-                            <li>
-                                <el-radio v-model="theme"  label="banner_bottom">Banner Bottom</el-radio>
-                            </li>
-                            <li>
-                                <el-radio v-model="theme" label="banner_top">Banner Top</el-radio>
-                            </li>
-                            <li>
-                                <el-radio v-model="theme" label="banner_left">Left</el-radio>
-                            </li>
-                            <li>
-                                <el-radio v-model="theme" label="banner_right">Right</el-radio>
-                            </li>
-                            <li>
-                                <el-radio v-model="theme" label="hide">Hide</el-radio>
-                            </li>
-                        </ul>
+                        
+                            <gdpr-radio-group 
+                                v-model="styleObj.selectedBanner"
+                                :options="radio_options">
+                            </gdpr-radio-group>
+
                     </el-collapse-item>
+
+
                     <el-collapse-item title="Color Customization" name="2">
+
                         <div class="color-customization"> 
-                             <div class="bgColorList">
-                                <p>Background Color</p>
 
-                                <el-input type="text" v-model="bg_color"></el-input>
+                             <gdpr-color-customization
+                                title="Background Color" 
+                                v-model="bg_color"></gdpr-color-customization>
 
-                                <el-color-picker @active-change="(color) => {bg_color = color}" v-model="bg_color" size="mini" class="gdpr_bg_color_picker"></el-color-picker>
-                            </div>
-                            <div class=textColorList>
-                                <p>Text Color</p>
+                            <gdpr-color-customization
+                                title="Text Color" 
+                                v-model="text_color"></gdpr-color-customization>
 
-                                <el-input type="text" v-model="text_color"></el-input>
+                            <gdpr-color-customization
+                                title="Button Background" 
+                                v-model="btn_bg"></gdpr-color-customization>
 
-                                <el-color-picker @active-change="(color) => {text_color = color}" v-model="text_color" size="mini" class="gdpr_text_color-picker"></el-color-picker>
-                            </div>
-                            <div class=btnbackground>
-                                <p>Button Background</p>
+                            <gdpr-color-customization
+                                title="Button Color" 
+                                v-model="btn_clr"></gdpr-color-customization>
 
-                                <el-input type="text" v-model="btn_bg"></el-input>
-
-                                <el-color-picker @active-change="(color) => {btn_bg = color}" v-model="btn_bg" size="mini" class="gdpr_btn_bg_color"></el-color-picker>
-                            </div>
-                            <div class=btnColorList>
-                                <p>Button Color</p>
-
-                                <el-input type="text" v-model="btn_clr"></el-input>
-
-                                <el-color-picker @active-change="(color) => {btn_clr = color}" v-model="btn_clr" size="mini" class="gdpr_btn_bg_color"></el-color-picker>
-                            </div>
                         </div>
                     </el-collapse-item>    
+
+
                     <el-collapse-item title="Custom Text" name="3">
                         <div class="cstm_text">
                             <el-row :gutter="12" class="cstm_msg">
+
                                 <el-col :span="24">
-                                    <label>Message</label>
-                                    <el-input type="textarea" v-model="show_message" :rows="3" placeholder="This website uses cookies to ensure you get the best experience on our website."></el-input>
+
+                                    <gdpr-input
+                                        title="Message"
+                                        pcHolder="This website uses cookies to ensure you get the best experience on our website."
+                                        selectedType="textarea"
+                                        v-model="show_message"></gdpr-input>
+
                                 </el-col>
+
                             </el-row>
+                        
+                        </div>
+
                             <el-row :gutter="12">
                                 <el-col :span="12">
-                                    <label>Dismiss button text</label>
-                                    <el-input v-model="getDismissBtn" placeholder="Got it!"></el-input>
+
+                                    <gdpr-input
+                                        title="Dismiss button text"
+                                        pcHolder="Got it!"
+                                        v-model="getDismissBtn"></gdpr-input>
+
+                    
                                 </el-col>
+
+
                                 <el-col :span="12">
-                                    <label>Policy link text</label>
-                                    <el-input v-model="getPolicy" placeholder="Learn More"></el-input>
+
+                                    <gdpr-input
+                                        title="Policy link text"
+                                        pcHolder="Learn More"
+                                        v-model="getPolicy"></gdpr-input>
+
                                 </el-col>
                             </el-row>
-                        </div>
                     </el-collapse-item>
-                    <el-collapse-item title="Policy Link" name="4">
-                        <el-row>
-                            <el-col :span="24">
-                                <div class="custom_link">
-                                    <label>Custom Link</label>
-                                    <el-input type="text" placeholder="Custom Link(ex - https://www.google.com/)" v-model="link"></el-input>
-                               </div>
-                            </el-col>
-                        </el-row>
+                    <el-collapse-item title="Policy Link" name="4" class="policy_link">
+
+                        <gdpr-input
+                            title="Custom Link"
+                            pcHolder="Custom Link"
+                            selectedType="url"
+                            v-model="link"></gdpr-input>
+
                     </el-collapse-item>
                     <el-collapse-item title="Settings" name="6">
                         <div class="settings">
-                            <el-row :gutter="15">
-                                <el-col :span="24">
-                                    <label class="settings_label">Duration of Cookie(in days)</label>
-                                    <el-input v-model="settingsObj.duration" type="number"></el-input>
-                                </el-col>
-                                <el-col :span="24">
-                                    <label class="settings_label">Delay of Cookie(in sec)</label>
-                                    <el-input v-model="settingsObj.delay" type="number"></el-input>
-                                </el-col>
-                                <el-col :span="24">
-                                    <label class="settings_label">Show Decline Button</label>
-                                    <el-switch v-model="settingsObj.showDeclineBtn">
-                                    </el-switch>
-                                </el-col>
-                            </el-row>
+
+                            <gdpr-settings 
+                                v-model="settingsObj">
+                            </gdpr-settings>
+
                         </div>
 
                     </el-collapse-item>
-                    </el-collapse>
+                </el-collapse>
             </div>
 		</div>
 	</div>
 </template>
 
 <script>
+    import GdprRadioGroup from '../Core/GdprRadioGroup';
+    import GdprSettings from '../Core/GdprSettings';
+    import GdprInput from '../Core/GdprInput';
+    import GdprColorCustomization from '../Core/GdprColorCustomization'
+
 	export default {
         props: [
             'styleObj',
@@ -134,8 +133,38 @@
             'settingsObj',
             'confirmationBtn'
         ],
+        components : {
+            GdprInput,
+            GdprSettings,
+            GdprRadioGroup,
+            GdprColorCustomization
+        },
 		data() {
 			return {
+
+                radio_options: [
+                    {
+                        label:'Banner Bottom',
+                        value:'banner_bottom'
+                    },
+                    {
+                        label:'Banner Top',
+                        value:'banner_top'
+                    },
+                    
+                    {
+                        label:'Left',
+                        value:'banner_left'
+                    },
+                    {
+                        label:'Right',
+                        value:'banner_right'
+                    },
+                    {
+                        label:'Hide',
+                        value:'hide'
+                    },
+                ],
 				activeName: '',
 				bottom: true,
 				top: false,
@@ -143,7 +172,7 @@
                 right: false,
                 duration: 0,
                 delay: 0,
-				theme: '',
+				theme: 'banner_bottom',
 				bgBlackColor: false,
 				bgBlueColor: false,
 				bgRedColor: false,
@@ -159,9 +188,13 @@
 			}
         },
 
-        created() {},
 
         computed: {
+            validateLink() {
+                let regexp = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gi;
+                let check = this.customLink.match(regexp);
+                return !!check ? this.customLink : '';
+            },
             show_message: {
                 get() {
                     return this.message;
@@ -229,10 +262,9 @@
             }
         },
 
-		watch: {
-            
-			theme() {
-				if( this.theme == 'banner_bottom' ) {
+		watch: { 
+			'styleObj.selectedBanner'() {
+				if( this.styleObj.selectedBanner == 'banner_bottom' ) {
                     this.styleObj.color = 'white';
                     this.styleObj.width = '100%';
                     this.styleObj.margin = '0px';
@@ -252,7 +284,7 @@
                     this.styleDismissBtn.marginTop = '0px';
                     this.styleDismissBtn.marginRight = '0px';
 				}
-				if( this.theme == 'banner_top' ) {
+				if( this.styleObj.selectedBanner == 'banner_top' ) {
                     this.styleObj.color = 'white';
                     this.styleObj.width = '100%';
                     this.styleObj.margin = '0px';
@@ -268,7 +300,7 @@
 
                     this.styleObj.selectedBanner = 'banner_top';
 				}
-				else if( this.theme == 'banner_left' ) {
+				else if( this.styleObj.selectedBanner == 'banner_left' ) {
                     this.styleObj.bottom = '0px';
                     this.styleObj.top = '';
                     this.styleObj.color = 'white';
@@ -283,7 +315,7 @@
 
                     this.styleObj.selectedBanner = 'banner_left';
 				}
-				else if( this.theme == 'banner_right' ) {
+				else if( this.styleObj.selectedBanner == 'banner_right' ) {
                     this.styleObj.bottom = '0px';
                     this.styleObj.color = 'white';
                     this.styleObj.maxWidth = '24em';
@@ -299,7 +331,7 @@
 
                     this.styleObj.selectedBanner = 'banner_right';
                 }
-                else if( this.theme == 'hide' ) {
+                else if( this.styleObj.selectedBanner == 'hide' ) {
                     this.styleObj.display = 'none';
                     this.styleObj.bottom = '0px';
                     this.styleObj.color = 'white';
@@ -358,6 +390,10 @@
 			min-height: 450px;
 			float: left;
 			background: #fff;
+            
+            .el-button {
+                letter-spacing: 2px;
+            }
 		}
 
 		.options {
@@ -382,6 +418,13 @@
 			}
 		 }
 
+         .el-collapse-item {
+             .el-collapse-item__wrap {
+                 padding-left: 10px;
+                 padding-top: 20px;
+             }
+         }
+
 		.el-collapse-item__header {
 			background: #83C6CF;
 			color: #fff;
@@ -393,21 +436,32 @@
 		    font-size: 16px;
 		}
 
+        .policy_link {
+            .el-collapse-item__wrap {
+                .el-row {
+                    overflow: hidden;
+                    width: 98%;
+                }
+            }
+        }
+
 		.is-active {
 			background: #078BA2;
 		}
 
 
         .color-customization{
-          padding:15px;
             .bgColorList {
-                width: 48%;
+                width: 49%;
                 float: left;
                 .gdpr_bg_color_picker {
                     position: relative;
                     top: -34px;
                     left: 189px;
                     display: block;
+                }
+                .el-input {
+                    width: 98%;
                 }
             }
              
@@ -450,28 +504,26 @@
 
 		
         .cstm_text {
-            padding: 20px 20px 0 20px;
-             .cstm_msg {
-                 padding-bottom: 10px;
-             }
+            .el-row {
+                overflow: hidden;
+                width: 100%;
+            }
+            .cstm_msg {
+                padding-bottom: 10px;
+            }
+        }
+
+        .el-collapse-item__content {
+            .el-row {
+                overflow: hidden;
+                width: 100%;
+            }
         }
         
-        .custom_link{
-            padding: 15px 15px 0 15px;
-            label{
-                margin-left: 2px;
-            }
-            .el-input{
-                padding-top:5px;
-            }
-        }
-
 		.settings{
-            padding:20px 20px 0px 20px;
 
             .el-input {
-                padding-top: 5px;
-                 padding-bottom: 5px;
+                padding-bottom: 5px;
             }
         }
 	}

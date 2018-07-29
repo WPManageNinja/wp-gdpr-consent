@@ -15,19 +15,21 @@
 		</el-row>
 
 
-		<app-all-config :styleObj="styleObj" :styleMsg="styleMsg" 
-                        :stylePolicy="stylePolicy" 
-                        :styleDismissBtn="styleDismissBtn" 
-                        :message="message"
-                        :policyLinkText="policyLinkText" 
-                        :dismissBtnText="dismissBtnText"
-                        :customLink="customLink"
-                        :settingsObj="settings"
-                        :confirmationBtn="confirmationBtn"
-                        @showMsg="show_msg($event)"
-                        @postPolicy="post_policy($event)"
-                        @postDismissBtn="postDismissBtn($event)"
-                        @setCustomLink="postCustomLink($event)" />
+		<app-all-config 
+            :styleObj="styleObj" 
+            :styleMsg="styleMsg" 
+            :stylePolicy="stylePolicy" 
+            :styleDismissBtn="styleDismissBtn" 
+            :message="message"
+            :policyLinkText="policyLinkText" 
+            :dismissBtnText="dismissBtnText"
+            :customLink="customLink"
+            :settingsObj="settings"
+            :confirmationBtn="confirmationBtn"
+            @showMsg="show_msg($event)"
+            @postPolicy="post_policy($event)"
+            @postDismissBtn="postDismissBtn($event)"
+            @setCustomLink="postCustomLink($event)" />
 	</div>
 </template>
 
@@ -54,30 +56,41 @@
             }
         },
         created() {
-            jQuery.get(ajaxurl, {
-                action: 'ninja_gdpr_ajax_actions',
-                route: 'get_gdprconfig'
-            }).then(
-                response => {
-                    console.log(response)
-                    this.styleObj = response.data.getGdprConfig.styleObj;
-                    this.styleMsg = response.data.getGdprConfig.styleMsg;
-                    this.styleDismissBtn = response.data.getGdprConfig.styleDismissBtn;
-                    this.message = response.data.getGdprConfig.message;
-                    this.dismissBtnText = response.data.getGdprConfig.dismissBtnText;
-                    this.policyLinkText = response.data.getGdprConfig.policyLinkText;
-                    this.customLink = response.data.getGdprConfig.customLink; 
-                    this.settings = response.data.getGdprConfig.settings;
-                    this.confirmationBtn = response.data.getGdprConfig.confirmationBtn;
-                    console.log(this.confirmationBtn)
-                }
-            ).always(
-                () => {
-                    this.loadGdpr = false;
-                }
-            )
+            this.fetchdata();
         },
         methods: {
+
+            fetchdata(){
+
+                const data = {
+                    action: 'ninja_gdpr_ajax_actions',
+                    route: 'get_gdprconfig'
+                }
+
+                jQuery.get(ajaxurl,data)
+                    .then(
+                        response => {
+                            console.log(response.data);
+
+                            this.styleObj = response.data.getGdprConfig.styleObj;
+                            this.styleMsg = response.data.getGdprConfig.styleMsg;
+                            this.styleDismissBtn = response.data.getGdprConfig.styleDismissBtn;
+                            this.message = response.data.getGdprConfig.message;
+                            this.dismissBtnText = response.data.getGdprConfig.dismissBtnText;
+                            this.policyLinkText = response.data.getGdprConfig.policyLinkText;
+                            this.customLink = response.data.getGdprConfig.customLink; 
+                            this.settings = response.data.getGdprConfig.settings;
+                            this.confirmationBtn = response.data.getGdprConfig.confirmationBtn;
+                        }
+                    )
+                    .fail(error=>{
+                        console.log(error.data.response);
+                    })
+                    .always(() => {
+                            this.loadGdpr = false;
+                        }
+                    )
+            },
             updateGDPR() {
                 let allGdprObj = {
                     styleObj: this.styleObj,
