@@ -38,8 +38,7 @@ Vue.use(CollapseItem);
 Vue.use(RadioGroup);
 Vue.use(ColorPicker);
 
-Vue.use(Loading.directive);
-Vue.prototype.$loading = Loading.service;
+
 Vue.prototype.$notify = Notification;
 
 import 'element-ui/lib/theme-chalk/notification.css';
