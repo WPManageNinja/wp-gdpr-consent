@@ -2,19 +2,19 @@
 
 class GdprHandler
 {
-	public $config;
+	// public $config;
 
 	public static function handleAjaxCalls()
 	{
-		$route = sanitize_text_field( $_REQUEST['route'] );
+		$route = sanitize_text_field($_REQUEST['route']);
 		
-		if($route == 'update_config'){
+		if ($route == 'update_config') {
 			$gdpr_Con = wp_unslash($_REQUEST['gdprConfig']); 
 			$gdprConfig = json_decode(trim(stripslashes($gdpr_Con)), true);
 			static::updateGdprOption($gdprConfig);
 		}
 
-		if( $route == 'get_gdprconfig' ){
+		if ($route == 'get_gdprconfig') {
 			static::get_gdpr('ajax');
 		}
 	}
@@ -24,56 +24,51 @@ class GdprHandler
     */
 	public static function get_gdpr($returnType = 'ajax')
 	{
-		$getGdprConfig = get_option('_gdpr_option_consent', false);
 		wp_send_json_success(array(
-			'getGdprConfig' => $getGdprConfig,
+			'getGdprConfig' => get_option('_gdpr_option_consent', false),
 		));
 	}
 
 
 
-	public static function gdprConfigVars()
-	{	
-		
-		wp_enqueue_script('wp_gdpr_user_display', WP_GDPR_PLUGIN_DIR_URL.'public/js/wp_gdpr_user_display.js', array('jquery'), WP_GDPR_PLUGIN_DIR_VERSION, true );
-        $ConfigDatas = get_option('_gdpr_option_consent', false);
-    	// styleObj
-    	$background 	= $ConfigDatas['styleObj']['background'];
-		$color 			= $ConfigDatas['styleObj']['color'];
-		$selected_obj   = $ConfigDatas['styleObj']['selectedBanner'];
-		$link 			= $ConfigDatas['customLink'];
-		
+	public static function addGDPRNotice()
+	{
+		$ConfigDatas = get_option('_gdpr_option_consent', false);
+
 		// styleMsg
 		$color_msg 	= $ConfigDatas['styleMsg']['color'];
 
+    	// styleObj
+		$link 			= $ConfigDatas['customLink'];
+		$color 			= $ConfigDatas['styleObj']['color'];
+    	$background 	= $ConfigDatas['styleObj']['background'];
+		$selected_obj   = $ConfigDatas['styleObj']['selectedBanner'];
+
 		// styleDismissBtn
-		$dismissBtnBg 		= $ConfigDatas['styleDismissBtn']['background'];
 		$dismissBtnColor 	= $ConfigDatas['styleDismissBtn']['color'];
+		$dismissBtnBg 		= $ConfigDatas['styleDismissBtn']['background'];
+
 		// settings
-		$showDeclineBtn 	= $ConfigDatas['settings']['showDeclineBtn'];
-		$duration 			= $ConfigDatas['settings']['duration'];
 		$delay				= $ConfigDatas['settings']['delay'];
+		$duration 			= $ConfigDatas['settings']['duration'];
+		$showDeclineBtn 	= $ConfigDatas['settings']['showDeclineBtn'];
+
+		wp_enqueue_script(
+			'wp_gdpr_user_display',
+			WP_GDPR_PLUGIN_DIR_URL.'public/js/wp_gdpr_user_display.js',
+			array('jquery'),
+			WP_GDPR_PLUGIN_DIR_VERSION,
+			true
+		);
 
 		wp_localize_script('wp_gdpr_user_display','gpd_settings_vars', array(
-			'delay' => $ConfigDatas['settings']['delay'],
-			'duration' => $ConfigDatas['settings']['duration']
+			'delay' => $delay,
+			'duration' => $duration
 		));
 
-
-        if( $selected_obj == 'banner_top' && $_COOKIE['wp_gdpr_permission'] == '' ){
-			include(WP_GDPR_PLUGIN_DIR_PATH.'views/banner_top.php');
-		}
-		elseif( $selected_obj == 'banner_bottom' && $_COOKIE['wp_gdpr_permission'] == '') {
-			include(WP_GDPR_PLUGIN_DIR_PATH.'views/banner_bottom.php');
-		}
-		elseif( $selected_obj == 'banner_right' && $_COOKIE['wp_gdpr_permission'] == '' ) {
-			include(WP_GDPR_PLUGIN_DIR_PATH.'views/banner_right.php');
-		}
-		elseif( $selected_obj == 'banner_left' && $_COOKIE['wp_gdpr_permission'] == '' ) {
-			include(WP_GDPR_PLUGIN_DIR_PATH.'views/banner_left.php');
-		}
-
-		
+        if ($selected_obj && !isset($_COOKIE['wp_gdpr_permission'])) {
+        	include(WP_GDPR_PLUGIN_DIR_PATH."views/{$selected_obj}.php");
+        }
 	}
 
 	/**
@@ -102,7 +97,7 @@ class GdprHandler
 	public static function getGDPRConfig()
 	{
 		return array(
-			
+
 	 		'styleObj' => array(
                 'bottom' 	  => '0px',
 				'background'  => '#A3549E',
@@ -124,7 +119,7 @@ class GdprHandler
                 'color'		=> '#fff'
 			),
                     
-            'stylePolicy' => array (
+            'stylePolicy' => array(
             	'color'=> 'wheat'
             ),
             
@@ -156,12 +151,6 @@ class GdprHandler
 			'policyLinkText' => 'Learn More',
             'dismissBtnText' => 'Got it!',
             'customLink' => ''
-
 		);
-
 	}
-
-	
-
-
 }
