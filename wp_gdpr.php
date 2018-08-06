@@ -24,55 +24,43 @@ class NINJAWPGDPR
 {
 	public function boot()
 	{
-		$this->commonHooks();
 		$this->adminHooks();
 		$this->publicHooks();
+		$this->commonHooks();
 		$this->loadTextDomain();
 	}
 
-
-
 	public function commonHooks()
 	{
-		add_action('wp_enqueue_scripts', array($this, 'enqueueScripts') );
-		add_action('wp_footer', array('WP_GDPR\Classes\GdprHandler','gdprConfigVars'));
+		add_action('wp_enqueue_scripts', array($this, 'enqueueScripts'));
 	}
 	
 	public function adminHooks()
 	{
-	
 		add_action('admin_menu', array('WP_GDPR\Classes\Menu','addAdminMenuPages'));
-		add_action('wp_ajax_ninja_gdpr_ajax_actions', array('WP_GDPR\Classes\GdprHandler','handleAjaxCalls'));
 		add_action('init', array('WP_GDPR\Classes\GdprHandler','populateDemoAddData'));
-	
+		add_action('wp_ajax_ninja_gdpr_ajax_actions', array('WP_GDPR\Classes\GdprHandler','handleAjaxCalls'));
 	}
 
 
 	public function publicHooks()
 	{
-		
+		add_action('wp_footer', array('WP_GDPR\Classes\GdprHandler', 'addGDPRNotice'));
 	}
 
 	public function enqueueScripts()
-	
 	{
 		wp_enqueue_style('ninja_wp_gdpr_css', WP_GDPR_PLUGIN_DIR_URL.'/public/css/styles.css');
 	}
 
 	public function loadTextDomain()
 	{
-		
+		// ...
 	}
-
-
-
-
-
-	
 }
 
 
-add_action('plugins_loaded', function(){
+add_action('plugins_loaded', function() {
 	$ninjaWpGDPR = new NINJAWPGDPR();
 	$ninjaWpGDPR->boot(); 
 });
