@@ -424,8 +424,9 @@
 
          .el-collapse-item {
              .el-collapse-item__wrap {
-                 padding-left: 10px;
-                 padding-top: 20px;
+                padding-left: 10px;
+                padding-top: 13px;
+                padding-bottom: 15px;
              }
          }
 
@@ -459,11 +460,12 @@
                 width: 49%;
                 float: left;
                 max-height: 100px;
+                position: relative;
                 .gdpr_bg_color_picker {
-                    position: relative;
-                    top: -34px;
-                    left: 189px;
-                    display: block;
+                    position: absolute;
+                    top: 53px;
+                    right: 10px;
+                    display: inline-block;
                 }
                 .el-input {
                     width: 98%;
@@ -532,4 +534,15 @@
             }
         }
 	}
+
+    @media (max-width: 1530px) {
+        .wp_gdpr_all_config {
+            .preview {
+                width: 100%;
+            }
+            .options {
+                width: 100%;
+            }
+        }
+    }
 </style>
