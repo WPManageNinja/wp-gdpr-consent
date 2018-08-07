@@ -535,7 +535,7 @@
         }
 	}
 
-    @media (max-width: 1530px) {
+
         .wp_gdpr_all_config {
             .preview {
                 width: 100%;
@@ -544,5 +544,5 @@
                 width: 100%;
             }
         }
-    }
+
 </style>

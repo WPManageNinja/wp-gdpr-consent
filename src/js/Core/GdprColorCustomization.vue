@@ -1,15 +1,13 @@
 <template>
     <div class="bgColorList">
-
         <p>{{ title }}</p>
-        <el-input type="text" v-model="model"></el-input>
+        <!-- <el-input type="text" v-model="model"></el-input> -->
         <el-color-picker
             size="mini" 
             v-model="model" 
             @active-change="activeChangedEvent"
-            class="gdpr_bg_color_picker"
-            show-alpha></el-color-picker>
 
+            show-alpha></el-color-picker>
     </div>
 </template>
 
