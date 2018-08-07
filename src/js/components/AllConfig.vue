@@ -461,12 +461,6 @@
                 float: left;
                 max-height: 100px;
                 position: relative;
-                .gdpr_bg_color_picker {
-                    position: absolute;
-                    top: 53px;
-                    right: 10px;
-                    display: inline-block;
-                }
                 .el-input {
                     width: 98%;
                 }
@@ -535,14 +529,18 @@
         }
 	}
 
-
+    @media (max-width: 600px) {
         .wp_gdpr_all_config {
             .preview {
                 width: 100%;
+                > div {
+                    padding: 2em !important;
+                }
             }
             .options {
                 width: 100%;
             }
         }
+    }
 
 </style>
