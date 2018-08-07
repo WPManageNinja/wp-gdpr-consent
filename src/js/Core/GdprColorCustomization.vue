@@ -1,13 +1,17 @@
 <template>
     <div class="bgColorList">
-        <p>{{ title }}</p>
-        <!-- <el-input type="text" v-model="model"></el-input> -->
-        <el-color-picker
-            size="mini" 
-            v-model="model" 
-            @active-change="activeChangedEvent"
-
-            show-alpha></el-color-picker>
+        <div class="block-container">
+            <div class="title">
+                <p>{{ title }}</p>
+            </div>
+            <div class="color-picker">
+                <el-color-picker
+                    size="mini" 
+                    v-model="model" 
+                    @active-change="activeChangedEvent"
+                    show-alpha></el-color-picker>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -33,6 +37,21 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+    .bgColorList {
+        .block-container {
+            text-align: center;
+            .title {
+                display: inline-block;
+            }
+            .color-picker {
+                display: inline-block;
+                .el-color-picker  {
+                    .el-color-picker__trigger {
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
 </style>
