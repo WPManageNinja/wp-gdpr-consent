@@ -529,4 +529,18 @@
         }
 	}
 
+    @media (max-width: 600px) {
+        .wp_gdpr_all_config {
+            .preview {
+                width: 100%;
+                > div {
+                    padding: 2em !important;
+                }
+            }
+            .options {
+                width: 100%;
+            }
+        }
+    }
+
 </style>
