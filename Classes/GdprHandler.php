@@ -15,21 +15,20 @@ class GdprHandler
 		}
 
 		if ($route == 'get_gdprconfig') {
-			static::get_gdpr('ajax');
+			static::get_gdpr();
 		}
 	}
 
 	/**
-     *  Fatching data
-    */
-	public static function get_gdpr($returnType = 'ajax')
+	 * Fetch gdpr options from db.
+	 * @return HTTP JSON Response
+	 */
+	public static function get_gdpr()
 	{
 		wp_send_json_success(array(
 			'getGdprConfig' => get_option('_gdpr_option_consent', false),
 		));
 	}
-
-
 
 	public static function addGDPRNotice()
 	{
