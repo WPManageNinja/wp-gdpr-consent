@@ -46,6 +46,8 @@ export default {
             }
             .color-picker {
                 display: inline-block;
+                position: absolute;
+                top: 8px;
                 .el-color-picker  {
                     .el-color-picker__trigger {
                         margin-left: 5px;

@@ -62166,7 +62166,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.bgColorList .block-container {\n  text-align: center;\n}\n.bgColorList .block-container .title {\n    display: inline-block;\n}\n.bgColorList .block-container .color-picker {\n    display: inline-block;\n}\n.bgColorList .block-container .color-picker .el-color-picker .el-color-picker__trigger {\n      margin-left: 5px;\n}\n", ""]);
+exports.push([module.i, "\n.bgColorList .block-container {\n  text-align: center;\n}\n.bgColorList .block-container .title {\n    display: inline-block;\n}\n.bgColorList .block-container .color-picker {\n    display: inline-block;\n    position: absolute;\n    top: 8px;\n}\n.bgColorList .block-container .color-picker .el-color-picker .el-color-picker__trigger {\n      margin-left: 5px;\n}\n", ""]);
 
 // exports
 
