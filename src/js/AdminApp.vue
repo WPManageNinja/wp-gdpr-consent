@@ -136,7 +136,6 @@
 </script>
 
 <style lang="scss">
-    @import '../css/style.scss';
 	.wp_gdpr_root_component {
 		.header {
 			font-size: 20px;

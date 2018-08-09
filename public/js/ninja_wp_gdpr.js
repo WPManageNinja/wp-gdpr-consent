@@ -60399,52 +60399,20 @@ if(false) {
 /* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var escape = __webpack_require__(189);
 exports = module.exports = __webpack_require__(1)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n@font-face {\n  font-family: element-icons;\n  src: url(" + escape(__webpack_require__(190)) + ") format(\"woff\"), url(" + escape(__webpack_require__(191)) + ") format(\"truetype\");\n  font-weight: 400;\n  font-style: normal;\n}\n[class*=\" el-icon-\"], [class^=el-icon-] {\n  font-family: element-icons !important;\n  speak: none;\n  font-style: normal;\n  font-weight: 400;\n  font-variant: normal;\n  text-transform: none;\n  line-height: 1;\n  vertical-align: baseline;\n  display: inline-block;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.el-icon-info:before {\n  content: \"\\E61A\";\n}\n.el-icon-error:before {\n  content: \"\\E62C\";\n}\n.el-icon-success:before {\n  content: \"\\E62D\";\n}\n.el-icon-warning:before {\n  content: \"\\E62E\";\n}\n.el-icon-question:before {\n  content: \"\\E634\";\n}\n.el-icon-back:before {\n  content: \"\\E606\";\n}\n.el-icon-arrow-left:before {\n  content: \"\\E600\";\n}\n.el-icon-arrow-down:before {\n  content: \"\\E603\";\n}\n.el-icon-arrow-right:before {\n  content: \"\\E604\";\n}\n.el-icon-arrow-up:before {\n  content: \"\\E605\";\n}\n.el-icon-caret-left:before {\n  content: \"\\E60A\";\n}\n.el-icon-caret-bottom:before {\n  content: \"\\E60B\";\n}\n.el-icon-caret-top:before {\n  content: \"\\E60C\";\n}\n.el-icon-caret-right:before {\n  content: \"\\E60E\";\n}\n.el-icon-d-arrow-left:before {\n  content: \"\\E610\";\n}\n.el-icon-d-arrow-right:before {\n  content: \"\\E613\";\n}\n.el-icon-minus:before {\n  content: \"\\E621\";\n}\n.el-icon-plus:before {\n  content: \"\\E62B\";\n}\n.el-icon-remove:before {\n  content: \"\\E635\";\n}\n.el-icon-circle-plus:before {\n  content: \"\\E601\";\n}\n.el-icon-remove-outline:before {\n  content: \"\\E63C\";\n}\n.el-icon-circle-plus-outline:before {\n  content: \"\\E602\";\n}\n.el-icon-close:before {\n  content: \"\\E60F\";\n}\n.el-icon-check:before {\n  content: \"\\E611\";\n}\n.el-icon-circle-close:before {\n  content: \"\\E607\";\n}\n.el-icon-circle-check:before {\n  content: \"\\E639\";\n}\n.el-icon-circle-close-outline:before {\n  content: \"\\E609\";\n}\n.el-icon-circle-check-outline:before {\n  content: \"\\E63E\";\n}\n.el-icon-zoom-out:before {\n  content: \"\\E645\";\n}\n.el-icon-zoom-in:before {\n  content: \"\\E641\";\n}\n.el-icon-d-caret:before {\n  content: \"\\E615\";\n}\n.el-icon-sort:before {\n  content: \"\\E640\";\n}\n.el-icon-sort-down:before {\n  content: \"\\E630\";\n}\n.el-icon-sort-up:before {\n  content: \"\\E631\";\n}\n.el-icon-tickets:before {\n  content: \"\\E63F\";\n}\n.el-icon-document:before {\n  content: \"\\E614\";\n}\n.el-icon-goods:before {\n  content: \"\\E618\";\n}\n.el-icon-sold-out:before {\n  content: \"\\E63B\";\n}\n.el-icon-news:before {\n  content: \"\\E625\";\n}\n.el-icon-message:before {\n  content: \"\\E61B\";\n}\n.el-icon-date:before {\n  content: \"\\E608\";\n}\n.el-icon-printer:before {\n  content: \"\\E62F\";\n}\n.el-icon-time:before {\n  content: \"\\E642\";\n}\n.el-icon-bell:before {\n  content: \"\\E622\";\n}\n.el-icon-mobile-phone:before {\n  content: \"\\E624\";\n}\n.el-icon-service:before {\n  content: \"\\E63A\";\n}\n.el-icon-view:before {\n  content: \"\\E643\";\n}\n.el-icon-menu:before {\n  content: \"\\E620\";\n}\n.el-icon-more:before {\n  content: \"\\E646\";\n}\n.el-icon-more-outline:before {\n  content: \"\\E626\";\n}\n.el-icon-star-on:before {\n  content: \"\\E637\";\n}\n.el-icon-star-off:before {\n  content: \"\\E63D\";\n}\n.el-icon-location:before {\n  content: \"\\E61D\";\n}\n.el-icon-location-outline:before {\n  content: \"\\E61F\";\n}\n.el-icon-phone:before {\n  content: \"\\E627\";\n}\n.el-icon-phone-outline:before {\n  content: \"\\E628\";\n}\n.el-icon-picture:before {\n  content: \"\\E629\";\n}\n.el-icon-picture-outline:before {\n  content: \"\\E62A\";\n}\n.el-icon-delete:before {\n  content: \"\\E612\";\n}\n.el-icon-search:before {\n  content: \"\\E619\";\n}\n.el-icon-edit:before {\n  content: \"\\E61C\";\n}\n.el-icon-edit-outline:before {\n  content: \"\\E616\";\n}\n.el-icon-rank:before {\n  content: \"\\E632\";\n}\n.el-icon-refresh:before {\n  content: \"\\E633\";\n}\n.el-icon-share:before {\n  content: \"\\E636\";\n}\n.el-icon-setting:before {\n  content: \"\\E638\";\n}\n.el-icon-upload:before {\n  content: \"\\E60D\";\n}\n.el-icon-upload2:before {\n  content: \"\\E644\";\n}\n.el-icon-download:before {\n  content: \"\\E617\";\n}\n.el-icon-loading:before {\n  content: \"\\E61E\";\n}\n.el-icon-loading {\n  -webkit-animation: rotating 2s linear infinite;\n  animation: rotating 2s linear infinite;\n}\n.el-icon--right {\n  margin-left: 5px;\n}\n.el-icon--left {\n  margin-right: 5px;\n}\n@-webkit-keyframes rotating {\n0% {\n    -webkit-transform: rotateZ(0);\n    transform: rotateZ(0);\n}\n100% {\n    -webkit-transform: rotateZ(360deg);\n    transform: rotateZ(360deg);\n}\n}\n@keyframes rotating {\n0% {\n    -webkit-transform: rotateZ(0);\n    transform: rotateZ(0);\n}\n100% {\n    -webkit-transform: rotateZ(360deg);\n    transform: rotateZ(360deg);\n}\n}\n.wp_gdpr_root_component .header {\n  font-size: 20px;\n  padding-bottom: 10px;\n  background: #fff;\n  margin-top: -20px;\n  padding-top: 20px;\n  margin-right: -20px;\n  margin-left: -20px;\n  padding-left: 24px;\n}\n.wp_gdpr_root_component .header .el-col .el-button--small {\n    float: right;\n    position: relative;\n    right: 19px;\n    top: 6px;\n}\n.wp_gdpr_root_component .common_btn {\n  margin: 0 !important;\n}\n", ""]);
+exports.push([module.i, "\n.wp_gdpr_root_component .header {\n  font-size: 20px;\n  padding-bottom: 10px;\n  background: #fff;\n  margin-top: -20px;\n  padding-top: 20px;\n  margin-right: -20px;\n  margin-left: -20px;\n  padding-left: 24px;\n}\n.wp_gdpr_root_component .header .el-col .el-button--small {\n    float: right;\n    position: relative;\n    right: 19px;\n    top: 6px;\n}\n.wp_gdpr_root_component .common_btn {\n  margin: 0 !important;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 189 */
-/***/ (function(module, exports) {
-
-module.exports = function escape(url) {
-    if (typeof url !== 'string') {
-        return url
-    }
-    // If url is already wrapped in quotes, remove them
-    if (/^['"].*['"]$/.test(url)) {
-        url = url.slice(1, -1);
-    }
-    // Should url be wrapped?
-    // See https://drafts.csswg.org/css-values-3/#urls
-    if (/["'() \t\n]/.test(url)) {
-        return '"' + url.replace(/"/g, '\\"').replace(/\n/g, '\\n') + '"'
-    }
-
-    return url
-}
-
-
-/***/ }),
-/* 190 */
-/***/ (function(module, exports) {
-
-module.exports = "../fonts/element-icons.woff?2fad952a20fbbcfd1bf2ebb210dccf7a";
-
-/***/ }),
-/* 191 */
-/***/ (function(module, exports) {
-
-module.exports = "../fonts/element-icons.ttf?6f0a76321d30f3c8120915e57f7bd77e";
-
-/***/ }),
+/* 189 */,
+/* 190 */,
+/* 191 */,
 /* 192 */
 /***/ (function(module, exports) {
 
@@ -60699,7 +60667,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.wp_gdpr_all_config .preview {\n  width: 70%;\n  margin-top: 10px;\n  min-height: 450px;\n  float: left;\n  background: #fff;\n  position: relative;\n}\n.wp_gdpr_all_config .preview .el-button {\n    letter-spacing: 2px;\n}\n.wp_gdpr_all_config .options {\n  width: 29%;\n  margin-top: 10px;\n  float: right;\n}\n.wp_gdpr_all_config .options ul li {\n    padding: 0 0px 0px 13px;\n}\n.wp_gdpr_all_config .color-customization .el-collapse-item__content p {\n  margin-left: 13px;\n}\n.wp_gdpr_all_config .el-collapse-item .el-collapse-item__wrap {\n  padding-left: 10px;\n  padding-top: 13px;\n  padding-bottom: 15px;\n}\n.wp_gdpr_all_config .el-collapse-item__header {\n  background: #83C6CF;\n  color: #fff;\n}\n.wp_gdpr_all_config .el-collapse-item__header {\n  padding-left: 10px;\n  padding-right: 10px;\n  font-size: 16px;\n}\n.wp_gdpr_all_config .policy_link .el-collapse-item__wrap .el-row {\n  overflow: hidden;\n  width: 98%;\n}\n.wp_gdpr_all_config .is-active {\n  background: #078BA2;\n}\n.wp_gdpr_all_config .color-customization .bgColorList {\n  width: 49%;\n  float: left;\n  max-height: 100px;\n  position: relative;\n}\n.wp_gdpr_all_config .color-customization .bgColorList .el-input {\n    width: 98%;\n}\n.wp_gdpr_all_config .color-customization .textColorList {\n  width: 48%;\n  float: right;\n}\n.wp_gdpr_all_config .color-customization .textColorList .gdpr_text_color-picker {\n    position: relative;\n    top: -34px;\n    left: 189px;\n    display: block;\n}\n.wp_gdpr_all_config .color-customization .btnbackground {\n  width: 48%;\n  float: left;\n  margin-top: -23px;\n}\n.wp_gdpr_all_config .color-customization .btnbackground .gdpr_btn_bg_color {\n    position: relative;\n    top: -34px;\n    left: 189px;\n    display: block;\n}\n.wp_gdpr_all_config .color-customization .btnColorList {\n  width: 48%;\n  float: right;\n  margin-top: -23px;\n}\n.wp_gdpr_all_config .color-customization .btnColorList .gdpr_btn_bg_color {\n    position: relative;\n    top: -34px;\n    left: 189px;\n    display: block;\n}\n.wp_gdpr_all_config .cstm_text .el-row {\n  overflow: hidden;\n  width: 100%;\n}\n.wp_gdpr_all_config .cstm_text .cstm_msg {\n  padding-bottom: 10px;\n}\n.wp_gdpr_all_config .el-collapse-item__content .el-row {\n  overflow: hidden;\n  width: 100%;\n}\n.wp_gdpr_all_config .settings .el-input {\n  padding-bottom: 5px;\n}\n@media (max-width: 600px) {\n.wp_gdpr_all_config .preview {\n    width: 100%;\n}\n.wp_gdpr_all_config .preview > div {\n      padding: 2em !important;\n}\n.wp_gdpr_all_config .options {\n    width: 100%;\n}\n}\n", ""]);
+exports.push([module.i, "\n.wp_gdpr_all_config .preview {\n  width: 70%;\n  margin-top: 10px;\n  min-height: 450px;\n  float: left;\n  background: #fff;\n  position: relative;\n}\n.wp_gdpr_all_config .preview .el-button {\n    letter-spacing: 2px;\n}\n.wp_gdpr_all_config .el-collapse-item__content {\n  padding-bottom: 17px;\n}\n.wp_gdpr_all_config .options {\n  width: 29%;\n  margin-top: 10px;\n  float: right;\n}\n.wp_gdpr_all_config .options ul li {\n    padding: 0 0px 0px 13px;\n}\n.wp_gdpr_all_config .options .dismiss_btn .el-input {\n    width: 99%;\n}\n.wp_gdpr_all_config .options .learn_more .el-input {\n    width: 99%;\n}\n.wp_gdpr_all_config .color-customization .el-collapse-item__content p {\n  margin-left: 13px;\n}\n.wp_gdpr_all_config .el-collapse-item .el-collapse-item__wrap {\n  padding-left: 10px;\n  padding-top: 0px;\n  padding-bottom: 0px;\n  padding-right: 10px;\n}\n.wp_gdpr_all_config .el-collapse-item__header {\n  background: #83C6CF;\n  color: #fff;\n}\n.wp_gdpr_all_config .el-collapse-item__header {\n  padding-left: 10px;\n  padding-right: 10px;\n  font-size: 16px;\n}\n.wp_gdpr_all_config .policy_link .el-collapse-item__wrap {\n  padding-right: 0px;\n}\n.wp_gdpr_all_config .policy_link .el-collapse-item__wrap .el-row {\n    overflow: hidden;\n    width: 98%;\n}\n.wp_gdpr_all_config .is-active {\n  background: #078BA2;\n}\n.wp_gdpr_all_config .color-customization .bgColorList {\n  width: 49%;\n  float: left;\n  max-height: 100px;\n  position: relative;\n}\n.wp_gdpr_all_config .color-customization .bgColorList .el-input {\n    width: 98%;\n}\n.wp_gdpr_all_config .color-customization .textColorList {\n  width: 48%;\n  float: right;\n}\n.wp_gdpr_all_config .color-customization .textColorList .gdpr_text_color-picker {\n    position: relative;\n    top: -34px;\n    left: 189px;\n    display: block;\n}\n.wp_gdpr_all_config .color-customization .btnbackground {\n  width: 48%;\n  float: left;\n  margin-top: -23px;\n}\n.wp_gdpr_all_config .color-customization .btnbackground .gdpr_btn_bg_color {\n    position: relative;\n    top: -34px;\n    left: 189px;\n    display: block;\n}\n.wp_gdpr_all_config .color-customization .btnColorList {\n  width: 48%;\n  float: right;\n  margin-top: -23px;\n}\n.wp_gdpr_all_config .color-customization .btnColorList .gdpr_btn_bg_color {\n    position: relative;\n    top: -34px;\n    left: 189px;\n    display: block;\n}\n.wp_gdpr_all_config .cstm_text .el-row {\n  width: 100%;\n}\n.wp_gdpr_all_config .cstm_text .cstm_msg {\n  padding-bottom: 10px;\n}\n.wp_gdpr_all_config .el-collapse-item__content .el-row {\n  overflow: hidden;\n  width: 100%;\n}\n.wp_gdpr_all_config .settings .el-input {\n  padding-bottom: 5px;\n}\n@media (max-width: 600px) {\n.wp_gdpr_all_config .preview {\n    width: 100%;\n}\n.wp_gdpr_all_config .preview > div {\n      padding: 2em !important;\n}\n.wp_gdpr_all_config .options {\n    width: 100%;\n}\n}\n", ""]);
 
 // exports
 
@@ -60852,16 +60820,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             radio_options: [{
-                label: 'Banner Bottom',
+                label: 'Footer Bottom',
                 value: 'banner_bottom'
             }, {
-                label: 'Banner Top',
+                label: 'Header Top',
                 value: 'banner_top'
             }, {
-                label: 'Left',
+                label: 'Footer Left',
                 value: 'banner_left'
             }, {
-                label: 'Right',
+                label: 'Footer Right',
                 value: 'banner_right'
             }, {
                 label: 'Hide',
@@ -61159,7 +61127,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.ninja-radio-group-inner .el-radio-group {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n.ninja-radio-group-inner .el-radio-group .el-radio {\n    margin-left: 0px;\n    margin-bottom: 15px;\n}\n.ninja-radio-group-inner .el-radio-group .el-radio:last-child {\n      margin: 0px;\n}\n", ""]);
+exports.push([module.i, "\n.ninja-radio-group {\n  margin-top: 13px;\n}\n.ninja-radio-group .ninja-radio-group-inner .el-radio-group {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n}\n.ninja-radio-group .ninja-radio-group-inner .el-radio-group .el-radio {\n      margin-left: 0px;\n      margin-bottom: 15px;\n}\n.ninja-radio-group .ninja-radio-group-inner .el-radio-group .el-radio:last-child {\n        margin: 0px;\n}\n", ""]);
 
 // exports
 
@@ -61352,7 +61320,10 @@ var render = function() {
     [
       _c(
         "el-col",
-        { attrs: { span: 24 } },
+        {
+          staticStyle: { "padding-top": "8px", "padding-right": "0.5px" },
+          attrs: { span: 24 }
+        },
         [
           _c("label", { staticClass: "settings_label" }, [
             _vm._v("Duration of Cookie(in days)")
@@ -61374,7 +61345,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "el-col",
-        { attrs: { span: 24 } },
+        { staticStyle: { "padding-right": "0.5px" }, attrs: { span: 24 } },
         [
           _c("label", { staticClass: "settings_label" }, [
             _vm._v("Hide GDP Concent(after "),
@@ -61437,6 +61408,10 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(226)
+}
 var normalizeComponent = __webpack_require__(15)
 /* script */
 var __vue_script__ = __webpack_require__(207)
@@ -61445,7 +61420,7 @@ var __vue_template__ = __webpack_require__(208)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -61882,11 +61857,14 @@ var render = function() {
                     [
                       _c(
                         "el-row",
-                        { staticClass: "cstm_msg", attrs: { gutter: 12 } },
+                        { staticClass: "cstm_msg" },
                         [
                           _c(
                             "el-col",
-                            { attrs: { span: 24 } },
+                            {
+                              staticStyle: { "padding-top": "8px" },
+                              attrs: { span: 24 }
+                            },
                             [
                               _c("label", [_vm._v("Message")]),
                               _vm._v(" "),
@@ -61917,11 +61895,10 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "el-row",
-                    { attrs: { gutter: 12 } },
                     [
                       _c(
                         "el-col",
-                        { attrs: { span: 12 } },
+                        { staticClass: "dismiss_btn", attrs: { span: 12 } },
                         [
                           _c("gdpr-input", {
                             attrs: {
@@ -61942,7 +61919,7 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "el-col",
-                        { attrs: { span: 12 } },
+                        { staticClass: "learn_more", attrs: { span: 12 } },
                         [
                           _c("gdpr-input", {
                             attrs: {
@@ -62171,6 +62148,46 @@ exports = module.exports = __webpack_require__(1)(false);
 
 // module
 exports.push([module.i, "\n.bgColorList .block-container {\n  text-align: center;\n}\n.bgColorList .block-container .title {\n    display: inline-block;\n}\n.bgColorList .block-container .color-picker {\n    display: inline-block;\n    position: absolute;\n    top: 8px;\n}\n.bgColorList .block-container .color-picker .el-color-picker .el-color-picker__trigger {\n      margin-left: 5px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 226 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(227);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(28)("139c903d", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1332b778\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GdprInput.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1332b778\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GdprInput.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 227 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.custom_link {\n  padding-top: 6px;\n}\n.custom_link .el-input {\n    width: 99%;\n}\n", ""]);
 
 // exports
 

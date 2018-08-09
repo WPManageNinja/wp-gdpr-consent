@@ -51,9 +51,9 @@
 
                     <el-collapse-item title="Custom Text" name="3">
                         <div class="cstm_text">
-                            <el-row :gutter="12" class="cstm_msg">
+                            <el-row class="cstm_msg">
 
-                                <el-col :span="24">
+                                <el-col :span="24" style="padding-top: 8px;">
                                     <label>Message</label>
                                     <el-input
                                         type="textarea"
@@ -67,8 +67,8 @@
                         
                         </div>
 
-                            <el-row :gutter="12">
-                                <el-col :span="12">
+                            <el-row>
+                                <el-col :span="12" class="dismiss_btn">
 
                                     <gdpr-input
                                         title="Dismiss button text"
@@ -79,7 +79,7 @@
                                 </el-col>
 
 
-                                <el-col :span="12">
+                                <el-col :span="12" class="learn_more">
 
                                     <gdpr-input
                                         title="Policy link text"
@@ -144,20 +144,20 @@
 			return {
                 radio_options: [
                     {
-                        label:'Banner Bottom',
+                        label:'Footer Bottom',
                         value:'banner_bottom'
                     },
                     {
-                        label:'Banner Top',
+                        label:'Header Top',
                         value:'banner_top'
                     },
                     
                     {
-                        label:'Left',
+                        label:'Footer Left',
                         value:'banner_left'
                     },
                     {
-                        label:'Right',
+                        label:'Footer Right',
                         value:'banner_right'
                     },
                     {
@@ -399,6 +399,9 @@
                 letter-spacing: 2px;
             }
 		}
+        .el-collapse-item__content {
+            padding-bottom: 17px;
+        }
 
 		.options {
 			width: 29%;
@@ -410,6 +413,16 @@
 					padding: 0 0px 0px 13px;
 				}
 			}
+            .dismiss_btn {
+                .el-input {
+                    width: 99%;
+                }
+            }
+            .learn_more {
+                .el-input {
+                    width: 99%;
+                }
+            }
 		}
 
 
@@ -425,8 +438,9 @@
          .el-collapse-item {
              .el-collapse-item__wrap {
                 padding-left: 10px;
-                padding-top: 13px;
-                padding-bottom: 15px;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                padding-right: 10px;
              }
          }
 
@@ -443,6 +457,7 @@
 
         .policy_link {
             .el-collapse-item__wrap {
+                padding-right: 0px;
                 .el-row {
                     overflow: hidden;
                     width: 98%;
@@ -506,7 +521,6 @@
 		
         .cstm_text {
             .el-row {
-                overflow: hidden;
                 width: 100%;
             }
             .cstm_msg {
