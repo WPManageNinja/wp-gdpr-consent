@@ -423,6 +423,9 @@
                     width: 99%;
                 }
             }
+            .el-icon-arrow-right {
+                line-height: inherit;
+            }
 		}
 
 
