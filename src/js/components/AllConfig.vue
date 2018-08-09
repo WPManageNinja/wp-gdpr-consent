@@ -144,20 +144,20 @@
 			return {
                 radio_options: [
                     {
-                        label:'Banner Bottom',
+                        label:'Footer Bottom',
                         value:'banner_bottom'
                     },
                     {
-                        label:'Banner Top',
+                        label:'Header Top',
                         value:'banner_top'
                     },
                     
                     {
-                        label:'Left',
+                        label:'Footer Left',
                         value:'banner_left'
                     },
                     {
-                        label:'Right',
+                        label:'Footer Right',
                         value:'banner_right'
                     },
                     {
