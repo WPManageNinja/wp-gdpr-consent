@@ -15,9 +15,10 @@ Domain Path: /languages
 */
 
 include "load.php";
+
 define("WP_GDPR_PLUGIN_DIR_URL", plugin_dir_url(__FILE__));
 define("WP_GDPR_PLUGIN_DIR_PATH", plugin_dir_path(__FILE__));
-define("WP_GDPR_PLUGIN_DIR_VERSION", plugin_dir_path(__FILE__));
+define("WP_GDPR_PLUGIN_DIR_VERSION", '1.0.0');
 
 
 class NINJAWPGDPR
@@ -26,13 +27,7 @@ class NINJAWPGDPR
 	{
 		$this->adminHooks();
 		$this->publicHooks();
-		$this->commonHooks();
 		$this->loadTextDomain();
-	}
-
-	public function commonHooks()
-	{
-		add_action('wp_enqueue_scripts', array($this, 'enqueueScripts'));
 	}
 	
 	public function adminHooks()
@@ -46,11 +41,6 @@ class NINJAWPGDPR
 	public function publicHooks()
 	{
 		add_action('wp_footer', array('WP_GDPR\Classes\GdprHandler', 'addGDPRNotice'));
-	}
-
-	public function enqueueScripts()
-	{
-		wp_enqueue_style('ninja_wp_gdpr_css', WP_GDPR_PLUGIN_DIR_URL.'/public/css/styles.css');
 	}
 
 	public function loadTextDomain()
