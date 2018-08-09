@@ -60699,7 +60699,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.wp_gdpr_all_config .preview {\n  width: 70%;\n  margin-top: 10px;\n  min-height: 450px;\n  float: left;\n  background: #fff;\n  position: relative;\n}\n.wp_gdpr_all_config .preview .el-button {\n    letter-spacing: 2px;\n}\n.wp_gdpr_all_config .options {\n  width: 29%;\n  margin-top: 10px;\n  float: right;\n}\n.wp_gdpr_all_config .options ul li {\n    padding: 0 0px 0px 13px;\n}\n.wp_gdpr_all_config .color-customization .el-collapse-item__content p {\n  margin-left: 13px;\n}\n.wp_gdpr_all_config .el-collapse-item .el-collapse-item__wrap {\n  padding-left: 10px;\n  padding-top: 13px;\n  padding-bottom: 15px;\n}\n.wp_gdpr_all_config .el-collapse-item__header {\n  background: #83C6CF;\n  color: #fff;\n}\n.wp_gdpr_all_config .el-collapse-item__header {\n  padding-left: 10px;\n  padding-right: 10px;\n  font-size: 16px;\n}\n.wp_gdpr_all_config .policy_link .el-collapse-item__wrap .el-row {\n  overflow: hidden;\n  width: 98%;\n}\n.wp_gdpr_all_config .is-active {\n  background: #078BA2;\n}\n.wp_gdpr_all_config .color-customization .bgColorList {\n  width: 49%;\n  float: left;\n  max-height: 100px;\n  position: relative;\n}\n.wp_gdpr_all_config .color-customization .bgColorList .el-input {\n    width: 98%;\n}\n.wp_gdpr_all_config .color-customization .textColorList {\n  width: 48%;\n  float: right;\n}\n.wp_gdpr_all_config .color-customization .textColorList .gdpr_text_color-picker {\n    position: relative;\n    top: -34px;\n    left: 189px;\n    display: block;\n}\n.wp_gdpr_all_config .color-customization .btnbackground {\n  width: 48%;\n  float: left;\n  margin-top: -23px;\n}\n.wp_gdpr_all_config .color-customization .btnbackground .gdpr_btn_bg_color {\n    position: relative;\n    top: -34px;\n    left: 189px;\n    display: block;\n}\n.wp_gdpr_all_config .color-customization .btnColorList {\n  width: 48%;\n  float: right;\n  margin-top: -23px;\n}\n.wp_gdpr_all_config .color-customization .btnColorList .gdpr_btn_bg_color {\n    position: relative;\n    top: -34px;\n    left: 189px;\n    display: block;\n}\n.wp_gdpr_all_config .cstm_text .el-row {\n  overflow: hidden;\n  width: 100%;\n}\n.wp_gdpr_all_config .cstm_text .cstm_msg {\n  padding-bottom: 10px;\n}\n.wp_gdpr_all_config .el-collapse-item__content .el-row {\n  overflow: hidden;\n  width: 100%;\n}\n.wp_gdpr_all_config .settings .el-input {\n  padding-bottom: 5px;\n}\n@media (max-width: 600px) {\n.wp_gdpr_all_config .preview {\n    width: 100%;\n}\n.wp_gdpr_all_config .preview > div {\n      padding: 2em !important;\n}\n.wp_gdpr_all_config .options {\n    width: 100%;\n}\n}\n", ""]);
+exports.push([module.i, "\n.wp_gdpr_all_config .preview {\n  width: 70%;\n  margin-top: 10px;\n  min-height: 450px;\n  float: left;\n  background: #fff;\n  position: relative;\n}\n.wp_gdpr_all_config .preview .el-button {\n    letter-spacing: 2px;\n}\n.wp_gdpr_all_config .el-collapse-item__content {\n  padding-bottom: 17px;\n}\n.wp_gdpr_all_config .options {\n  width: 29%;\n  margin-top: 10px;\n  float: right;\n}\n.wp_gdpr_all_config .options ul li {\n    padding: 0 0px 0px 13px;\n}\n.wp_gdpr_all_config .options .dismiss_btn .el-input {\n    width: 99%;\n}\n.wp_gdpr_all_config .options .learn_more .el-input {\n    width: 99%;\n}\n.wp_gdpr_all_config .color-customization .el-collapse-item__content p {\n  margin-left: 13px;\n}\n.wp_gdpr_all_config .el-collapse-item .el-collapse-item__wrap {\n  padding-left: 10px;\n  padding-top: 0px;\n  padding-bottom: 0px;\n  padding-right: 10px;\n}\n.wp_gdpr_all_config .el-collapse-item__header {\n  background: #83C6CF;\n  color: #fff;\n}\n.wp_gdpr_all_config .el-collapse-item__header {\n  padding-left: 10px;\n  padding-right: 10px;\n  font-size: 16px;\n}\n.wp_gdpr_all_config .policy_link .el-collapse-item__wrap {\n  padding-right: 0px;\n}\n.wp_gdpr_all_config .policy_link .el-collapse-item__wrap .el-row {\n    overflow: hidden;\n    width: 98%;\n}\n.wp_gdpr_all_config .is-active {\n  background: #078BA2;\n}\n.wp_gdpr_all_config .color-customization .bgColorList {\n  width: 49%;\n  float: left;\n  max-height: 100px;\n  position: relative;\n}\n.wp_gdpr_all_config .color-customization .bgColorList .el-input {\n    width: 98%;\n}\n.wp_gdpr_all_config .color-customization .textColorList {\n  width: 48%;\n  float: right;\n}\n.wp_gdpr_all_config .color-customization .textColorList .gdpr_text_color-picker {\n    position: relative;\n    top: -34px;\n    left: 189px;\n    display: block;\n}\n.wp_gdpr_all_config .color-customization .btnbackground {\n  width: 48%;\n  float: left;\n  margin-top: -23px;\n}\n.wp_gdpr_all_config .color-customization .btnbackground .gdpr_btn_bg_color {\n    position: relative;\n    top: -34px;\n    left: 189px;\n    display: block;\n}\n.wp_gdpr_all_config .color-customization .btnColorList {\n  width: 48%;\n  float: right;\n  margin-top: -23px;\n}\n.wp_gdpr_all_config .color-customization .btnColorList .gdpr_btn_bg_color {\n    position: relative;\n    top: -34px;\n    left: 189px;\n    display: block;\n}\n.wp_gdpr_all_config .cstm_text .el-row {\n  width: 100%;\n}\n.wp_gdpr_all_config .cstm_text .cstm_msg {\n  padding-bottom: 10px;\n}\n.wp_gdpr_all_config .el-collapse-item__content .el-row {\n  overflow: hidden;\n  width: 100%;\n}\n.wp_gdpr_all_config .settings .el-input {\n  padding-bottom: 5px;\n}\n@media (max-width: 600px) {\n.wp_gdpr_all_config .preview {\n    width: 100%;\n}\n.wp_gdpr_all_config .preview > div {\n      padding: 2em !important;\n}\n.wp_gdpr_all_config .options {\n    width: 100%;\n}\n}\n", ""]);
 
 // exports
 
@@ -61159,7 +61159,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.ninja-radio-group-inner .el-radio-group {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n.ninja-radio-group-inner .el-radio-group .el-radio {\n    margin-left: 0px;\n    margin-bottom: 15px;\n}\n.ninja-radio-group-inner .el-radio-group .el-radio:last-child {\n      margin: 0px;\n}\n", ""]);
+exports.push([module.i, "\n.ninja-radio-group {\n  margin-top: 13px;\n}\n.ninja-radio-group .ninja-radio-group-inner .el-radio-group {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n}\n.ninja-radio-group .ninja-radio-group-inner .el-radio-group .el-radio {\n      margin-left: 0px;\n      margin-bottom: 15px;\n}\n.ninja-radio-group .ninja-radio-group-inner .el-radio-group .el-radio:last-child {\n        margin: 0px;\n}\n", ""]);
 
 // exports
 
@@ -61352,7 +61352,10 @@ var render = function() {
     [
       _c(
         "el-col",
-        { attrs: { span: 24 } },
+        {
+          staticStyle: { "padding-top": "8px", "padding-right": "0.5px" },
+          attrs: { span: 24 }
+        },
         [
           _c("label", { staticClass: "settings_label" }, [
             _vm._v("Duration of Cookie(in days)")
@@ -61374,7 +61377,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "el-col",
-        { attrs: { span: 24 } },
+        { staticStyle: { "padding-right": "0.5px" }, attrs: { span: 24 } },
         [
           _c("label", { staticClass: "settings_label" }, [
             _vm._v("Hide GDP Concent(after "),
@@ -61437,6 +61440,10 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(220)
+}
 var normalizeComponent = __webpack_require__(15)
 /* script */
 var __vue_script__ = __webpack_require__(207)
@@ -61445,7 +61452,7 @@ var __vue_template__ = __webpack_require__(208)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -61588,7 +61595,7 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(220)
+  __webpack_require__(210)
 }
 var normalizeComponent = __webpack_require__(15)
 /* script */
@@ -61633,8 +61640,46 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 210 */,
-/* 211 */,
+/* 210 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(211);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(28)("20dd9f36", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a468e51c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GdprColorCustomization.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a468e51c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GdprColorCustomization.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 211 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.bgColorList .block-container {\n  text-align: center;\n}\n.bgColorList .block-container .title {\n    display: inline-block;\n}\n.bgColorList .block-container .color-picker {\n    display: inline-block;\n    position: absolute;\n    top: 8px;\n}\n.bgColorList .block-container .color-picker .el-color-picker .el-color-picker__trigger {\n      margin-left: 5px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 212 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -61882,11 +61927,14 @@ var render = function() {
                     [
                       _c(
                         "el-row",
-                        { staticClass: "cstm_msg", attrs: { gutter: 12 } },
+                        { staticClass: "cstm_msg" },
                         [
                           _c(
                             "el-col",
-                            { attrs: { span: 24 } },
+                            {
+                              staticStyle: { "padding-top": "8px" },
+                              attrs: { span: 24 }
+                            },
                             [
                               _c("label", [_vm._v("Message")]),
                               _vm._v(" "),
@@ -61917,11 +61965,10 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "el-row",
-                    { attrs: { gutter: 12 } },
                     [
                       _c(
                         "el-col",
-                        { attrs: { span: 12 } },
+                        { staticClass: "dismiss_btn", attrs: { span: 12 } },
                         [
                           _c("gdpr-input", {
                             attrs: {
@@ -61942,7 +61989,7 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "el-col",
-                        { attrs: { span: 12 } },
+                        { staticClass: "learn_more", attrs: { span: 12 } },
                         [
                           _c("gdpr-input", {
                             attrs: {
@@ -62142,13 +62189,13 @@ var content = __webpack_require__(221);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(28)("20dd9f36", content, false, {});
+var update = __webpack_require__(28)("139c903d", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a468e51c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GdprColorCustomization.vue", function() {
-     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a468e51c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GdprColorCustomization.vue");
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1332b778\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GdprInput.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1332b778\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GdprInput.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -62166,7 +62213,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.bgColorList .block-container {\n  text-align: center;\n}\n.bgColorList .block-container .title {\n    display: inline-block;\n}\n.bgColorList .block-container .color-picker {\n    display: inline-block;\n    position: absolute;\n    top: 8px;\n}\n.bgColorList .block-container .color-picker .el-color-picker .el-color-picker__trigger {\n      margin-left: 5px;\n}\n", ""]);
+exports.push([module.i, "\n.custom_link {\n  padding-top: 6px;\n}\n.custom_link .el-input {\n    width: 99%;\n}\n", ""]);
 
 // exports
 

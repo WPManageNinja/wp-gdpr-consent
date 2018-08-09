@@ -31,6 +31,8 @@ export default {
 
 
 <style lang="scss">
+.ninja-radio-group {
+    margin-top: 13px;
     .ninja-radio-group-inner {
         .el-radio-group {
             display: flex;
@@ -46,6 +48,6 @@ export default {
             }
         }
     }
-    
+}   
 </style>
 

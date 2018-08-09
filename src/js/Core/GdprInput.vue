@@ -49,3 +49,14 @@ export default {
 }
 
 </script>
+
+<style lang="scss">
+
+.custom_link {
+    padding-top: 6px;
+    .el-input {
+        width: 99%;
+    }
+}
+
+</style>
