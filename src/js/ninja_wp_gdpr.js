@@ -2,25 +2,26 @@ import Vue from 'vue'
 
 import locale from 'element-ui/lib/locale';
 import lang from 'element-ui/lib/locale/lang/en';
+
 locale.use(lang);
 
-import { 
-	Col, 
-	Input, 
-	Select, 
-	Row, 
-	Button,
-	Option, 
-	Icon, 
-	Loading, 
-	Notification, 
-	Switch, 
-	Message, 
-	Collapse,
-	CollapseItem,
-	Radio,
-	RadioGroup,
-	ColorPicker
+import {
+    Col,
+    Input,
+    Select,
+    Row,
+    Button,
+    Option,
+    Icon,
+    Loading,
+    Notification,
+    Switch,
+    Message,
+    Collapse,
+    CollapseItem,
+    Radio,
+    RadioGroup,
+    ColorPicker
 } from 'element-ui'
 
 Vue.use(Button)
@@ -60,6 +61,6 @@ import 'element-ui/lib/theme-chalk/switch.css';
 import App from './AdminApp';
 
 new Vue({
-	el: "#ninja_wp_gdpr",
-	render: h => h(App)
+    el: "#ninja_wp_gdpr",
+    render: h => h(App)
 })

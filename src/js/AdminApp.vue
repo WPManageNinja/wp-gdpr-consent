@@ -3,15 +3,16 @@
 		<el-row class="header">
 			<el-col :span="24">
 				<el-col :span="20">
-					<h1>WP GDPR CONSENT</h1>
+					<h1>
+						WP GDPR CONSENT
+						<a style="font-size: 15px;border: 1px solid #008ba3;padding: 4px 10px;text-decoration: none;color: #008ba3;" :href="preview_url" target="_blank">Preview</a></h1>
 				</el-col>
 				<el-col :span="4">
 					<el-button class="common_btn" type="success" @click="updateGDPR" size="small">Update</el-button>
 				</el-col>
 			</el-col>
 		</el-row>
-
-
+		
 		<app-all-config 
             :styleObj="styleObj" 
             :styleMsg="styleMsg" 
@@ -39,6 +40,7 @@
         },
         data() {
             return {
+                preview_url: window.ninja_wp_gdpr.preview_url,
                 message: '',
                 settings: {},
                 styleObj: {},
